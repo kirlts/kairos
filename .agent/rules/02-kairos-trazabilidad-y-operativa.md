@@ -22,6 +22,10 @@ C. MEMORY.md (La Memoria del Proyecto)
 Todo aprendizaje, corrección de errores arquitectónicos y Perfiles de Desempeño Kairós (PDK) deben documentarse aquí (`docs/MEMORY.md`).
 Restricción de Crecimiento: Es un archivo "Append-Only". ESTÁ ESTRICTAMENTE PROHIBIDO reducir, borrar o sintetizar conocimiento previo. Solo debe crecer iterativamente y debe ser consultado antes de tomar decisiones de diseño estructural.
 
+D. USER-DECISIONS.md (Registro de Decisiones)
+Todo repositorio debe inicializar y mantener actualizado siempre un archivo `docs/USER-DECISIONS.md`. Este archivo registra todas las decisiones que el usuario haya tomado o las correcciones que haga.
+Trazabilidad de Decisiones: Al crearlo o actualizarlo, usa formato plantilla y espera que el usuario diga "ok, commiteado" o similar para poblarlo con sus decisiones definitivamente. Este actúa como el historial claro de la interacción direccional del usuario.
+
 1. PROTOCOLO DE AUTO-SANACIÓN Y BYPASS DE TERMINAL (1-Strike Rule)
 Antigravity IDE puede presentar ceguera temporal ante la salida de ciertos comandos de terminal (especialmente procesos contenedores como Docker o entornos virtuales complejos).
 
