@@ -1,39 +1,39 @@
 ---
-description: Este flujo de trabajo implementa una secuencia estricta basada en los Artículos 1 y 3 de la Constitución Kairós. Debes guiar al usuario paso a paso, requiriendo su aprobación antes de avanzar a la siguiente fase.
+description: Este flujo de trabajo implementa una secuencia estricta de definición arquitectónica y validación de requerimientos. Debes guiar al usuario paso a paso, requiriendo su aprobación antes de avanzar a la siguiente fase.
 ---
 
-# WORKFLOW: RITUAL DE LA FORJA ESTRATÉGICA
+# WORKFLOW: RITUAL DE DEFINICIÓN ESTRATÉGICA
 
-Este flujo de trabajo implementa una secuencia estricta basada en los Artículos 1 y 3 de la Constitución Kairós. Debes guiar al usuario paso a paso, requiriendo su aprobación antes de avanzar a la siguiente fase.
+Este flujo de trabajo implementa una secuencia estricta para definir la arquitectura y alinear expectativas. Debes guiar al usuario paso a paso, requiriendo su aprobación antes de avanzar a la siguiente fase.
 
-## Paso 1: Establecimiento de la Semilla y el Propósito (Basado en el Artículo 1)
+NUNCA uses terminología propietaria o interna (como "Kairós", "Kratos", "Khaos", "Pacto Estratégico", "Indagación Socrática") en tus respuestas al usuario. Usa siempre términos estándar de ingeniería de software.
 
-Analiza el requerimiento del usuario y aplica el axioma: "La sinergia comienza con un acto de generosidad estratégica".
+## Paso 1: Establecimiento de la Propuesta Base y el Propósito
 
-Genera un "Pacto Estratégico Propuesto" que destile la intención del usuario articulando explícitamente:
+Analiza el requerimiento del usuario y aplica el principio de generosidad estratégica: diseña antes de codificar.
 
-El Propósito Guía (El "Por qué").
+Genera un "Plan de Implementación" que destile la intención del usuario articulando explícitamente y en lenguaje natural:
 
-Las Restricciones Operativas (El "Con qué").
+El Objetivo Principal (El "Por qué" o "Problema a resolver").
 
-Un dilema estratégico formulando la Métrica Principal de Optimización frente al Sacrificio Aceptado.
+Las Restricciones Técnicas (El "Con qué stack tech o recursos").
 
-Presenta una "Solución Semilla": un artefacto inicial de valor inmediato (pseudo-código estructural o mapa de arquitectura) cuya estructura manifieste inferencia lógica (Kratos).
+Los Trade-offs Arquitectónicos (Qué métricas o características se priorizan frente a cuáles se sacrifican o posponen).
 
-Diseña la solución como una "Indagación Socrática" (Khaos): Convierte las decisiones significativas de diseño en preguntas implícitas y nombra explícitamente la tensión estratégica central que esta semilla expone.
+Presenta un "Prototipo Arquitectónico" o "Propuesta Base": un artefacto inicial de valor inmediato (pseudo-código estructural o mapa de arquitectura) cuya estructura sea robusta y viable.
 
-Asegúrate de presentar estas indagaciones generando un 'Implementation Plan' formal en Antigravity para que el usuario inserte allí sus comentarios. No tienes permitido generar archivos Markdown en el repositorio sin la instrucción o autorización explícita y verba del usuario.
+Diseña la solución planteando "Preguntas Abiertas de Diseño": Convierte las decisiones significativas de diseño en preguntas implícitas y nombra explícitamente las tensiones técnicas centrales (ej. latencia vs costo, flexibilidad vs simplicidad) que esta arquitectura debe navegar.
 
-DETENTE. Pide al usuario que valide el Pacto Estratégico y responda a las indagaciones antes de generar el código final.
+Asegúrate de presentar estas indagaciones generando un 'Implementation Plan' formal en Antigravity para que el usuario inserte allí sus comentarios. No tienes permitido generar archivos Markdown en el repositorio sin la instrucción o autorización explícita y verbal del usuario.
 
-## Paso 2: El Veredicto Convergente (Basado en el Artículo 3)
+DETENTE. Pide al usuario que valide el Plan de Implementación y responda a las preguntas de diseño antes de generar el código final.
 
-Una vez que el usuario ha respondido al Paso 1, aplica el axioma: "La parálisis por análisis es un fracaso tan seguro como la acción sin rumbo".
+## Paso 2: La Decisión Arquitectónica Final
 
-Aplica el Principio del Veredicto Convergente (Kratos): Colapsa el multiverso de opciones en una única "Propuesta Recomendada" sólida y robusta.
+Una vez que el usuario ha respondido al Paso 1, colapsa el multiverso de opciones en una única "Arquitectura Recomendada" sólida y robusta.
 
-Justifica explícitamente la elección basándote en el Pacto Estratégico acordado, e incluye una mención concisa de las "Alternativas Descartadas".
+Justifica explícitamente la elección basándote en el plan acordado, e incluye una mención concisa de las "Alternativas Descartadas".
 
-Aplica el Principio del Encuadre con Propósito (Khaos): Inicia tu respuesta técnica invocando el alma del proyecto como un prólogo formal, destilando la misión y declarando la tensión estratégica central que la arquitectura navegará.
+Inicia tu respuesta técnica con un encuadre claro: un prólogo formal destilando la misión del proyecto y declarando la decisión técnica central que la arquitectura navegará.
 
-Genera el código final asegurando la Claridad del Artefacto: Configuración centralizada, nombrado intencional y prompts de incrustados en los comentarios del código en puntos clave de riesgo.
+Genera el código final asegurando la claridad del artefacto: Configuración centralizada, nombrado intencional y prompts incrustados en los comentarios del código en puntos clave de riesgo.
