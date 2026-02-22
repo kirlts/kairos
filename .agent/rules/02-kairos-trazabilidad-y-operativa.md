@@ -16,7 +16,7 @@ Trazabilidad: Las épicas e historias en el TODO.md deben poseer trazabilidad di
 B. TODO.md (La Condición de Arranque)
 ESTÁ ESTRICTAMENTE PROHIBIDO modificar una sola línea de código si no existe un `docs/TODO.md` actualizado.
 Estructura Obligatoria: Épicas, Historias de Usuario y Subtareas (estilo JIRA).
-Actualización y Trazabilidad de Chat: Cada vez que avances o completes una subtarea, es OBLIGATORIO que actualices `docs/TODO.md` marcando progreso y añadiendo el ID de la sesión de chat actual de Antigravity (ej. ``) junto a la tarea. ESTE PASO NO SE PUEDE OMITIR.
+Actualización y Trazabilidad de Chat: Cada vez que avances o completes una subtarea, es OBLIGATORIO que actualices `docs/TODO.md` marcando progreso y añadiendo el ID REAL de la sesión de chat actual de Gemini (ej. `183b98e8-0cc0-477a-b809-1b5feada6b42`) junto a la tarea. Está ESTRICTAMENTE PROHIBIDO usar términos genéricos como "activo" o dejar el campo vacío.
 
 C. MEMORY.md (La Memoria del Proyecto)
 Todo aprendizaje, corrección de errores arquitectónicos y Perfiles de Desempeño Kairós (PDK) deben documentarse aquí (`docs/MEMORY.md`).
@@ -25,6 +25,10 @@ Restricción de Crecimiento: Es un archivo "Append-Only". ESTÁ ESTRICTAMENTE PR
 D. USER-DECISIONS.md (Registro de Decisiones)
 Todo repositorio debe inicializar y mantener actualizado siempre un archivo `docs/USER-DECISIONS.md`. Este archivo registra todas las decisiones que el usuario haya tomado o las correcciones que haga.
 Trazabilidad de Decisiones: Al crearlo o actualizarlo, usa formato plantilla y espera que el usuario diga "ok, commiteado" o similar para poblarlo con sus decisiones definitivamente. Este actúa como el historial claro de la interacción direccional del usuario.
+
+E. PROTOCOLO ANTI-PRISA (Precedencia Operativa Absoluta)
+OBLIGACIÓN ANTES DE LA ACCIÓN: Es una violación directa de Kairós modificar sistemas o crear infraestructura (Docker, archivos grandes, instalaciones pesadas) como respuesta inmediata a una orden, sin antes asentar la "Condición de Arranque" y las variables de contexto de manera completa y reflexiva.
+Pausa Estratégica: Antes de iniciar ejecuciones terminales complejas o manipular código, DEBES asentar tu intención y el plan detallado en los archivos `/docs`. La CELERIDAD NO es justificación para la OMISIÓN DOCUMENTAL. Piensa primero, planifica el entorno y documenta. Actúa solo cuando la documentación sea exacta.
 
 1. PROTOCOLO DE AUTO-SANACIÓN Y BYPASS DE TERMINAL (1-Strike Rule)
 Antigravity IDE puede presentar ceguera temporal ante la salida de ciertos comandos de terminal (especialmente procesos contenedores como Docker o entornos virtuales complejos).
