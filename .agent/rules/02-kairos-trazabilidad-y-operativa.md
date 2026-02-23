@@ -16,7 +16,7 @@ Trazabilidad: Las épicas e historias en el TODO.md deben poseer trazabilidad di
 B. TODO.md (La Condición de Arranque)
 ESTÁ ESTRICTAMENTE PROHIBIDO modificar una sola línea de código si no existe un `docs/TODO.md` actualizado.
 Estructura Obligatoria: Épicas, Historias de Usuario y Subtareas (estilo JIRA).
-Actualización y Trazabilidad de Chat: Cada vez que avances o completes una subtarea, es OBLIGATORIO que actualices `docs/TODO.md` marcando progreso y añadiendo el ID REAL de la sesión de chat actual de Gemini (ej. `183b98e8-0cc0-477a-b809-1b5feada6b42`) junto a la tarea. Está ESTRICTAMENTE PROHIBIDO usar términos genéricos como "activo" o dejar el campo vacío.
+Actualización y Trazabilidad de Chat: Cada vez que avances o completes una subtarea, es OBLIGATORIO que actualices `docs/TODO.md` marcando progreso y añadiendo la fecha (YYYY-MM-DD) y la hora (HH:MM:SS) junto a la tarea. Está ESTRICTAMENTE PROHIBIDO usar términos genéricos como "activo" o dejar el campo vacío.
 
 C. MEMORY.md (La Memoria del Proyecto)
 Todo aprendizaje, corrección de errores arquitectónicos y Perfiles de Desempeño Kairós (PDK) deben documentarse aquí (`docs/MEMORY.md`).
