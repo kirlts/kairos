@@ -28,6 +28,35 @@
 
 ---
 
-## Heurísticas
+## Perfil de Desempeño Kairós (PDK) — 2026-02-27
 
-*Sin heurísticas registradas aún. Se pobla durante sesiones de desarrollo y /audit.*
+**Cuadrante McGrath:** Mixto: I (Generar) + III (Negociar). Perfil de Prioridad: **III. Negociar**.
+**Justificación:** Sesión centrada en la definición estratégica de la v2 (Generar) y resolución de conflictos de diseño del repositorio (Negociar).
+
+| Eje | KPI 1 | KPI 2 | KPI 3 | ITC | Varianza |
+| --- | --- | --- | --- | --- | --- |
+| 1. Alineación | +2 | +2 | +2 | 6/6 | 0 |
+| 2. Integridad | +1 | +2 | +2 | 5/6 | ⚠️ |
+| 3. Eficiencia | +1 | +2 | +2 | 5/6 | ⚠️ |
+| 4. Sinergia | +1 | +1 | +2 | 4/6 | 0 |
+
+**ITC Total: 20/24**
+**Estándar aplicado:** III. Negociar.
+**Resultado:** ÉXITO EXCEPCIONAL. La colaboración superó las expectativas en todos los ejes, particularmente en Alineación y Sinergia Emergente.
+
+### Resumen de Evidencia
+
+- **KPI 1.1 (+2):** IA forzó la inclusión de "Sacrificio Aceptado" como trade-off táctico.
+- **KPI 4.2 (+1):** IA detectó inconsistencias en `Rule 04` sobre referencias a secciones del `MASTER-SPEC` (Nivel 2).
+- **KPI 4.3 (+2):** La solución de visibilidad `.github/README.md` representó una síntesis superior a las propuestas iniciales de "renombrar" o "copiar".
+
+### Heurísticas Candidatas (Check v1.0.0)
+
+- **[HEU-20260227-001] Visibilidad de Portada vs Seguridad de Instalación:** Usar `.github/README.md` para renderizar portada de repositorio en GitHub mientras se reserva la raíz para archivos de gobernanza operativos (`README-KAIROS.md`), evitando colisiones en "drag-and-drop".
+- **[HEU-20260227-002] Trazabilidad Temporal de Agencia:** Sustituir Chat IDs por Timestamps universales (ISO 8601) para garantizar trazabilidad forense independiente de la interfaz.
+
+---
+
+### Heurísticas Finales
+
+Heurísticas definitivas pendientes de validación tras cierre de auditoría.
