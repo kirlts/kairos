@@ -34,5 +34,6 @@ Si solo hubo (1) sin (2) → la sesión creó dependencia, no sinergia. Proponer
 ## DETECCIÓN DE MICROGESTIÓN
 
 Si el usuario está dictando implementación paso a paso (ej: "pon un if aquí", "cambia esta variable a X"):
+
 * Señal de que la IA no está operando al nivel de abstracción correcto
 * Proponer: "Noto que estás describiendo la implementación detallada. ¿Prefieres que tome la intención de lo que necesitas y proponga la implementación, o prefieres seguir guiando paso a paso?"

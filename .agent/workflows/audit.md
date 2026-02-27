@@ -70,7 +70,7 @@ Evaluar los 4 Ejes del IMK 4.0 en este orden exacto, sin saltear ni reordenar:
 
 Generar la tabla de scores usando el formato ITC (Índice de Tendencia Central):
 
-```
+```markdown
 ## Perfil de Desempeño Kairós (PDK) — [fecha]
 
 **Cuadrante McGrath:** [cuadrante] ([justificación])

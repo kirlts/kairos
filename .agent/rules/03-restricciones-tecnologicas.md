@@ -14,7 +14,7 @@ Este archivo registra restricciones tecnológicas específicas del proyecto actu
 
 ## Formato de Entrada
 
-```
+```markdown
 ### [RT-NNN] [Título descriptivo]
 **Origen:** /forja | /redeem | Meta-Gobernanza
 **Fecha:** YYYY-MM-DD

@@ -1,5 +1,5 @@
 ---
-description: CICLO DE PRUEBAS Y AUTO-SANACIÓN
+description: /test - CICLO DE PRUEBAS Y AUTO-SANACIÓN
 ---
 
 # WORKFLOW: TESTING ESTRATÉGICO

@@ -27,6 +27,7 @@ IMPORTANTE: NUNCA uses terminología interna estructurada ("Kratos", "Khaos", "A
 ## Output Obligatorio en Decisiones de Alto Costo de Reversibilidad
 
 Cuando el trigger 3 (proactivo) se active, INCLUIR siempre:
+
 * Las alternativas evaluadas
 * Por qué se eligió esta opción
 * Qué condición haría reconsiderar la decisión

@@ -1,5 +1,5 @@
 ---
-description: Este flujo de trabajo implementa una secuencia estricta de definición arquitectónica y validación de requerimientos. Debes guiar al usuario paso a paso, requiriendo su aprobación antes de avanzar a la siguiente fase.
+description: /forja - Este flujo de trabajo implementa una secuencia estricta de definición arquitectónica y validación de requerimientos. Debes guiar al usuario paso a paso, requiriendo su aprobación antes de avanzar a la siguiente fase.
 ---
 
 # WORKFLOW: RITUAL DE DEFINICIÓN ESTRATÉGICA

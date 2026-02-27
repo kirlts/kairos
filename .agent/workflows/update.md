@@ -21,7 +21,7 @@ Leer la primera línea de `kairos-version.txt` en la raíz del repositorio local
 
 Usar `read_url_content` para leer:
 
-```
+```text
 https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/kairos-version.txt
 ```
 
