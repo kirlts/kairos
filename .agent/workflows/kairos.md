@@ -43,6 +43,6 @@ La IA concluye revelando un "punto ciego" que ha detectado en la colaboración. 
 
 **Output Obligatorio:**
 
-- Un mapa de tensiones (Mermaid).
+- Un Mapa de Tensiones (descripción narrativa o lista de fuerzas).
 - Un análisis de "Inferencia de Intención" (lo que los docs dicen vs lo que el código hace).
 - La recomendación del "Salto de Fe".
