@@ -18,34 +18,44 @@ Leer todos los archivos del eje documental:
 - `docs/TEST.md` (si existe)
 - `docs/DEUDA-TECNICA.md` (si existe)
 
-## Paso 2: Comparación con Realidad
+## Paso 2: Verificación de Conformidad Estructural
 
-Para cada documento, verificar:
+Comparar los archivos actuales con los estandares de estructura definidos en la versión actual de Kairós:
 
-- ¿El MASTER-SPEC refleja la arquitectura actual del código?
-- ¿El TODO.md tiene tareas completadas sin timestamp?
-- ¿Hay decisiones observables en el código que no están en USER-DECISIONS.md?
-- ¿Hay cambios recientes que no están en CHANGELOG.md?
+- **MASTER-SPEC:** ¿Tiene las secciones requeridas (ej: Trade-offs, Sacrificio Aceptado, Preguntas Abiertas)? ¿Sigue la numeración estándar?
+- **MEMORY:** ¿El contenido es exclusivamente meta-heurístico? ¿Sigue el formato `[HEU-...]`?
+- **USER-DECISIONS:** ¿Registra la agencia humana con el formato de 5 campos?
+- **TODO:** ¿Utiliza la taxonomía de IDs y el formato de timestamps?
 
-## Paso 3: Diagnóstico de Brechas
+## Paso 3: Sincronización con la Realidad del Código
 
-Generar una tabla de brechas:
+Para cada documento, verificar la coherencia con el estado actual del proyecto:
 
-| Documento | Brecha detectada | Severidad | Acción propuesta |
-| --- | --- | --- | --- |
+- ¿El MASTER-SPEC refleja la arquitectura real implementada?
+- ¿El TODO.md refleja el progreso real y tiene los timestamps correctos?
+- ¿Hay decisiones en el código que falten en USER-DECISIONS.md?
+- ¿Hay cambios en el producto que no figuren en CHANGELOG.md?
 
-## Paso 4: Propuesta de Actualización
+## Paso 4: Diagnóstico de Brechas y Propuesta de Migración
 
-Para cada brecha, proponer la corrección específica. No hacer cambios sin aprobación del usuario en brechas de severidad Alta.
+Generar una tabla consolidada de brechas de **Contenido** (sincronización) y **Estructura** (plantilla):
 
-## Paso 5: Ejecución
+| Documento | Tipo de Brecha | Descripción | Severidad | Acción propuesta |
+| --- | --- | --- | --- | --- |
+| ej: MASTER-SPEC | Estructura | Faltan secciones §5 y §6 | Alta | Migrar a nueva plantilla preservando contenido |
+| ej: TODO | Contenido | Tarea TASK-001 sin timestamp | Media | Añadir timestamp basado en logs |
 
-Aplicar las correcciones aprobadas.
+## Paso 5: Propuesta de Actualización y Ejecución
 
-## Paso 6: Validación Final
+1. Presentar las acciones propuestas al usuario.
+2. **IMPORTANTE:** En brechas de Estructura, la IA debe asegurar la preservación del contenido existente al migrar a nuevas plantillas.
+3. No ejecutar cambios en brechas de severidad Alta sin aprobación explícita.
+4. Aplicar las correcciones aprobadas.
 
-Verificar que todos los documentos son coherentes entre sí:
+## Paso 6: Validación de Coherencia Cruzada (Check Final)
 
-- MASTER-SPEC §1 ↔ TODO.md épicas
-- MASTER-SPEC §4 ↔ restricciones en `.agent/rules/03`
-- USER-DECISIONS.md ↔ trade-offs en MASTER-SPEC §5
+Verificar que no existan contradicciones internas:
+
+- Intentos/Propósitos en MASTER-SPEC ↔ Épicas en TODO.md
+- Restricciones en MASTER-SPEC §4 ↔ Reglas en `.agent/rules/03`
+- Decisiones en USER-DECISIONS.md ↔ Trade-offs en MASTER-SPEC §5
