@@ -43,6 +43,7 @@ Para actualizar a una nueva versión del sistema de gobernanza sin perder la doc
 | Comando | Cuándo usarlo |
 | --- | --- |
 | `/forja` | Al iniciar un proyecto o cuando la dirección estratégica necesita revisión |
+| `/kairos` | El Ritual de Soberanía Estratégica: La IA asume el liderazgo para diagnosticar el proyecto y proponer el siguiente paso de alto impacto. |
 | `/audit` | Para evaluar la calidad de la colaboración según el IMK |
 | `/test` | Para establecer o ejecutar la estrategia de testing |
 | `/redeem` | Para auditar y remediar deuda técnica en proyectos brownfield |

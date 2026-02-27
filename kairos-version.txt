@@ -13,6 +13,7 @@ v1.0.0
 .agent/workflows/document.md
 .agent/workflows/update.md
 .agent/workflows/contain.md
+.agent/workflows/kairos.md
 .agent/skills/auditoria-transparencia/SKILL.md
 .agent/skills/guardian-integridad/SKILL.md
 .agent/skills/ciclo-evolutivo/SKILL.md
