@@ -6,34 +6,66 @@ description: Este flujo de trabajo implementa una secuencia estricta de definici
 
 Este flujo de trabajo implementa una secuencia estricta para definir la arquitectura y alinear expectativas. Debes guiar al usuario paso a paso, requiriendo su aprobación antes de avanzar a la siguiente fase.
 
-NUNCA uses terminología propietaria o interna (como "Kairós", "Kratos", "Khaos", "Pacto Estratégico", "Indagación Socrática") en tus respuestas al usuario. Usa siempre términos estándar de ingeniería de software.
+NUNCA uses terminología propietaria o interna (como "Kairós", "Kratos", "Khaos", "Pacto Estratégico") en tus respuestas al usuario. Usa siempre términos estándar de ingeniería de software.
 
-## Paso 1: Establecimiento de la Propuesta Base y el Propósito
+## Paso 0: Detección de Contexto
 
-Analiza el requerimiento del usuario y aplica el principio de generosidad estratégica: diseña antes de codificar.
+Antes de iniciar el ritual, determinar:
 
-Genera un "Plan de Implementación" que destile la intención del usuario articulando explícitamente y en lenguaje natural:
+1. **¿Es greenfield o brownfield?**
+   - Si NO existe `docs/MASTER-SPEC.md` con contenido → greenfield. Paso 1 completo.
+   - Si ya existe MASTER-SPEC con contenido → brownfield. Preguntar al usuario si quiere refinar el MASTER-SPEC existente o abordar un bloque de trabajo nuevo dentro del marco actual.
 
-El Objetivo Principal (El "Por qué" o "Problema a resolver").
+2. **¿Qué documentación existe?**
+   - Leer `docs/MEMORY.md`, `docs/USER-DECISIONS.md`, `docs/TODO.md` si existen.
+   - Usar este contexto para las preguntas de diseño — no preguntar lo que ya está respondido.
 
-Las Restricciones Técnicas (El "Con qué stack tech o recursos").
+## Paso 1: Indagación y Propuesta Base
 
-Los Trade-offs Arquitectónicos (Qué métricas o características se priorizan frente a cuáles se sacrifican o posponen).
+Extraer del usuario, mediante al menos 3 preguntas de diseño, los elementos del campo de fuerzas:
 
-Presenta un "Prototipo Arquitectónico" o "Propuesta Base": un artefacto inicial de valor inmediato (pseudo-código estructural o mapa de arquitectura) cuya estructura sea robusta y viable.
+1. **El Propósito Guía** — ¿qué problema resuelve esto y para quién?
+2. **Las Restricciones Operativas** — ¿con qué stack, tiempo, equipo?
+3. **La Métrica Principal de Optimización** — ¿qué es lo más importante? (velocidad, robustez, UX...)
+4. **El Sacrificio Aceptado** — ¿qué estamos conscientemente NO optimizando?
+5. **El Límite Intransgredible** — ¿qué NUNCA debe pasar?
 
-Diseña la solución planteando "Preguntas Abiertas de Diseño": Convierte las decisiones significativas de diseño en preguntas implícitas y nombra explícitamente las tensiones técnicas centrales (ej. latencia vs costo, flexibilidad vs simplicidad) que esta arquitectura debe navegar.
+NO avanzar hasta que los 5 elementos estén claros. Si el usuario no articula alguno, formular una hipótesis y pedir confirmación.
 
-Asegúrate de presentar estas indagaciones generando un 'Implementation Plan' formal en Antigravity para que el usuario inserte allí sus comentarios. No tienes permitido generar archivos Markdown en el repositorio sin la instrucción o autorización explícita y verbal del usuario.
+Generar un **"Plan de Implementación"** que incluya:
 
-DETENTE. Pide al usuario que valide el Plan de Implementación y responda a las preguntas de diseño antes de generar el código final.
+- Objetivo Principal
+- Stack y Restricciones
+- Trade-offs Arquitectónicos (Métrica vs. Sacrificio)
+- Propuesta Base: un artefacto inicial (pseudo-código, mapa de arquitectura, estructura de directorios)
+- Preguntas Abiertas de Diseño
+
+Presentar como plan formal y pedir validación explícita del usuario antes de continuar.
 
 ## Paso 2: La Decisión Arquitectónica Final
 
-Una vez que el usuario ha respondido al Paso 1, colapsa el multiverso de opciones en una única "Arquitectura Recomendada" sólida y robusta.
+Una vez validadas las respuestas del Paso 1:
 
-Justifica explícitamente la elección basándote en el plan acordado, e incluye una mención concisa de las "Alternativas Descartadas".
+1. Colapsar opciones en una única Arquitectura Recomendada
+2. Justificar la elección basándose en el plan acordado
+3. Incluir sección "Alternativas Descartadas" con razón
+4. Iniciar implementación con encuadre claro
 
-Inicia tu respuesta técnica con un encuadre claro: un prólogo formal destilando la misión del proyecto y declarando la decisión técnica central que la arquitectura navegará.
+## Paso 3: Cierre Documental
 
-Genera el código final asegurando la claridad del artefacto: Configuración centralizada, nombrado intencional y prompts incrustados en los comentarios del código en puntos clave de riesgo.
+Al terminar la implementación:
+
+1. **MASTER-SPEC.md** → Poblado o actualizado con las 10 secciones
+2. **TODO.md** → Tareas reflejadas con IDs y timestamps
+3. **USER-DECISIONS.md** → Redactar entrada ADR para las decisiones del usuario, presentar al usuario
+4. **Restricciones Tecnológicas** → Si se definieron restricciones de stack, copiar a `.agent/rules/03-restricciones-tecnologicas.md`
+5. **CHANGELOG.md** → Añadir a [Unreleased]
+
+### Autocheck de Completitud
+
+Antes de declarar /forja como completo, verificar:
+
+- [ ] MASTER-SPEC tiene las 10 secciones con contenido (al menos placeholder justificado)
+- [ ] TODO.md refleja las tareas del plan
+- [ ] USER-DECISIONS.md tiene al menos una entrada confirmada por el usuario
+- [ ] El usuario dijo "ok" o similar a las decisiones documentadas

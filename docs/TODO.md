@@ -1,17 +1,29 @@
-# TODO
+# TODO: [Nombre del Proyecto]
 
-Este documento es la **Condición de Arranque** obligatoria. ESTÁ ESTRICTAMENTE PROHIBIDO modificar el código fuente sin que este archivo refleje la tarea actual.
-
-## [ÉPICA] Nombre de la Épica
-
-(Descripción breve del gran bloque de trabajo).
-
-### [USER STORY] Nombre de la Historia
-
-(Valor entregable para el usuario/arquitecto).
-
-- [ ] **Subtarea 1:** Descripción de la tarea táctica. `[Chat ID: ]`
-- [ ] **Subtarea 2:** Descripción de la tarea táctica. `[Chat ID: ]`
+> **Convenciones:**
+>
+> - `[ ]` Pendiente · `[/]` En progreso · `[x]` Completado
+> - Todo item completado lleva timestamp: `[x] Tarea — YYYY-MM-DD HH:MM:SS`
+> - Las épicas se referencian como `[EPIC-NNN]` y sus subtareas como `[TASK-NNN]`
+> - Referencia cruzada con MASTER-SPEC: cada épica tiene tag de sección
 
 ---
-*Instrucciones de Trazabilidad: Cada vez que se avance o complete una subtarea, se DEBE añadir el ID de la sesión de chat actual.*
+
+## 🔴 En Progreso
+
+<!-- Máximo 3 items en progreso simultáneamente (WIP limit) -->
+
+---
+
+## 🟡 Próximamente (Backlog Priorizado)
+
+---
+
+## ✅ Completado
+
+<!-- Los items completados permanecen aquí para trazabilidad.
+     El CHANGELOG.md consolida los releases. -->
+
+### [EPIC-000] Setup inicial de Kairós
+
+- [x] Inicializar repositorio con sistema de gobernanza Kairós v2 — 2026-02-27 18:10:04

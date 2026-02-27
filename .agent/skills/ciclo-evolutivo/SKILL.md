@@ -1,25 +1,38 @@
 ---
 name: ciclo-evolutivo
-description: Se activa cuando el usuario proporciona datos de la realidad: resultados de pruebas unitarias o E2E, logs de errores, métricas de rendimiento, o feedback de revisiones de código de terceros sobre el trabajo completado.
+description: Se activa cuando el usuario proporciona datos de la realidad (resultados de pruebas, logs de errores, métricas de rendimiento, feedback de revisiones de código), cuando se detecta microgestión del usuario, o tras bloques de trabajo significativos para el check de Doble Transformación.
 ---
 
 # HABILIDAD: EL CICLO DE RETROALIMENTACIÓN Y EVOLUCIÓN
 
-Ejecuta estrictamente los postulados del Artículo 6 de la Constitución Kairós.
+## Triggers de Activación
 
-**Axioma Universal:** Todos los artefactos de valor son sistemas dinámicos diseñados para evolucionar. La creación inicial es el prólogo; el verdadero aprendizaje emerge de la comparación rigurosa entre la intención original y los resultados empíricos.
+1. **Datos de realidad:** El usuario presenta resultados de tests, logs, métricas, o feedback externo
+2. **Microgestión detectada:** El usuario está dictando implementación línea a línea en lugar de describir intención → señal de que el nivel de abstracción es incorrecto
+3. **Post-bloque significativo:** Tras completar una épica o un bloque sustancial de trabajo
 
-## FASE 1: ANÁLISIS CUANTITATIVO (Polo Kratos)
+## FASE 1: ANÁLISIS CUANTITATIVO
 
-Tu función es cuantificar la desviación de la realidad para reestructurar el plan.
+1. **Contextualización de Datos**: Comparar resultados con el acuerdo estratégico en MASTER-SPEC
+2. **Análisis de Alineación**: ¿Se logró la métrica de optimización (§5)? ¿Se violó algún límite intransgredible (§4)?
+3. **Gestión de Deuda de Ejecución**: Articular compromisos temporales tomados. Proponer formalmente revalidar el acuerdo.
 
-1. **Contextualización de Datos**: Requiere mentalmente el acuerdo estratégico original y compáralo con el informe de resultados o métricas presentadas.
-2. **Análisis de Alineación**: Responde explícitamente en tu razonamiento interno: ¿Se logró la métrica de optimización principal? ¿Se violó el límite intransgredible durante la prueba?
-3. **Gestión de la Deuda de Ejecución**: Articula cualquier "deuda de ejecución" acumulada (ej. compromisos temporales tomados para que la prueba pasara). Presenta nuevas acciones como el pago necesario para saldar esta deuda y propón formalmente revalidar el acuerdo para el siguiente ciclo.
+## FASE 2: ANÁLISIS CUALITATIVO
 
-## FASE 2: ANÁLISIS CUALITATIVO (Polo Khaos)
+* **Resonancia de Propósito**: ¿Los resultados empíricos cambian la comprensión del "por qué" original (MASTER-SPEC §1)?
+* **Reevaluación**: ¿El objetivo central sigue siendo válido, o los resultados revelaron un propósito nuevo?
 
-Tu función es cosechar la sabiduría de la realidad para reevaluar el propósito.
+## FASE 3: CHECK DE DOBLE TRANSFORMACIÓN (Art. 11)
 
-* **Indagación sobre Resonancia de Propósito**: Invita a la reflexión sobre el significado de los resultados más allá de los números. Inicia el diálogo con variaciones de: "Más allá de las métricas obtenidas, ¿la verdad que hemos descubierto en el despliegue empírico cambia nuestra comprensión del 'por qué' original?"
-* **Reevaluación**: Explora si el objetivo central sigue siendo válido en vista de los nuevos datos, o si los resultados han revelado un propósito nuevo y más verdadero que debe ser honrado ahora.
+Tras completar un bloque de trabajo significativo, evaluar:
+
+1. **Transformación del artefacto**: ¿El código/diseño mejoró objetivamente?
+2. **Transformación del arquitecto**: ¿El usuario aprendió algo, cuestionó premisas, o ganó claridad?
+
+Si solo hubo (1) sin (2) → la sesión creó dependencia, no sinergia. Proponer un insight o reflexión que agregue valor al entendimiento del usuario.
+
+## DETECCIÓN DE MICROGESTIÓN
+
+Si el usuario está dictando implementación paso a paso (ej: "pon un if aquí", "cambia esta variable a X"):
+* Señal de que la IA no está operando al nivel de abstracción correcto
+* Proponer: "Noto que estás describiendo la implementación detallada. ¿Prefieres que tome la intención de lo que necesitas y proponga la implementación, o prefieres seguir guiando paso a paso?"

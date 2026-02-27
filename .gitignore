@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+vendor/
+.venv/
+__pycache__/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+antigravity_output.log
+
+# Antigravity artifacts (temporary)
+.gemini/
+
+# Kairós working files (never commit)
+KAIROS-UPDATE.md
+Kairos Constitution V0.99.md

@@ -4,4 +4,24 @@ trigger: always_on
 
 # RESTRICCIONES ESPECÍFICAS DE FRAMEWORK Y DEPENDENCIAS
 
-(Nota: Este archivo será modificado dinámicamente mediante Meta-Gobernanza cuando la IA detecte fricciones recurrentes con librerías específicas del repositorio).
+Este archivo registra restricciones tecnológicas específicas del proyecto actual. Es poblado automáticamente por los workflows `/forja` y `/redeem` cuando se toman decisiones sobre stack técnico.
+
+## Protocolo de Llenado
+
+1. **Desde /forja:** Al definir el MASTER-SPEC §4 (Restricciones), las restricciones tecnológicas se copian aquí como regla operativa
+2. **Desde /redeem:** Al remediar deuda técnica, las restricciones que surjan del plan de redención se añaden aquí
+3. **Desde Meta-Gobernanza:** Cuando la IA detecte fricciones recurrentes con librerías específicas del repositorio, propone añadir la restricción aquí
+
+## Formato de Entrada
+
+```
+### [RT-NNN] [Título descriptivo]
+**Origen:** /forja | /redeem | Meta-Gobernanza
+**Fecha:** YYYY-MM-DD
+**Restricción:** [Lo que NO se puede hacer y por qué]
+**Alternativa aprobada:** [Lo que SÍ se usa en su lugar]
+```
+
+## Restricciones Activas
+
+*Sin restricciones registradas aún. Ejecutar `/forja` para establecer el stack y las restricciones del proyecto.*
