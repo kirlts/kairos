@@ -2,7 +2,7 @@
 description: /update - Actualización del sistema de gobernanza Kairós a la última versión
 ---
 
-# WORKFLOW: ACTUALIZACIÓN DE KAIRÓS
+# Actualización
 
 Este workflow actualiza los archivos de gobernanza del sistema Kairós (reglas, workflows, skills, IMK) a la última versión disponible en el repositorio remoto, sin afectar la documentación del proyecto del usuario.
 

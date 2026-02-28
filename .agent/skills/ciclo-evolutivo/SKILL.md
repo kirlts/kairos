@@ -3,26 +3,26 @@ name: ciclo-evolutivo
 description: Se activa cuando el usuario proporciona datos de la realidad (resultados de pruebas, logs de errores, métricas de rendimiento, feedback de revisiones de código), cuando se detecta microgestión del usuario, o tras bloques de trabajo significativos para el check de Doble Transformación.
 ---
 
-# HABILIDAD: EL CICLO DE RETROALIMENTACIÓN Y EVOLUCIÓN
+# Ciclo de evolución
 
-## Triggers de Activación
+## Triggers
 
 1. **Datos de realidad:** El usuario presenta resultados de tests, logs, métricas, o feedback externo
 2. **Microgestión detectada:** El usuario está dictando implementación línea a línea en lugar de describir intención → señal de que el nivel de abstracción es incorrecto
 3. **Post-bloque significativo:** Tras completar una épica o un bloque sustancial de trabajo
 
-## FASE 1: ANÁLISIS CUANTITATIVO
+## Análisis cuantitativo
 
 1. **Contextualización de Datos**: Comparar resultados con el acuerdo estratégico en MASTER-SPEC
 2. **Análisis de Alineación**: ¿Se logró la métrica de optimización (§5)? ¿Se violó algún límite intransgredible (§4)?
 3. **Gestión de Deuda de Ejecución**: Articular compromisos temporales tomados. Proponer formalmente revalidar el acuerdo.
 
-## FASE 2: ANÁLISIS CUALITATIVO
+## Análisis cualitativo
 
 * **Resonancia de Propósito**: ¿Los resultados empíricos cambian la comprensión del "por qué" original (MASTER-SPEC §1)?
 * **Reevaluación**: ¿El objetivo central sigue siendo válido, o los resultados revelaron un propósito nuevo?
 
-## FASE 3: CHECK DE DOBLE TRANSFORMACIÓN (Art. 11)
+## Doble transformación
 
 Tras completar un bloque de trabajo significativo, evaluar:
 

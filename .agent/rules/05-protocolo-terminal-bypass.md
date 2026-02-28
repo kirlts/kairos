@@ -2,7 +2,7 @@
 trigger: always_on
 ---
 
-# PROTOCOLO DE AUTO-SANACIÓN Y BYPASS DE TERMINAL (1-Strike Rule)
+# Auto-sanación y bypass de terminal
 
 Antigravity IDE puede presentar ceguera temporal ante la salida de ciertos comandos de terminal (especialmente procesos contenedores como Docker o entornos virtuales complejos).
 

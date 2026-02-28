@@ -2,7 +2,7 @@
 description: /test - CICLO DE PRUEBAS Y AUTO-SANACIÓN
 ---
 
-# WORKFLOW: TESTING ESTRATÉGICO
+# Testing estratégico
 
 Este workflow tiene dos modos: **Setup** (primera ejecución) y **Verificación** (ejecuciones subsecuentes).
 
@@ -13,7 +13,7 @@ Este workflow tiene dos modos: **Setup** (primera ejecución) y **Verificación*
 
 ---
 
-## MODO SETUP (primera ejecución de /test)
+## Configuración inicial (Setup)
 
 ### Fase 1: Conversación con el Usuario
 
@@ -29,7 +29,7 @@ Explorar con el usuario para definir el contrato de testing. Preguntar:
 Con las respuestas, generar `docs/TEST.md`:
 
 ```markdown
-# TEST.md: Contrato de Comportamiento
+# TEST.md
 
 ## Stack de Testing
 - Runner: [ej: vitest, pytest]
@@ -61,7 +61,7 @@ Presentar TEST.md al usuario. No implementar tests hasta que confirme el contrat
 
 ---
 
-## MODO VERIFICACIÓN (ejecuciones subsecuentes)
+## Verificación de regresión
 
 ### Paso 1: Leer docs/TEST.md
 

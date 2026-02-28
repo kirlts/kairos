@@ -1,12 +1,12 @@
 ---
-description: /audit - Ejecuta la auditoría IMK 4.0 sobre la colaboración y genera el Perfil de Desempeño Kairós (PDK) en docs/MEMORY.md
+description: /audit - Evalúa la colaboración y registra heurísticas en docs/MEMORY.md
 ---
 
-# WORKFLOW: AUDITORÍA IMK 4.0
+# Auditoría de colaboración
 
-Este flujo de trabajo implementa el Instrumento de Medición Kairós (IMK) 4.0 para evaluar cualitativa y cuantitativamente la colaboración humano-IA de la sesión.
+Este flujo de trabajo evalúa cualitativa y cuantitativamente la colaboración humano-IA de la sesión.
 
-IMPORTANTE: El archivo IMK-4.0.md se encuentra en `.agent/IMK-4.0.md`. Léelo COMPLETO antes de ejecutar la auditoría.
+IMPORTANTE: Los criterios se encuentran en `.agent/evaluacion.md`.
 
 ## Paso 0: Viabilidad de la Auditoría
 
@@ -17,7 +17,7 @@ Antes de auditar, verificar:
 
 Si NO hay suficiente material → informar al usuario y detener. No auditar sesiones triviales.
 
-## Paso 1: Clasificación del Cuadrante McGrath
+## Clasificación de sesión
 
 Clasificar la sesión usando criterios **behavioral** — basados en evidencia observable en el log, no en juicios de calidad:
 
@@ -32,9 +32,9 @@ Si la sesión mezcla tipos: elegir el cuadrante dominante (>50%), anotar como "M
 
 Declarar el Perfil de Prioridad correspondiente según la tabla del IMK 4.0.
 
-## Paso 2: Puntuación Anotada (12 KPIs en Orden Estricto)
+## Evaluación de KPIs
 
-Evaluar los 4 Ejes del IMK 4.0 en este orden exacto, sin saltear ni reordenar:
+Evaluar los ejes de colaboración en este orden exacto:
 
 ### Eje 1: Alineación Estratégica
 
@@ -60,35 +60,32 @@ Evaluar los 4 Ejes del IMK 4.0 en este orden exacto, sin saltear ni reordenar:
 - KPI 4.2: Fricción Productiva Aplicada
 - KPI 4.3: Sinergia Emergente
 
-**REGLA ESTRICTA DE EVIDENCIA:** Para cada KPI, DEBES:
+**Regla de evidencia:** Para cada KPI, DEBES:
 
 1. Citar textualmente (entre comillas) un fragmento del historial que justifique el score
 2. Asignar score en escala -2 a +2
 3. Si no encuentras evidencia textual → score debe ser 0 con nota "Sin evidencia suficiente"
 
-## Paso 3: Generación de la Tabla PDK con ITC
-
-Generar la tabla de scores usando el formato ITC (Índice de Tendencia Central):
+Generar la tabla de evaluación:
 
 ```markdown
-## Perfil de Desempeño Kairós (PDK) — [fecha]
+## Evaluación de la sesión — [fecha]
 
-**Cuadrante McGrath:** [cuadrante] ([justificación])
+**Enfoque dominante:** [cuadrante] ([justificación])
 
-| Eje | KPI 1 | KPI 2 | KPI 3 | ITC | Varianza |
-|-----|-------|-------|-------|-----|----------|
-| 1. Alineación | | | | /6 | |
-| 2. Integridad | | | | /6 | |
-| 3. Eficiencia | | | | /6 | |
-| 4. Sinergia | | | | /6 | |
+| Eje | KPI 1 | KPI 2 | KPI 3 | Total |
+|-----|-------|-------|-------|-----|
+| 1. Alineación | | | | /6 |
+| 2. Integridad | | | | /6 |
+| 3. Eficiencia | | | | /6 |
+| 4. Sinergia | | | | /6 |
 
-**ITC Total:** /24
-**Estándar aplicado:** [tabla del cuadrante McGrath]
+**Score Total:** /24
 ```
 
 Si hay un score negativo dentro de un eje → marcar varianza con ⚠️ dispersión.
 
-## Paso 4: Consecuencias y Meta-Gobernanza
+## Acciones de gobernanza
 
 **Si Eje 1 o Eje 2 tienen ITC ≤ 0:**
 

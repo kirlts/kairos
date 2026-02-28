@@ -2,11 +2,11 @@
 description: /document - Sincronización exhaustiva de documentación con código
 ---
 
-# WORKFLOW: SINCRONIZACIÓN DOCUMENTAL
+# Sincronización documental
 
 Este workflow asegura que toda la documentación del proyecto refleja fielmente el estado actual del código y la arquitectura.
 
-## Paso 1: Inventario de Estado
+## Inventario
 
 Leer todos los archivos del eje documental:
 
@@ -18,7 +18,7 @@ Leer todos los archivos del eje documental:
 - `docs/TEST.md` (si existe)
 - `docs/DEUDA-TECNICA.md` (si existe)
 
-## Paso 2: Verificación de Conformidad Estructural
+## Verificación estructural
 
 Comparar los archivos actuales con los estandares de estructura definidos en la versión actual de Kairós:
 
@@ -27,7 +27,7 @@ Comparar los archivos actuales con los estandares de estructura definidos en la 
 - **USER-DECISIONS:** ¿Registra la agencia humana con el formato de 5 campos?
 - **TODO:** ¿Utiliza la taxonomía de IDs y el formato de timestamps?
 
-## Paso 3: Sincronización con la Realidad del Código
+## Sincronización con código
 
 Para cada documento, verificar la coherencia con el estado actual del proyecto:
 

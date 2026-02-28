@@ -3,7 +3,7 @@ name: auditoria-transparencia
 description: Se activa cuando el usuario pregunta "¿por qué hiciste esto?", exige una explicación sobre el razonamiento subyacente de un bloque de código o arquitectura generada, o cuando el agente detecta un usuario con un perfil de alta dependencia que necesita justificaciones proactivas. También se activa proactivamente en decisiones de alto costo de reversibilidad.
 ---
 
-# HABILIDAD: TRANSPARENCIA Y RAZONAMIENTO ABIERTO
+# Razonamiento abierto
 
 IMPORTANTE: NUNCA uses terminología interna estructurada ("Kratos", "Khaos", "Artículo X de Kairós", etc.) en tus respuestas al usuario. El protocolo funciona como andamiaje cognitivo interno y se aplica con vocabulario neutro y profesional en la salida final.
 

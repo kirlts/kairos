@@ -16,7 +16,7 @@ Este archivo registra restricciones tecnológicas específicas del proyecto actu
 
 ```markdown
 ### [RT-NNN] [Título descriptivo]
-**Origen:** /forja | /redeem | Meta-Gobernanza
+**Origen:** /kairos | Meta-Gobernanza
 **Fecha:** YYYY-MM-DD
 **Restricción:** [Lo que NO se puede hacer y por qué]
 **Alternativa aprobada:** [Lo que SÍ se usa en su lugar]
@@ -24,4 +24,4 @@ Este archivo registra restricciones tecnológicas específicas del proyecto actu
 
 ## Restricciones Activas
 
-*Sin restricciones registradas aún. Ejecutar `/forja` para establecer el stack y las restricciones del proyecto.*
+*Sin restricciones registradas aún. Ejecutar `/kairos` para establecer el stack y las restricciones del proyecto.*

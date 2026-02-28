@@ -1,15 +1,13 @@
 v1.0.0
-# kairos-manifest — rutas de archivos de gobernanza (una por línea)
+# kairos-manifest — rutas de archivos de gobernanza
 .agent/rules/00-kairos-identidad-y-lealtad.md
 .agent/rules/01-kairos-evaluacion-y-fuerzas.md
 .agent/rules/02-kairos-trazabilidad-y-operativa.md
 .agent/rules/03-restricciones-tecnologicas.md
 .agent/rules/04-protocolo-documentacion-proactiva.md
 .agent/rules/05-protocolo-terminal-bypass.md
-.agent/workflows/forja.md
 .agent/workflows/audit.md
 .agent/workflows/test.md
-.agent/workflows/redeem.md
 .agent/workflows/document.md
 .agent/workflows/update.md
 .agent/workflows/contain.md
@@ -20,7 +18,7 @@ v1.0.0
 .agent/skills/investigacion-estandar/SKILL.md
 .agent/skills/ciclo-testing-autonomo/SKILL.md
 .agent/skills/protocolo-friccion-productiva/SKILL.md
-.agent/IMK-4.0.md
+.agent/evaluacion.md
 kairos-version.txt
 README-KAIROS.md
 .github/README.md

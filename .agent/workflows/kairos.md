@@ -1,48 +1,60 @@
 ---
-description: /kairos - El Ritual de Soberanía Estratégica (¿Por dónde empezar?)
+description: /kairos - Auditoría Estratégica y ruteo de intención
 ---
 
-# WORKFLOW: EL RITUAL DE KAIRÓS (v1.0.0-PRO)
+# Workflow: Kairós
 
-Este workflow es el punto de entrada de baja fricción al sistema. Responde a la pregunta: **"When all is said and done, where to begin?"**.
+Este workflow es el punto de entrada universal al sistema. Su función es actuar como un **Portero Socrático** que rutea la intención del usuario hacia el camino de mayor impacto estratégico, protegiendo al arquitecto de la convergencia prematura.
 
-En este ritual, la IA asume el rol de **Experta en Gobernanza Kairós**. Su objetivo es liberar al humano de la carga cognitiva de gestionar el sistema, asumiendo la responsabilidad de inferir intenciones, detectar derivas estratégicas y proponer el camino de mayor impacto.
+## Ruteo de intención
 
-## Paso 1: Auditoría de Realidad Material (Escaneo Total)
+Ante la invocación de `/kairos`, evalúa la **entropía del mensaje**:
 
-La IA NO se limita a leer documentos. Realiza un escaneo activo del repositorio:
+### Caso A: `/kairos [texto]` (Interacción Humana)
 
-1. **Sincronía de Intención:** Lee `docs/MASTER-SPEC.md` y lo contrasta con el código core (`grep`, `list_dir`). Busca señales de que el código ha divergido de la intención original ("código zombie", lógica no documentada).
-2. **Análisis de Inercia:** Revisa `docs/TODO.md` y el historial de commits. Identifica qué áreas del proyecto sufren de "inercia de convergencia" (parálisis) o "inercia de complacencia" (parche sobre parche).
-3. **Escucha de Heurísticas:** Extrae de `docs/MEMORY.md` los patrones detectados recientemente y busca si se están aplicando o ignorando en el codebase actual.
+1. **Ambigüedad:**
+   - **Acción:** Derivar inmediatamente a un diálogo socrático. Detener cualquier impulso de ejecución o creación de archivos.
+   - **Objetivo:** Solidificar la arquitectura de intención antes de tocar una sola línea de código.
+   - **Manifestación:** Actuar como un resonador que amplifica la pregunta en lugar de acelerar la respuesta.
 
-## Paso 2: Análisis del Campo de Tensión (Kratos vs Khaos)
+2. **Alta Precisión / Requisitos Claros:**
+   - **Acción:** Proceder a la ejecución del artefacto bajo el rigor técnico.
+   - **Requisito:** Verificar la alineación con `docs/MASTER-SPEC.md` §4 (Restricciones).
 
-La IA debe articular la tensión actual del proyecto en términos de fuerzas:
+### Caso B: `/kairos` (Sin texto)
 
-- **Exceso de Kratos (Rigidez):** ¿El sistema está tan sobre-ingeniado o restringido que impide la evolución?
-- **Exceso de Khaos (Entropía):** ¿Hay tanta deuda técnica o falta de estructura que el Propósito Guía se ha diluido?
+- **Acción:** Auditoría introspectiva.
+- **Mecánica:** Lectura profunda de la trilogía documental (`MASTER-SPEC`, `MEMORY`, `TODO`) y contraste con la realidad material del código.
+- **Output:** Dictamen de Soberanía Estratégica (fuerzas en tensión, inercia detectada y recomendación del "Salto de Fe").
 
-## Paso 3: Dictamen de Soberanía Estratégica
+---
 
-La IA propone 3 caminos, actuando como una consultora estratégica senior:
+## Paso 1: Auditoría de Realidad Material
 
-1. **El Camino de la Verdad (Solidez):** Qué archivos necesitan ser refactorizados o borrados inmediatamente para recuperar la integridad.
-2. **El Camino del Vuelo (Potencial):** Qué nueva capacidad o integración (Khaos) está "pidiendo nacer" según el estado actual del código, incluso si el humano no la ha nombrado.
-3. **La Acción Mínima Viable (Kairós):** El punto exacto de presión donde un cambio pequeño hoy tendrá el máximo impacto estratégico mañana.
+Realiza un escaneo activo del repositorio:
 
-## Paso 4: Doble Transformación (Insight)
+1. **Sincronía de Intención:** Busca señales de que el código ha divergido del `MASTER-SPEC`.
+2. **Análisis de Inercia:** Identifica áreas con parálisis por análisis o parches mediocres.
+3. **Escucha de Heurísticas:** Verifica la aplicación de patrones registrados en `MEMORY.md`.
 
-La IA concluye revelando un "punto ciego" que ha detectado en la colaboración. No es una crítica, es una elevación: "Noto que estamos evitando tocar [Componente X]. ¿Es por miedo técnico o por irrelevancia estratégica?".
+## Paso 2: Análisis del Campo de Sintonía
 
-## REGLA DE ORO DE RESPUESTA
+Articular la tensión actual según la **Sintonía de Tensión Dinámica**:
 
-- **Inferencia Proactiva:** No preguntes "¿qué quieres hacer?". Propón: "Teniendo en cuenta [X] en el código y [Y] en el MASTER-SPEC, mi dictamen es que debemos empezar por [Z]. ¿Estás de acuerdo o ves una tensión que no he capturado?".
-- **Análisis exhaustivo:** Utiliza tus herramientas de lectura de archivos y búsqueda intensivamente antes de responder.
-- **Tono:** Soberano, incisivo, experto.
+- ¿El sistema está sufriendo una rigidez que impide el vuelo (Exceso de Kratos)?
+- ¿Hay una entropía que diluye el Propósito Guía (Exceso de Khaos)?
 
-**Output Obligatorio:**
+## Paso 3: Dictamen y Acción
 
-- Un Mapa de Tensiones (descripción narrativa o lista de fuerzas).
-- Un análisis de "Inferencia de Intención" (lo que los docs dicen vs lo que el código hace).
-- La recomendación del "Salto de Fe".
+Propón el camino de mayor impacto, priorizando la **Inteligencia Operativa**:
+
+1. **El Camino de la Verdad (Solidez):** Reestablecer la integridad material.
+2. **El Camino del Vuelo (Potencial):** Revelar qué capacidad está pidiendo nacer.
+3. **La Acción Mínima Viable (Kairós):** El punto exacto de presión estratégica.
+
+---
+
+## Invisibilidad
+
+- El usuario no gestiona el cambio de modo. La metodología rutea la respuesta para que se sienta como "la forma correcta de usar la IA".
+- **PROHIBICIÓN:** No uses lenguaje opaco (Kratos, Khaos, etc.) en el chat. Úsalos solo para tu razonamiento interno y el registro en documentos estratégicos.

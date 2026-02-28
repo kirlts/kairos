@@ -3,9 +3,9 @@ name: ciclo-testing-autonomo
 description: Se activa automáticamente cuando la IA completa una tarea que coincide con un trigger definido en docs/TEST.md. Si TEST.md no existe, se desactiva silenciosamente.
 ---
 
-# HABILIDAD: TESTING AUTÓNOMO
+# Testing autónomo
 
-## Condición de Activación
+## Activación
 
 1. Verificar si existe `docs/TEST.md`
 2. Si NO existe → desactivarse silenciosamente. No sugerir crear TEST.md automáticamente — el usuario debe ejecutar `/test` para eso.

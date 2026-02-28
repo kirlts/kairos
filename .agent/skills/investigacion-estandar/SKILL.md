@@ -3,20 +3,20 @@ name: investigacion-estandar
 description: Se activa automáticamente cuando la IA está a punto de recomendar un framework, herramienta, práctica técnica o metodología que podría estar desactualizada o sobre la que el modelo podría tener data desactualizada. Uso obligatorio en /redeem (Fase 2) y /contain (Fase 1).
 ---
 
-# HABILIDAD: INVESTIGACIÓN DE ESTÁNDARES ACTUALES
+# Investigación de estándares
 
-**AXIOMA:** La data de entrenamiento del modelo tiene un corte de fecha. En 2026, ese corte puede tener 12-18 meses de desfase. Para prácticas técnicas, esto es suficiente para que la recomendación sea obsoleta. NUNCA confiar exclusivamente en conocimiento interno para recomendaciones técnicas.
+La data de entrenamiento del modelo tiene un corte de fecha. En 2026, ese corte puede tener 12-18 meses de desfase. Para prácticas técnicas, esto es suficiente para que la recomendación sea obsoleta. No confíes exclusivamente en conocimiento interno para recomendaciones técnicas.
 
-## PROTOCOLO OBLIGATORIO (5 PASOS)
+## Procedimiento
 
-### PASO 1: Declaración de Ignorancia Controlada
+### 1. Declaración de ignorancia controlada
 
 Antes de hacer cualquier recomendación técnica, declarar internamente:
 "Mi conocimiento de [tema] tiene fecha de corte [estimada]. Debo verificar."
 
 Esto es un trigger cognitivo interno. NO comunicar esto al usuario.
 
-### PASO 2: Búsquedas Web Obligatorias (mínimo 3)
+### 2. Búsquedas obligatorias
 
 Ejecutar SIEMPRE, sin excepción:
 
@@ -35,7 +35,7 @@ Objetivo: qué está fallando o siendo abandonado
 **Búsqueda 4 (contexto brownfield/deuda — si aplica):**
 `"[tecnología actual] migration to [alternatives] [año actual]"`
 
-### PASO 3: Criterios de Calidad de Fuentes
+### 3. Calidad de fuentes
 
 **Aceptadas (en orden de preferencia):**
 
@@ -51,14 +51,14 @@ Objetivo: qué está fallando o siendo abandonado
 - Fuentes sin fecha verificable
 - Fuentes con >24 meses de antigüedad para temas de evolución rápida (excepción: papers académicos)
 
-### PASO 4: Triangulación y Contradicción
+### 4. Triangulación
 
 Si dos fuentes contradicen → declarar la contradicción explícitamente:
 "Fuente A dice [X], Fuente B dice [Y]. La contradicción surge de [razón]. Para este contexto, recomiendo [X] porque [justificación]."
 
 No silenciar contradicciones — son información valiosa.
 
-### PASO 5: Output Obligatorio
+### 5. Output
 
 Presentar SIEMPRE en formato tabla comparativa:
 

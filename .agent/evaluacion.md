@@ -1,10 +1,6 @@
-# Instrumento de Medición Kairós (IMK) v4.0
+# Criterios de evaluación de colaboración
 
-## Preámbulo: Un Marco Metodológico para la Medición
-
-Este documento establece una rúbrica universal y empíricamente justificada para cuantificar la efectividad de cualquier metodología de colaboración Humano-IA. Su propósito es medir el valor estratégico tangible generado, priorizando la calidad de la deliberación, la robustez del artefacto y la sinergia de la colaboración sobre métricas superficiales de velocidad o volumen.
-
-El IMK está diseñado para evaluar la colaboración en la resolución de "problemas perversos" (wicked problems), que carecen de soluciones únicas y correctas y son característicos del trabajo del conocimiento. Por ello, el instrumento no mide la simple ejecución, sino la calidad del proceso adaptativo de resolución. Su arquitectura se fundamenta en una síntesis de marcos de la ciencia cognitiva (Taxonomía de Bloom/Anderson & Krathwohl), el análisis del trabajo cognitivo (Taxonomía de Rasmussen) y la psicometría (Escalas Ancladas en el Comportamiento, Teoría de la Medición) para garantizar su validez de constructo y su rigor metodológico.
+Este documento define los criterios de evaluación para la colaboración humano-IA. El objetivo es medir la efectividad del proceso mediante el análisis de la alineación estratégica, la integridad del artefacto y la sinergia del diálogo.
 
 ## Eje 1: Alineación Estratégica y Claridad de la Misión
 
@@ -66,7 +62,7 @@ El IMK está diseñado para evaluar la colaboración en la resolución de "probl
 
 **Definición:** Mide la capacidad del artefacto final para desempeñar su función principal de manera correcta, consistente y predecible bajo condiciones de operación normales. Evalúa si el artefacto "hace lo que se supone que debe hacer" de forma fiable.
 
-#### Descriptores de Nivel de Desempeño (KPI 2.1)
+#### Niveles de desempeño
 
 **Excepcional (+2)** El artefacto no solo es funcionalmente correcto, sino que su diseño es inherentemente verificable. Incluye un conjunto robusto de pruebas, validaciones o mecanismos de autocomprobación que demuestran su corrección.
 
@@ -247,7 +243,7 @@ Este protocolo es el algoritmo inmutable que debe seguir cualquier agente (IA o 
 
 ### Fase 1: Calibración de Intención
 
-**Propósito:** Asignar una ponderación a los ejes del IMK que refleje las prioridades de la tarea evaluada.
+**Propósito:** Asignar una ponderación a los ejes de evaluación que refleje las prioridades de la tarea evaluada.
 
 **Proceso:**
 
@@ -263,7 +259,7 @@ Este protocolo es el algoritmo inmutable que debe seguir cualquier agente (IA o 
 
 La tabla no modifica la forma en que el evaluador asigna los puntajes; el proceso de puntuación de \+2 a \-2 basado en los PLDs es siempre el mismo para garantizar la consistencia. La función de la tabla es establecer el **estándar de éxito** para la interpretación final del resultado. Le dice al **análisis final** dónde poner el foco de la exigencia, asegurando que cada colaboración sea juzgada según las prioridades inherentes a su propósito.
 
-Las expectativas de desempeño para cada tipo de tarea no son una opinión, sino una **hipótesis normativa derivada de la lógica funcional** de cada cuadrante del Circumplejo de Tareas Grupales de McGrath. Cada perfil está diseñado para priorizar los ejes del IMK que son más críticos para el éxito en ese tipo de trabajo colaborativo específico.
+Las expectativas de desempeño para cada tipo de tarea no son una opinión, sino una **hipótesis normativa derivada de la lógica funcional** de cada cuadrante del Circumplejo de Tareas Grupales de McGrath. Cada perfil está diseñado para priorizar los ejes de evaluación que son más críticos para el éxito en ese tipo de trabajo colaborativo específico.
 
 ### Cuadrante I: Generar (Planificación y Creatividad)
 

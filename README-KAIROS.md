@@ -1,38 +1,35 @@
 # Kairós — Sistema de Gobernanza para Desarrollo Asistido por IA
 
 > **Versión:** v1.0.0
-> **Metodología:** Kairós v2 · [IMK 4.0](.agent/IMK-4.0.md)
+> **Metodología:** Kairós v2 · [Criterios de evaluación](.agent/evaluacion.md)
 
 ## ¿Qué es Kairós?
 
-Kairós es un sistema de gobernanza de desarrollo diseñado para proyectos solo-dev o equipos pequeños que desarrollan con asistencia de IA. Eleva la colaboración Humano-IA del nivel de "asistencia táctica" al nivel de "socio estratégico", maximizando la calidad del artefacto y el crecimiento del desarrollador.
-
-**La opinión de Kairós:** La calidad del artefacto es un lagging indicator de la calidad del diálogo. La complacencia de la IA es un riesgo sistémico. La agencia humana es un recurso escaso que el sistema debe preservar activamente.
+Kairós es un sistema de gobernanza y colaboración diseñado para optimizar el desarrollo asistido por IA. Facilita la alineación estratégica entre la intención del usuario y la ejecución técnica, asegurando la integridad del artefacto y la sostenibilidad del proceso.
 
 ## Componentes del Sistema
 
 | Componente | Ubicación | Función |
 | --- | --- | --- |
-| Documentación del proyecto | `docs/` | MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS, TEST |
-| Reglas de comportamiento | `.agent/rules/` | Protocolo operativo de la IA |
-| Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/forja, /audit, /test, etc.) |
-| Skills | `.agent/skills/` | Capacidades especializadas activables |
-| Instrumento de medición | `.agent/IMK-4.0.md` | Rúbrica de evaluación de la colaboración |
+| Eje documental | `docs/` | MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS |
+| Reglas operativas | `.agent/rules/` | Protocolos de comportamiento y física del sistema |
+| Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/kairos, /test, /audit, etc.) |
+| Evaluación | `.agent/evaluacion.md` | Criterios de calidad y métricas de colaboración |
 
 ## Cómo Adoptar Kairós
 
-### En un proyecto nuevo (Greenfield)
+### Proyectos nuevos
 
 1. Clonar o copiar este repositorio como base
-2. Ejecutar `/forja` en tu primera sesión de chat para establecer el MASTER-SPEC
+2. Ejecutar `/kairos [intención]` en tu primera sesión de chat para establecer el MASTER-SPEC
 3. Comenzar a desarrollar — la IA aplicará la gobernanza automáticamente
 
-### En un proyecto existente (Brownfield)
+### Proyectos existentes
 
 1. Copiar la carpeta `.agent/` y los archivos raíz (`kairos-version.txt`, `README-KAIROS.md`, `.gitignore`) a tu repo
-2. Ejecutar `/redeem` para auditar la deuda técnica existente
+2. Ejecutar `/fix` para auditar la deuda técnica existente
 3. Poblar `docs/MASTER-SPEC.md` con el contexto actual del proyecto
-4. Ejecutar `/forja` para alinear la estrategia actual y continuar
+4. Ejecutar `/kairos [intención]` para alinear la estrategia actual y continuar.
 
 ## Actualización de Kairós
 
@@ -42,11 +39,11 @@ Para actualizar a una nueva versión del sistema de gobernanza sin perder la doc
 
 | Comando | Cuándo usarlo |
 | --- | --- |
-| `/forja` | Al iniciar un proyecto o cuando la dirección estratégica necesita revisión |
-| `/kairos` | El Ritual de Soberanía Estratégica: La IA asume el liderazgo para diagnosticar el proyecto y proponer el siguiente paso de alto impacto. |
-| `/audit` | Para evaluar la calidad de la colaboración según el IMK |
+| `/kairos [intención]` | Al iniciar un proyecto o cuando la dirección estratégica necesita revisión |
+| `/kairos` | Auditoría Estratégica: La IA asume el liderazgo para diagnosticar el proyecto y proponer el siguiente paso de alto impacto. |
+| `/audit` | Para evaluar la calidad de la colaboración |
 | `/test` | Para establecer o ejecutar la estrategia de testing |
-| `/redeem` | Para auditar y remediar deuda técnica en proyectos brownfield |
+| `/fix` | Para auditar y remediar deuda técnica en proyectos existentes |
 | `/document` | Cuando la documentación está desincronizada con el código |
 | `/update` | Para actualizar el sistema de gobernanza Kairós a la última versión |
 | `/contain` | Para definir la estrategia de entorno (Docker, Dev Containers, etc.) |
