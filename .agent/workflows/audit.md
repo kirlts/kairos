@@ -1,5 +1,5 @@
 ---
-description: /audit - Evalúa la colaboración y registra heurísticas en docs/MEMORY.md
+description: /audit - Evalúa la calidad de la sesión, extrae aprendizajes estratégicos y actualiza MEMORY.md.
 ---
 
 # Auditoría de colaboración
@@ -32,39 +32,20 @@ Si la sesión mezcla tipos: elegir el cuadrante dominante (>50%), anotar como "M
 
 Declarar el Perfil de Prioridad correspondiente según la tabla del IMK 4.0.
 
-## Evaluación de KPIs
+## Paso 2: Evaluación Técnica Rigurosa
 
-Evaluar los ejes de colaboración en este orden exacto:
+**MANDATO DE RIGOR:** Esta fase DEBE ejecutarse consultando exclusivamente las definiciones, descriptores de nivel y escalas de puntuación detalladas en `.agent/evaluacion.md`. Está ESTRICTAMENTE PROHIBIDO evaluar basándose en resúmenes o memoria contextual.
 
-### Eje 1: Alineación Estratégica
+Para cada uno de los 4 ejes y sus respectivos KPIs definidos en `evaluacion.md`:
 
-- KPI 1.1: Detección de Propósito Guía
-- KPI 1.2: Vinculación de Tareas al Plan
-- KPI 1.3: Detección de Desvío
-
-### Eje 2: Integridad del Artefacto
-
-- KPI 2.1: Robustez y Manejo de Edge Cases
-- KPI 2.2: Sostenibilidad del Diseño
-- KPI 2.3: Defensibilidad de Decisiones
-
-### Eje 3: Eficiencia del Proceso
-
-- KPI 3.1: Velocidad de Convergencia
-- KPI 3.2: Reducción de Iteraciones Innecesarias
-- KPI 3.3: Uso de Contexto Previo
-
-### Eje 4: Sinergia Emergente
-
-- KPI 4.1: Elevación del Problema
-- KPI 4.2: Fricción Productiva Aplicada
-- KPI 4.3: Sinergia Emergente
+1. **Lectura de Criterio:** Leer los descriptores de desempeño (+2 a -2) para el KPI específico.
+2. **Búsqueda de Evidencia:** Localizar fragmentos textuales en el historial de la sesión que coincidan con los descriptores.
+3. **Calibración de Score:** Asignar el puntaje basándose en la evidencia más sólida y coherente con los descriptores.
 
 **Regla de evidencia:** Para cada KPI, DEBES:
 
 1. Citar textualmente (entre comillas) un fragmento del historial que justifique el score
 2. Asignar score en escala -2 a +2
-3. Si no encuentras evidencia textual → score debe ser 0 con nota "Sin evidencia suficiente"
 
 Generar la tabla de evaluación:
 
@@ -100,4 +81,4 @@ Si hay un score negativo dentro de un eje → marcar varianza con ⚠️ dispers
 
 1. Añadir el PDK cronológicamente al final de `docs/MEMORY.md`
 2. Si se identificó deuda técnica → crear entrada en `docs/DEUDA-TECNICA.md` (si existe)
-3. Si se identificaron decisiones significativas no documentadas → redactar entradas para USER-DECISIONS.md
+3. Si se identificaron decisiones significativas no documentadas → redactar entradas para `docs/USER-DECISIONS.md`.

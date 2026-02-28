@@ -1,5 +1,5 @@
 ---
-description: /document - Sincronización exhaustiva de documentación con código
+description: /document - Sincroniza el eje documental (MASTER-SPEC, TODO, MEMORY) con el estado real del proyecto.
 ---
 
 # Sincronización documental
@@ -22,10 +22,11 @@ Leer todos los archivos del eje documental:
 
 Comparar los archivos actuales con los estandares de estructura definidos en la versión actual de Kairós:
 
-- **MASTER-SPEC:** ¿Tiene las secciones requeridas (ej: Trade-offs, Sacrificio Aceptado, Preguntas Abiertas)? ¿Sigue la numeración estándar?
+- **MASTER-SPEC:** ¿Tiene las secciones requeridas (§1-§6)? ¿Sigue la numeración estándar?
 - **MEMORY:** ¿El contenido es exclusivamente meta-heurístico? ¿Sigue el formato `[HEU-...]`?
 - **USER-DECISIONS:** ¿Registra la agencia humana con el formato de 5 campos?
 - **TODO:** ¿Utiliza la taxonomía de IDs y el formato de timestamps?
+- **CHECKLIST DE INTEGRIDAD:** ¿Los planes de implementación recientes contienen el bloque de integridad obligatorio?
 
 ## Sincronización con código
 
@@ -48,9 +49,10 @@ Generar una tabla consolidada de brechas de **Contenido** (sincronización) y **
 ## Paso 5: Propuesta de Actualización y Ejecución
 
 1. Presentar las acciones propuestas al usuario.
-2. **IMPORTANTE:** En brechas de Estructura, la IA debe asegurar la preservación del contenido existente al migrar a nuevas plantillas.
-3. No ejecutar cambios en brechas de severidad Alta sin aprobación explícita.
-4. Aplicar las correcciones aprobadas.
+2. **Mandato de Rigor:** En brechas de Estructura, la IA debe asegurar la preservación del contenido existente al migrar a nuevas plantillas.
+3. **Validación de Checklists:** Crear tareas en `task.md` para cada documento que necesite actualización.
+4. No ejecutar cambios en brechas de severidad Alta sin aprobación explícita.
+5. Aplicar las correcciones aprobadas.
 
 ## Paso 6: Validación de Coherencia Cruzada (Check Final)
 

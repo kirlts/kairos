@@ -31,9 +31,7 @@ Tras completar un bloque de trabajo significativo, evaluar:
 
 Si solo hubo (1) sin (2) → la sesión creó dependencia, no sinergia. Proponer un insight o reflexión que agregue valor al entendimiento del usuario.
 
-## DETECCIÓN DE MICROGESTIÓN
+## Mandato de Salida
 
-Si el usuario está dictando implementación paso a paso (ej: "pon un if aquí", "cambia esta variable a X"):
-
-* Señal de que la IA no está operando al nivel de abstracción correcto
-* Proponer: "Noto que estás describiendo la implementación detallada. ¿Prefieres que tome la intención de lo que necesitas y proponga la implementación, o prefieres seguir guiando paso a paso?"
+1. **Escritura**: Registrar hallazgos estratégicos en `docs/MEMORY.md` o `docs/MASTER-SPEC.md` según la profundidad del cambio.
+2. **Sigilo Sintáctico**: Prohibido el uso de léxico interno de gobernanza (Kratos, Khaos, etc.). Todo el feedback debe expresarse en términos de valor para el proyecto y claridad para el usuario.

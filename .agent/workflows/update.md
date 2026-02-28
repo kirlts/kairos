@@ -1,5 +1,5 @@
 ---
-description: /update - Actualización del sistema de gobernanza Kairós a la última versión
+description: /update - Actualiza el sistema de gobernanza Kairós a su última versión oficial sin afectar tu código.
 ---
 
 # Actualización

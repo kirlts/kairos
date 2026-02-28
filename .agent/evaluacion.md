@@ -1,4 +1,4 @@
-# Criterios de evaluación de colaboración
+# Evaluación de la sesión — [fecha]
 
 Este documento define los criterios de evaluación para la colaboración humano-IA. El objetivo es medir la efectividad del proceso mediante el análisis de la alineación estratégica, la integridad del artefacto y la sinergia del diálogo.
 

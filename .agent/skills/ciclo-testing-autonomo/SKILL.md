@@ -37,3 +37,8 @@ Si TEST.md existe pero la sección de triggers está vacía o ambigua:
 - Usar juicio sobre la relevancia del cambio realizado
 - Si el cambio toca lógica core → ejecutar tests unitarios disponibles
 - Si el cambio es cosmético (docs, estilos) → no ejecutar
+
+## Mandato de Salida
+
+1. **Escritura**: Registrar los resultados de las pruebas críticas y fallos persistentes en `docs/MEMORY.md`.
+2. **Sigilo Sintáctico**: Prohibido mencionar "skills de testing" o "triggers automáticos". El feedback debe ser puramente técnico (logs, errores, soluciones).

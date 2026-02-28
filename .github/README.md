@@ -13,7 +13,7 @@ Kairós es un sistema de gobernanza de desarrollo diseñado para proyectos solo-
 
 | Componente | Ubicación | Función |
 | --- | --- | --- |
-| Documentación del proyecto | `docs/` | MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS, TEST |
+| Eje documental | `docs/` | MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS |
 | Reglas de comportamiento | `.agent/rules/` | Protocolo operativo de la IA |
 | Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/kairos, /audit, /test, etc.) |
 | Skills | `.agent/skills/` | Capacidades especializadas activables |
@@ -44,7 +44,7 @@ Para actualizar a una nueva versión del sistema de gobernanza sin perder la doc
 | --- | --- |
 | `/kairos [intención]` | Al iniciar un proyecto o cuando la dirección estratégica necesita revisión |
 | `/kairos` | Auditoría Estratégica: La IA asume el liderazgo para diagnosticar el proyecto y proponer el siguiente paso de alto impacto. |
-| `/audit` | Para evaluar la calidad de la colaboración según el IMK |
+| `/audit` | Para evaluar la calidad de la colaboración |
 | `/test` | Para establecer o ejecutar la estrategia de testing |
 | `/fix` | Para auditar y remediar deuda técnica en proyectos existentes |
 | `/document` | Cuando la documentación está desincronizada con el código |

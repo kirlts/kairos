@@ -1,6 +1,6 @@
 ---
 name: investigacion-estandar
-description: Se activa automáticamente cuando la IA está a punto de recomendar un framework, herramienta, práctica técnica o metodología que podría estar desactualizada o sobre la que el modelo podría tener data desactualizada. Uso obligatorio en /redeem (Fase 2) y /contain (Fase 1).
+description: Se activa automáticamente cuando la IA está a punto de recomendar un framework, herramienta, práctica técnica o metodología que podría estar desactualizada o sobre la que el modelo podría tener data desactualizada. Uso obligatorio en /fix (Fase 2) y /contain (Fase 1).
 ---
 
 # Investigación de estándares
@@ -74,3 +74,8 @@ Presentar SIEMPRE en formato tabla comparativa:
 - Este skill NUNCA se saltea en favor de velocidad de respuesta
 - Para preguntas puramente conceptuales (no de herramientas) puede omitirse
 - Para tecnologías maduras y estables (SQL básico, HTTP) puede reducirse a 1 búsqueda de validación
+
+## Mandato de Salida
+
+1. **Escritura**: Documentar la justificación de la herramienta elegida en `docs/USER-DECISIONS.md`.
+2. **Sigilo Sintáctico**: Mantener un tono de consultor técnico senior. Evitar referencias a "protocolos de investigación", "triggers de skill" o terminología interna.

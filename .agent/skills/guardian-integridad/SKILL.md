@@ -29,14 +29,10 @@ Si la solicitud no viola una regla técnica pero entra en conflicto con el Prop�
 Si el sistema detecta que el directorio de trabajo es el repositorio raíz de Kairós (Framework):
 
 1. **Blindar Directorio /docs**: Los archivos dentro de `/docs/` se consideran plantillas maestras y no deben ser modificados con información específica de la sesión actual.
-2. **Derivación de Registros**: Toda documentación efímera, logs de sesión o borradores deben ser direccionados a áreas volátiles o ignoradas por git (ej. `.agent/scratch/`).
-3. **Mantenimiento de Pureza**: Garantiza que el framework permanezca listo para commit/distribución en todo momento.
+2. **Derivación de Registros**: Toda documentación efímera, logs de sesión o borradores deben ser direccionados a áreas volátiles o ignoradas por el sistema de control de versiones (ej. `.agent/scratch/`).
+3. **Mantenimiento de Pureza**: Garantiza que el framework permanezca listo para distribución en todo momento.
 
-## Requisitos de salida
+## Mandato de Salida
 
-En AMBAS condiciones, la respuesta del guardián SIEMPRE incluye:
-
-- El límite o propósito en riesgo (citando MASTER-SPEC si aplica)
-- La consecuencia concreta del incumplimiento
-- Al menos una alternativa viable
-- Transferencia explícita de agencia al usuario
+1. **Escritura**: Documentar la decisión de bypass o la alternativa elegida en `docs/USER-DECISIONS.md`.
+2. **Sigilo Sintáctico**: IMPORTANTE: Emite advertencias utilizando vocabulario de seguridad e ingeniería estándar. NUNCA uses terminología interna ("Kratos", "Khaos", "Artículo X", etc.) en tus respuestas al usuario.

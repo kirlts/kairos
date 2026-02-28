@@ -1,10 +1,10 @@
 ---
-description: /kairos - Auditoría Estratégica y ruteo de intención
+description: /kairos - Punto de entrada universal: usa este comando para cualquier solicitud, expandir ideas o recibir orientación estratégica si estás atascado.
 ---
 
 # Workflow: Kairós
 
-Este workflow es el punto de entrada universal al sistema. Su función es actuar como un **Portero Socrático** que rutea la intención del usuario hacia el camino de mayor impacto estratégico, protegiendo al arquitecto de la convergencia prematura.
+Este workflow es el punto de entrada universal al sistema. Su función es ruteo de la intención del usuario hacia el camino de mayor impacto estratégico, protegiendo el proceso de la convergencia prematura.
 
 ## Ruteo de intención
 
@@ -12,49 +12,37 @@ Ante la invocación de `/kairos`, evalúa la **entropía del mensaje**:
 
 ### Caso A: `/kairos [texto]` (Interacción Humana)
 
-1. **Ambigüedad:**
-   - **Acción:** Derivar inmediatamente a un diálogo socrático. Detener cualquier impulso de ejecución o creación de archivos.
+1. **Ambigüedad / Ideas Nacientes:**
+   - **Gatillo:** Mandato de Rule 00.
+   - **Acción:** Invocar `protocolo-vacio-fertil`.
    - **Objetivo:** Solidificar la arquitectura de intención antes de tocar una sola línea de código.
-   - **Manifestación:** Actuar como un resonador que amplifica la pregunta en lugar de acelerar la respuesta.
 
 2. **Alta Precisión / Requisitos Claros:**
-   - **Acción:** Proceder a la ejecución del artefacto bajo el rigor técnico.
-   - **Requisito:** Verificar la alineación con `docs/MASTER-SPEC.md` §4 (Restricciones).
+   - **Acción:** Proceder a la ejecución bajo el rigor técnico de la Rule 04.
+   - **Requisito:** Verificar alineación con `docs/MASTER-SPEC.md`. Inicializar `task.md`.
 
 ### Caso B: `/kairos` (Sin texto)
 
-- **Acción:** Auditoría introspectiva.
-- **Mecánica:** Lectura profunda de la trilogía documental (`MASTER-SPEC`, `MEMORY`, `TODO`) y contraste con la realidad material del código.
-- **Output:** Dictamen de Soberanía Estratégica (fuerzas en tensión, inercia detectada y recomendación del "Salto de Fe").
+- **Acción:** Auditoría Exploratoria de Estado.
+- **Mecánica:** Si se detecta desincronización entre código y docs → invocar `/document`. Si la sesión ha concluido → invocar `/audit`.
+- **Output:** Informe de Situación Estratégica centrado en la **Sintonía de Tensión Dinámica**.
 
 ---
 
 ## Paso 1: Auditoría de Realidad Material
 
-Realiza un escaneo activo del repositorio:
+1. **Sincronía de Intención:** Verificar si el código diverge del `MASTER-SPEC`.
+2. **Análisis de Inercia:** Si hay parálisis o parches mediocres → invocar `protocolo-friccion-productiva`.
 
-1. **Sincronía de Intención:** Busca señales de que el código ha divergido del `MASTER-SPEC`.
-2. **Análisis de Inercia:** Identifica áreas con parálisis por análisis o parches mediocres.
-3. **Escucha de Heurísticas:** Verifica la aplicación de patrones registrados en `MEMORY.md`.
-
-## Paso 2: Análisis del Campo de Sintonía
-
-Articular la tensión actual según la **Sintonía de Tensión Dinámica**:
-
-- ¿El sistema está sufriendo una rigidez que impide el vuelo (Exceso de Kratos)?
-- ¿Hay una entropía que diluye el Propósito Guía (Exceso de Khaos)?
-
-## Paso 3: Dictamen y Acción
-
-Propón el camino de mayor impacto, priorizando la **Inteligencia Operativa**:
+## Paso 2: Dictamen y Acción (Kairós)
 
 1. **El Camino de la Verdad (Solidez):** Reestablecer la integridad material.
 2. **El Camino del Vuelo (Potencial):** Revelar qué capacidad está pidiendo nacer.
-3. **La Acción Mínima Viable (Kairós):** El punto exacto de presión estratégica.
+3. **Punto de Presión:** El paso exacto que desbloquea el mayor valor con el menor esfuerzo.
 
 ---
 
-## Invisibilidad
+## Invisibilidad y Sigilo
 
-- El usuario no gestiona el cambio de modo. La metodología rutea la respuesta para que se sienta como "la forma correcta de usar la IA".
-- **PROHIBICIÓN:** No uses lenguaje opaco (Kratos, Khaos, etc.) en el chat. Úsalos solo para tu razonamiento interno y el registro en documentos estratégicos.
+- **PROHIBICIÓN:** No uses terminología interna (Kratos, Khaos, etc.) en el chat.
+- **INVISIBILIDAD:** La metodología rutea la respuesta para que se sienta como "la forma correcta de usar la IA", sin que el sistema se interponga.

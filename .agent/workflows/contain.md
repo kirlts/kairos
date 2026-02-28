@@ -1,21 +1,21 @@
 ---
-description: /contain - Definición de la estrategia de entorno (Docker, Dev Containers, etc.)
+description: /contain - Configura la estrategia de entorno de desarrollo (contenedores, máquinas virtuales, etc.) para garantizar consistencia técnica.
 ---
 
-# WORKFLOW: CONTAINERIZACIÓN Y ENTORNO
+# WORKFLOW: ESTRATEGIA DE ENTORNO
 
-Este workflow define la estrategia de entorno de desarrollo del proyecto. En 2026, con IA capaz de generar configuraciones de Docker/Dev Containers de alta calidad, el overhead de containerización se reduce drásticamente.
+Este workflow define la estrategia de entorno de desarrollo del proyecto. En 2026, con IA capaz de generar configuraciones de entornos aislados de alta calidad, el overhead de setup se reduce drásticamente.
 
 ## Fase 1: Diagnóstico con Matriz
 
 Analizar el proyecto usando la siguiente matriz de decisión:
 
-| Factor | Peso | A favor de container | En contra |
+| Factor | Peso | A favor de aislamiento (Contenedores/VM) | En contra |
 | --- | --- | --- | --- |
-| Dependencias del sistema | Alto | 2+ servicios (DB, Redis, etc.) | Solo runtime del lenguaje |
-| Uniformidad de entorno | Medio | Múltiples devs o CI/CD | Solo-dev sin CI |
-| Reproducibilidad | Alto | Deploy a cloud | Solo local |
-| Complejidad del setup | Medio | >5 pasos de setup manual | npm install y listo |
+| Dependencias del sistema | Alto | 2+ servicios externos (DB, Cache, etc.) | Solo runtime del lenguaje |
+| Uniformidad de entorno | Medio | Múltiples colaboradores o CI/CD | Colaborador único sin CI |
+| Reproducibilidad | Alto | Despliegue a nube | Solo ejecución local |
+| Complejidad del setup | Medio | >5 pasos de setup manual | Instalación simple de paquetes |
 
 Ejecutar el skill `investigacion-estandar` para verificar mejores prácticas actuales para el stack del proyecto.
 
@@ -23,12 +23,10 @@ Ejecutar el skill `investigacion-estandar` para verificar mejores prácticas act
 
 Presentar una propuesta con:
 
-1. **Recomendación:** Containerizar / No container / Dev Container sin Docker completo
+1. **Recomendación:** Aislamiento total / Ejecución nativa / Configuración de entorno de IDE
 2. **Justificación** basada en la matriz y la investigación
 3. **Complejidad de implementación** estimada
-4. **Archivos que se generarán:**
-   - `Dockerfile` / `docker-compose.yml`
-   - `.devcontainer/devcontainer.json`
+4. **Archivos que se generarán:** (ej: archivos de configuración de contenedores, scripts de setup, metadatos de entorno de IDE)
    - Actualizaciones a `docs/MASTER-SPEC.md` §9
 
 **NO implementar sin aprobación del usuario.**

@@ -1,5 +1,5 @@
 ---
-description: /test - CICLO DE PRUEBAS Y AUTO-SANACIÓN
+description: /test - Establece o ejecuta la estrategia de pruebas para asegurar la estabilidad y el correcto funcionamiento del sistema.
 ---
 
 # Testing estratégico

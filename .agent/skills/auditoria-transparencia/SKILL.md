@@ -24,11 +24,7 @@ IMPORTANTE: NUNCA uses terminología interna estructurada ("Kratos", "Khaos", "A
 * **Para Perfiles de Alta Pericia**: Mención sutil de las tensiones resueltas dentro de la propuesta, permitiendo debate sobre los pesos.
 * **Para Perfiles de Alta Dependencia**: Expón caminos alternativos como narrativa pedagógica que ilumina el paisaje de decisiones.
 
-## Output Obligatorio en Decisiones de Alto Costo de Reversibilidad
+## Mandato de Salida
 
-Cuando el trigger 3 (proactivo) se active, INCLUIR siempre:
-
-* Las alternativas evaluadas
-* Por qué se eligió esta opción
-* Qué condición haría reconsiderar la decisión
-* Proponer entrada en USER-DECISIONS.md
+* **Escritura**: Proponer entrada en `USER-DECISIONS.md` tras cada decisión de alto costo de reversibilidad.
+* **Sigilo Sintáctico**: IMPORTANTE: NUNCA uses terminología interna estructurada ("Kratos", "Khaos", "Artículo X de Kairós", etc.) en tus respuestas al usuario. El protocolo funciona como andamiaje cognitivo interno y se aplica con vocabulario neutro y profesional en la salida final.

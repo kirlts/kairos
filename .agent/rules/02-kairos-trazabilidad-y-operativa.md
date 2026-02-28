@@ -4,11 +4,15 @@ trigger: always_on
 
 # Trazabilidad y operativa
 
-Estas directivas son de cumplimiento obligatorio y anulan cualquier instrucción contraria.
+Estas directivas son de cumplimiento obligatorio y anulan cualquier instrucción contraria. El incumplimiento de estos protocolos se considera un fallo de integridad del sistema.
+
+## 0. Checklist de Integridad KAIRÓS
+
+Cualquier bloque de ejecución que requiera modificar código o arquitectura DEBE iniciar con una sección titulada `## Checklist de Integridad Kairós` en el `implementation_plan.md`. Estas tareas deben sincronizarse obligatoriamente en el `task.md` de Antigravity.
 
 ## 1. Directorio /docs
 
-TODOS los documentos rectores del proyecto deben residir obligatoriamente dentro del directorio `/docs/`. ESTÁ ESTRICTAMENTE PROHIBIDO generar código sin que la trilogía documental esté alineada.
+TODOS los documentos rectores del proyecto deben residir obligatoriamente dentro del directorio `/docs/`. ESTÁ ESTRICTAMENTE PROHIBIDO generar código sin que el eje documental esté alineado.
 
 ### A. MASTER-SPEC.md
 
@@ -40,13 +44,11 @@ Trazabilidad: La IA redacta la entrada; el usuario confirma con "ok" o similar a
 Función: Historial versionado de cambios del proyecto. Formato Keep a Changelog.
 Actualización: La IA añade entradas a la sección `[Unreleased]` al completar trabajo. Al hacer un release, la sección se mueve a una versión numerada.
 
-### F. PAUSA ESTRATÉGICA Y HERMETISMO
+### F. PAUSA ESTRATÉGICA
 
-Pausa estratégica: Es una violación directa de Kairós modificar sistemas o crear infraestructura (Docker, archivos grandes, instalaciones pesadas) como respuesta inmediata a una orden, sin antes asentar la "Condición de Arranque" y las variables de contexto de manera completa y reflexiva.
+**Pausa Estratégica:** Antes de iniciar ejecuciones terminales complejas (configuración de infraestructura, instalaciones pesadas), DEBES asentar tu intención y el plan detallado en los archivos `/docs`. La CELERIDAD NO es justificación para la OMISIÓN DOCUMENTAL.
 
-1. **Pausa Estratégica:** Antes de iniciar ejecuciones terminales complejas o manipular código, DEBES asentar tu intención y el plan detallado en los archivos `/docs`. La CELERIDAD NO es justificación para la OMISIÓN DOCUMENTAL. Piensa primero, planifica el entorno y documenta. Actúa solo cuando la documentación sea exacta.
-
-2. **Hermetismo Contextual del Framework:** Si detectas que el directorio de trabajo es el repositorio raíz de Kairós (Framework):
+1. **Hermetismo Contextual del Framework:** Si detectas que el directorio de trabajo es el repositorio raíz de Kairós (Framework):
    - **Blindar Directorio /docs:** Los archivos dentro de `/docs/` se consideran plantillas maestras y no deben ser modificados con información específica de la sesión actual (logs de sesión, PDKs efímeros, etc.).
    - **Derivación de Registros:** Toda documentación efímera debe direccionarse a áreas volátiles o ignoradas por git (ej. `.agent/scratch/`).
    - **Mantenimiento de Pureza:** Garantiza que el framework permanezca listo para commit/distribución en todo momento.

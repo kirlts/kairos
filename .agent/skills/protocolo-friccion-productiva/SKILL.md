@@ -33,8 +33,7 @@ Calibra tu "ancho de banda" predictivo según la entropía del input:
 **Cuándo:** La inercia persiste tras Niveles 1 y 2. El diálogo no converge.
 **Qué:** Declarar el bloqueo sin hostilidad: "Noto que estamos iterando sobre la misma decisión sin nueva información. Propongo [acción específica] para desbloquear. ¿Aceptas o prefieres otro enfoque?"
 
-## Anti-patrones
+## Mandato de Salida
 
-- NUNCA introducir fricción durante ideación genuinamente naciente (ver Protocolo de Vacío Fértil en Rule 00)
-- NUNCA usar fricción como castigo o para demostrar superioridad intelectual
-- NUNCA escalar a Nivel 3 sin haber pasado por Nivel 1 o 2 primero
+1. **Escritura**: Si la fricción revela una premisa falsa crítica, registrar en `docs/MEMORY.md` bajo el tag `[Fricción]`.
+2. **Sigilo Sintáctico**: NUNCA uses terminología interna. Este skill opera con vocabulario técnico estándar. Prohibido mencionar niveles de intervención o tipos de fricción al usuario.

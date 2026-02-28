@@ -10,47 +10,40 @@ Este protocolo define el ciclo operativo obligatorio de la IA en relación con l
 
 Antes de la primera solicitud de implementación en cada sesión nueva, la IA DEBE:
 
-1. Leer `docs/MEMORY.md` completo (bóveda de heurísticas transferibles)
+1. Leer `docs/MEMORY.md` completo (repositorio de heurísticas transferibles)
 2. Leer `docs/MASTER-SPEC.md` completo (fuente de verdad del proyecto)
 3. Si existe `docs/TEST.md`, leerlo para conocer los triggers de testing autónomo
 
 Si alguno de estos archivos no existe o está vacío, notifica al usuario una sola vez y continúa.
 
-## Ciclo de trabajo
+## Ciclo de Trabajo Obligatorio
 
-### BEFORE (antes de escribir código)
+### BEFORE (Planeación)
 
-1. Verificar que `docs/TODO.md` refleja la tarea que se va a implementar
-2. Verificar que la tarea no contradice `docs/MASTER-SPEC.md` §4 (Restricciones) ni §5 (Trade-offs)
-3. Si la tarea no está en TODO.md → añadirla antes de implementar
-4. Leer `docs/MASTER-SPEC.md` §4 (Restricciones y Decisiones de Diseño) — la implementación no puede violar ningún límite intransgredible listado ahí
+1. **Verificación TODO.md:** La tarea debe existir en `TODO.md` antes de ejecutarse.
+2. **Umbral de Planeación:** Si la tarea afecta a >1 archivo o modifica `MASTER-SPEC` §4/§5 → GENERAR `implementation_plan.md` con Checklist de Integridad.
+3. **Sincronización `task.md`:** Reflejar las subtareas del plan en el `task.md` de Antigravity.
 
-### DURING (mientras se escribe código)
+### DURING (Ejecución)
 
-1. Articular proactivamente incertidumbres y trade-offs en decisiones de alto costo de reversibilidad, sin esperar a que el usuario pregunte
-2. Al encontrar una decisión técnica con opciones igualmente válidas → referenciar `docs/MASTER-SPEC.md` §5 (Trade-offs Acordados) y §6 (Sacrificio Aceptado) como criterio de desempate
-3. Si la implementación crea deuda técnica consciente → documentar inmediatamente en el chat
+1. **Articulación de Trade-offs:** Si surge una decisión con opciones válidas, referenciar `MASTER-SPEC` §5 para desempatar.
+2. **Registro de Deuda:** Si se toma un atajo técnico, documentar inmediatamente en el chat.
 
-### AFTER (después de completar trabajo)
+### AFTER (Validación y Sincronización)
 
-1. Actualizar `docs/TODO.md` con timestamp (YYYY-MM-DD HH:MM:SS) en las tareas completadas
-2. Si el trabajo cambió la arquitectura o stack → actualizar `docs/MASTER-SPEC.md` §2
-3. Si se tomó una decisión significativa → redactar entrada para `docs/USER-DECISIONS.md` y presentar al usuario para confirmación.
-    - **Uso de `[CITA]`:** Al redactar para `MASTER-SPEC`, `USER-DECISIONS` o el `Implementation Plan`, utiliza quirúrgicamente el tag **`[CITA]`** para anclar la literalidad del usuario cuando el matiz creativo o técnico sea crítico. No lo uses por inercia; úsalo basado en la razonabilidad para evitar ruido visual.
-4. Si el skill `ciclo-testing-autonomo` está activo y el trabajo coincide con un trigger de `docs/TEST.md` → ejecutar tests correspondientes.
-    - **Autonomía de Invocación:** Tienes la potestad y la obligación de invocar workflows (ej. `/test`, `/document`) de forma independiente si la lógica de Kairós lo exige para garantizar la integridad, respetando su contenido al 100%.
+1. **Validación por Artefactos (Mecanismo de Confianza):** La validación final de una tarea no reside solo en la ejecución exitosa, sino en la calidad del artefacto generado para el usuario.
+   - **Cambio de Código:** La "evidencia" debe demostrar que el cambio es funcional mediante la inspección del artefacto resultante.
+   - **Gobernanza/Diseño:** La evidencia es la actualización de los documentos de referencia (`MASTER-SPEC`, `USER-DECISIONS`).
+2. **Sincronización 1:1 (CRÍTICO):** Es **OBLIGATORIO** ejecutar el workflow `/document` tras completar **CADA TASK** individual. La sincronización es el latido que mantiene la coherencia del agente.
+3. **Actualización TODO.md:** Marcar progreso con timestamp (YYYY-MM-DD HH:MM:SS) SOLO tras validar el artefacto.
 
-## Evaluación de conformidad
+## Evaluación de Conformidad (Post-Ciclo)
 
-Antes de declarar una tarea como completada, verifica mentalmente las 5 cualidades del artefacto:
+Antes de dar el cierre a un bloque, verifica las 5 cualidades:
 
-1. **Robustez**: ¿sobrevive a inputs inesperados?
-2. **Sostenibilidad**: ¿el costo de mantenerlo es proporcional a su valor?
-3. **Modificabilidad**: ¿otro developer (o la IA en sesión futura) podría entender y modificar esto sin esfuerzo desproporcionado?
-4. **Velocidad de Creación**: ¿se completó en un tiempo razonable sin over-engineering?
-5. **Potencial de Crecimiento**: ¿la estructura permite evolución sin reescritura?
+1. **Robustez** | 2. **Sostenibilidad** | 3. **Modificabilidad** | 4. **Velocidad** | 5. **Potencial de Crecimiento**
 
-Si alguna cualidad falla claramente → propón una corrección antes de cerrar la tarea.
+Si falla claramente → Corregir antes de notificar al usuario.
 
 ## Análisis de heurísticas
 

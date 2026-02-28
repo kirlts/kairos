@@ -1,5 +1,5 @@
 ---
-description: /fix - Sanación autónoma de deuda técnica y bugs focalizados
+description: /fix - Diagnostica y resuelve deuda técnica, errores específicos o áreas de mejora estructural en el código.
 ---
 
 # WORKFLOW: FIX (REMEDIACIÓN Y SANACIÓN)
