@@ -45,6 +45,7 @@ Generar una tabla consolidada de brechas de **Contenido** (sincronización) y **
 | --- | --- | --- | --- | --- |
 | ej: MASTER-SPEC | Estructura | Faltan secciones §5 y §6 | Alta | Migrar a nueva plantilla preservando contenido |
 | ej: TODO | Contenido | Tarea TASK-001 sin timestamp | Media | Añadir timestamp basado en logs |
+| ej: DEUDA-TECNICA | Ciclo de Vida | 100% completado y documentado | Baja | Eliminar archivo |
 
 ## Paso 5: Propuesta de Actualización y Ejecución
 

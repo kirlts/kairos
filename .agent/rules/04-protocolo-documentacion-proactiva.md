@@ -34,8 +34,8 @@ Si alguno de estos archivos no existe o está vacío, notifica al usuario una so
 1. **Validación por Artefactos (Mecanismo de Confianza):** La validación final de una tarea no reside solo en la ejecución exitosa, sino en la calidad del artefacto generado para el usuario.
    - **Cambio de Código:** La "evidencia" debe demostrar que el cambio es funcional mediante la inspección del artefacto resultante.
    - **Gobernanza/Diseño:** La evidencia es la actualización de los documentos de referencia (`MASTER-SPEC`, `USER-DECISIONS`).
-2. **Sincronización 1:1 (CRÍTICO):** Es **OBLIGATORIO** ejecutar el workflow `/document` tras completar **CADA TASK** individual. La sincronización es el latido que mantiene la coherencia del agente.
-3. **Actualización TODO.md:** Marcar progreso con timestamp (YYYY-MM-DD HH:MM:SS) SOLO tras validar el artefacto.
+2. **Sincronización Mandataria (Rigor Operativo):** Es **OBLIGATORIO** incluir la ejecución del workflow `/document` (o el comando de sincronización pertinente) como un paso de cierre explícito dentro de la checklist de `task.md`. La sincronización es el latido que mantiene la coherencia del agente; no realizarla se considera un fallo de integridad.
+3. **Actualización TODO.md:** Marcar progreso con timestamp (YYYY-MM-DD HH:MM:SS) SOLO tras validar el artefacto y sincronizar.
 
 ## Evaluación de Conformidad (Post-Ciclo)
 

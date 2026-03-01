@@ -33,11 +33,12 @@ Literalidad de Intención: Al registrar heurísticas basadas en diálogos, prior
 Consulta Obligatoria: Este archivo DEBE ser consultado al inicio de cada sesión (ver Rule 04, Paso 0) y antes de tomar decisiones de diseño estructural.
 Protocolo Anti-Sesgo: Antes de escribir una heurística, se DEBE seguir el procedimiento del Rule 04 (verificación con búsqueda web + confirmación del usuario si no hay fuente externa).
 
-### D. USER-DECISIONS.md
+### D. USER-DECISIONS.md (Registro de Agencia Humana)
 
-Función: Documenta las decisiones significativas del humano, las alternativas descartadas, y las condiciones bajo las cuales reconsiderar la decisión. Responde: ¿quién decidió esto? ¿por qué no se fue por otro camino?
+Función: Documenta las decisiones significativas del humano y su **Intención Declarada**. Responde: ¿quién decidió esto? ¿por qué se eligió este camino desde la voluntad humana?
+**Mandato de Identidad:** Este documento **NO ES UN CHANGELOG**. Es el registro de la soberanía del usuario. Debe capturar el "por qué" estratégico y las intenciones explícitas que el usuario comunica en el chat.
 Formato obligatorio: Cada entrada sigue el formato ADR adaptado con 5 campos: Contexto, Decisión, Alternativas Descartadas, Consecuencias, Condiciones de Reversión.
-Trazabilidad: La IA redacta la entrada; el usuario confirma con "ok" o similar antes de guardar.
+Trazabilidad: La IA redacta la entrada basada en la literalidad del chat; el usuario confirma con "ok" o similar antes de guardar.
 
 ### E. CHANGELOG.md
 
@@ -52,3 +53,15 @@ Actualización: La IA añade entradas a la sección `[Unreleased]` al completar 
    - **Blindar Directorio /docs:** Los archivos dentro de `/docs/` se consideran plantillas maestras y no deben ser modificados con información específica de la sesión actual (logs de sesión, PDKs efímeros, etc.).
    - **Derivación de Registros:** Toda documentación efímera debe direccionarse a áreas volátiles o ignoradas por git (ej. `.agent/scratch/`).
    - **Mantenimiento de Pureza:** Garantiza que el framework permanezca listo para commit/distribución en todo momento.
+
+### G. DEUDA-TECNICA.md (Opcional/Temporal)
+
+Función: Registra la deuda técnica, refactorizaciones pendientes y áreas de mejora identificadas por `/fix` o auditorías manuales.
+Regla de Autoliquidación: El archivo `DEUDA-TECNICA.md` no es una pieza permanente del eje documental. Una vez que el 100% de las tareas están completadas (`[x]`) y su resolución está respaldada por entradas en `CHANGELOG.md` o actualizaciones en `MASTER-SPEC.md`, el sistema DEBE eliminar el archivo proactivamente para mantener la pureza del repositorio.
+
+### H. RIGOR OPERATIVO DE WORKFLOWS
+
+**Mandato de Coreografía:** El comando `/kairos` y la ejecución de tareas complejas deben percibirse como el disparador de una coreografía de workflows autónomos.
+
+1. **Inclusión en check-list:** La IA debe incluir obligatoriamente en su `task.md` la invocación proactiva de los workflows pertinentes al contexto (`/document`, `/test`, `/audit`, etc.) como subtareas explícitas.
+2. **Cierre de Ciclo:** Ninguna tarea se considera "finalizada" hasta que el workflow de sincronización documental (`/document`) haya sido ejecutado íntegramente para asegurar que el código y los documentos rectores sean un solo cuerpo de verdad.
