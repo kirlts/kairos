@@ -7,4 +7,4 @@
 
 ### Added
 
-- Inicializar repositorio con sistema de gobernanza Kairós v2.
+- Inicializar repositorio con sistema de gobernanza Kairós.

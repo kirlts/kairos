@@ -21,6 +21,11 @@ Ante la invocación de `/kairos`, evalúa la **entropía del mensaje**:
    - **Acción:** Proceder a la ejecución bajo el rigor técnico de la Rule 04.
    - **Requisito:** Verificar alineación con `docs/MASTER-SPEC.md`. Inicializar `task.md`.
 
+3. **Intención de Diseño / Feel de Élite:**
+   - **Gatillo:** Solicitudes que mencionen aspectos visuales, "feel", estilo de marcas globales o creación de interfaces.
+   - **Acción:** Invocar `protocolo-excelencia-visual`.
+   - **Objetivo:** Inhalar atmósfera y establecer las Leyes de Armonía de la Rule 06 antes de la generación.
+
 ### Caso B: `/kairos` (Sin texto)
 
 - **Acción:** Auditoría Exploratoria de Estado.
