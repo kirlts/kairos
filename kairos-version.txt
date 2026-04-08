@@ -1,4 +1,4 @@
-v2.0.0
+v2.1.0
 .agent/rules/00-kairos-identidad-y-lealtad.md
 .agent/rules/01-kairos-evaluacion-y-fuerzas.md
 .agent/rules/02-kairos-trazabilidad-y-operativa.md
@@ -11,11 +11,14 @@ v2.0.0
 .agent/skills/ciclo-testing-autonomo/SKILL.md
 .agent/skills/guardian-integridad/SKILL.md
 .agent/skills/investigacion-estandar/SKILL.md
+.agent/skills/protocolo-adherencia-estricta/SKILL.md
 .agent/skills/protocolo-campo-relacional/SKILL.md
 .agent/skills/protocolo-excelencia-visual/SKILL.md
 .agent/skills/protocolo-friccion-productiva/SKILL.md
 .agent/skills/protocolo-vacio-fertil/SKILL.md
 .agent/templates/changelog.md
+.agent/templates/derive-checklist.md
+.agent/templates/derive-working.md
 .agent/templates/deuda-tecnica.md
 .agent/templates/master-spec.md
 .agent/templates/memory.md

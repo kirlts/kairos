@@ -14,15 +14,18 @@ Al iniciar una sesión o interactuar en un repositorio nuevo/existente, la IA DE
 2. **Auto-Aprovisionamiento:** Si el directorio `docs/` no existe o faltan documentos base, **CREA O PUEBLA** los documentos faltantes copiando exactamente la estructura de `.agent/templates/`.
 3. **Manejo Legacy:** Si existen documentos previos con nombres similares pero de versiones antiguas que no calzan con las plantillas actuales, muévelos automáticamente a `docs/archive/` (ej. `[archivo]_legacy_[fecha].md`) antes de crear la versión limpia desde la plantilla, e intenta portar el contenido si es posible.
 
-## Lectura al inicio de sesión
+## Secuencia de Lectura Obrigatória (Inicio de Sesión)
 
-Tras asegurar la existencia e integridad del ecosistema `/docs` (Paso 0), la IA DEBE:
+Para evitar el envenenamiento de contexto y el "Legacy Anchoring" documentado en el skill de `protocolo-adherencia-estricta`, tu secuencia inicial debe ser jerárquica:
 
-1. Leer `docs/MEMORY.md` completo (repositorio de heurísticas transferibles)
-2. Leer `docs/MASTER-SPEC.md` completo (fuente de verdad del proyecto)
-3. Si existe `docs/TEST.md`, leerlo para conocer los triggers de testing autónomo
+1. **Jerarquía Alfa:** Ingiere primero el Workflow/Skill/Regla solicitada en la instrucción (`.agent/*`).
+2. **Jerarquía Beta:** Ejecuta purga de *scratches* previos si el workflow lo demanda.
+3. **Jerarquía Gamma:** Tras asegurar la existencia e integridad del ecosistema `/docs` (Paso 0), DEBES:
+   - Leer `docs/MEMORY.md` completo (repositorio de heurísticas transferibles).
+   - Leer `docs/MASTER-SPEC.md` aplicando Ceguera Categórica a zonas que reemplazarás (según dicte el workflow activo).
+   - Si existe `docs/TEST.md`, leerlo.
 
-Si por alguna restricción de permisos o entorno inusual no se pudieron crear, notifica al usuario una sola vez y continúa.
+Si por alguna restricción de permisos o entorno inusual no se pudieron crear los repositorios documentales, notifica al usuario una sola vez y continúa.
 
 ## Ciclo de Trabajo Obligatorio
 

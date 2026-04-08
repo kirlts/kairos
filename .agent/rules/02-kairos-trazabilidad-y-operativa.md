@@ -72,8 +72,8 @@ Regla de Autoliquidación: El archivo `DEUDA-TECNICA.md` no es una pieza permane
 ### H. Directorio /docs/archive/
 
 Función: Almacena documentos que fueron parte activa del eje documental pero han sido reemplazados por versiones canónicas más recientes.
-Triggers de Degradación (ÚNICOS escenarios permitidos):
-1. **Reemplazo por `/derive`:** Al ejecutar `/derive` con integración documental, los checks previos de §8 se mueven aquí con sufijo `_LEGACY_[fecha]`.
+Triggers de Degradación (Principio de Destrucción Creadora):
+1. **Migración de Formato Legacy:** Al ejecutar `/derive` sobre un proyecto, si se detecta que los checks preexistentes en §8 están en un formato obsoleto o texto plano, TODO ese bloque se extrae y mueve aquí con sufijo `_LEGACY_[YYYY-MM-DD_HH-MM].md` para dar paso a la taxonomía canónica `[ACTOR.CAT.NN]`. Si los checks actuales ya poseen la taxonomía canónica perfecta, **TIENES ESTRICTAMENTE PROHIBIDO DESTRUIRLOS O ARCHIVARLOS.** El workflow `/derive` opera entonces bajo un paradigma de **Expansión Aditiva**, generando nodos puramente adicionales y no solapados (MECE).
 2. **Autoliquidación de DEUDA-TECNICA.md:** Al completarse al 100%, el archivo se elimina (no se archiva).
 3. **Decisión explícita del usuario:** Cualquier otra degradación requiere una entrada en USER-DECISIONS.md con el formato de 5 campos.
 Prohibición: Los documentos en `archive/` NUNCA se consultan para tomar decisiones de implementación. Solo sirven como registro forense.

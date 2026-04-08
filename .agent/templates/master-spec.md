@@ -109,11 +109,3 @@ Taxonomía: [ACTOR.CATEGORÍA.NN]
 Actores: Definidos por /derive según el proyecto
 Categorías: AV (Disponibilidad), FN (Funcionalidad), CR (Corrección), IN (Integridad), RS (Resiliencia)
 -->
-
----
-
-## §9. Ambiente y Entorno (Opcional)
-
-> Poblado por el workflow `/contain`.
-> Estrategia de contenedores, aislamiento, o setup local.
-
