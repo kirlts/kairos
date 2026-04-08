@@ -47,7 +47,7 @@ Con las respuestas, generar `docs/TEST.md`:
 - [ ] [Descripción del test] — valida §4 de MASTER-SPEC
 
 ## Tests de Regresión
-<!-- Se añaden cuando /audit o debugging revelan un bug -->
+<!-- Se añaden cuando debugging revela un bug -->
 
 ## Política de Playwright/E2E
 - Activar cuando: [condiciones]

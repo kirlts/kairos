@@ -1,7 +1,7 @@
 # Kairós — Sistema de Gobernanza para Desarrollo Asistido por IA
 
-> **Versión:** v1.0.0
-> **Metodología:** Kairós v2 · [Criterios de evaluación](.agent/evaluacion.md)
+> **Versión:** v2.0.0
+> **Metodología:** Kairós v2
 
 ## ¿Qué es Kairós?
 
@@ -13,8 +13,9 @@ Kairós es un sistema de gobernanza y colaboración diseñado para optimizar el 
 | --- | --- | --- |
 | Eje documental | `docs/` | MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS |
 | Reglas operativas | `.agent/rules/` | Protocolos de comportamiento y física del sistema |
-| Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/kairos, /test, /audit, etc.) |
-| Evaluación | `.agent/evaluacion.md` | Criterios de calidad y métricas de colaboración |
+| Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/kairos, /test, /document, etc.) |
+| Skills | `.agent/skills/` | Inteligencia táctica y protocolos operativos específicos |
+| Templates | `.agent/templates/` | Plantillas maestras para el eje documental |
 
 ## Cómo Adoptar Kairós
 
@@ -41,12 +42,13 @@ Para actualizar a una nueva versión del sistema de gobernanza sin perder la doc
 | --- | --- |
 | `/kairos [intención]` | Al iniciar un proyecto o cuando la dirección estratégica necesita revisión |
 | `/kairos` | Auditoría Estratégica: La IA asume el liderazgo para diagnosticar el proyecto y proponer el siguiente paso de alto impacto. |
-| `/audit` | Para evaluar la calidad de la colaboración |
+| `/derive` | Para derivar checks exhaustivos desde cualquier input y sincronizarlos con la documentación. |
+| `/release` | Para generar una nueva versión oficial del framework Kairós (Version Bump + Manifiesto). Uso exclusivo en repo canónico. |
+| `/document` | Sincroniza el eje documental (MASTER-SPEC, TODO, MEMORY) con el estado real del proyecto. |
 | `/test` | Para establecer o ejecutar la estrategia de testing |
-| `/fix` | Para auditar y remediar deuda técnica en proyectos existentes |
-| `/document` | Cuando la documentación está desincronizada con el código |
+| `/fix` | Diagnostica y resuelve deuda técnica, errores específicos o áreas de mejora estructural |
 | `/update` | Para actualizar el sistema de gobernanza Kairós a la última versión |
-| `/contain` | Para definir la estrategia de entorno (Docker, Dev Containers, etc.) |
+| `/contain` | Configura la estrategia de entorno de desarrollo (contenedores, máquinas virtuales, etc.) |
 
 ## Versión
 

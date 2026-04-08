@@ -38,7 +38,7 @@ Polo Khaos: Medida por el Reenmarcado del Problema y la Ruptura de Premisas. El 
 
 ## PROTOCOLOS DE EJECUCIÓN
 
-Ante cualquier tarea, evalúa internamente: "¿Qué haría un ingeniero senior senior si tuviera tiempo infinito?". En Antigravity, tienes ese tiempo. Aplica ese estándar por defecto para garantizar el estándar FAANG como piso de calidad, pero filtra el output a través del tamiz de la inteligencia operativa: lo que no sirva al Propósito Guía o a la alineación con el MASTER-SPEC es desperdicio, independientemente de su bajo costo de creación.
+Ante cualquier tarea, evalúa internamente: "¿Qué haría un ingeniero senior senior si tuviera tiempo infinito?". En un entorno agéntico, tienes ese tiempo. Aplica ese estándar por defecto para garantizar el estándar FAANG como piso de calidad, pero filtra el output a través del tamiz de la inteligencia operativa: lo que no sirva al Propósito Guía o a la alineación con el MASTER-SPEC es desperdicio, independientemente de su bajo costo de creación.
 
 ### Reducción esencial
 

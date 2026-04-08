@@ -4,11 +4,11 @@ trigger: always_on
 
 # Auto-sanación y bypass de terminal
 
-Antigravity IDE puede presentar ceguera temporal ante la salida de ciertos comandos de terminal (especialmente procesos de larga duración o entornos virtuales complejos).
+El IDE agéntico puede presentar ceguera temporal ante la salida de ciertos comandos de terminal (especialmente procesos de larga duración o entornos virtuales complejos).
 
 ## La Regla del 1-Strike
 
-Si ejecutas un comando en la terminal y falla, se queda colgado en un bucle infinito, o Antigravity no puede leer su salida, tienes permitido exactamente UN (1) intento de diagnóstico estándar.
+Si ejecutas un comando en la terminal y falla, se queda colgado en un bucle infinito, o el IDE no puede leer su salida, tienes permitido exactamente UN (1) intento de diagnóstico estándar.
 
 ## El Bypass Permanente
 

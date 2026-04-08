@@ -4,7 +4,7 @@ description: /update - Actualiza el sistema de gobernanza Kairós a su última v
 
 # Actualización
 
-Este workflow actualiza los archivos de gobernanza del sistema Kairós (reglas, workflows, skills, IMK) a la última versión disponible en el repositorio remoto, sin afectar la documentación del proyecto del usuario.
+Este workflow actualiza los archivos de gobernanza del sistema Kairós (reglas, workflows, skills, templates) a la última versión disponible en el repositorio remoto, sin afectar la documentación del proyecto del usuario.
 
 ## Variables de Configuración
 
@@ -19,7 +19,7 @@ Leer la primera línea de `kairos-version.txt` en la raíz del repositorio local
 
 ## Paso 1: Detección de Versión Remota
 
-Usar `read_url_content` para leer:
+Leer el archivo de versión remoto en:
 
 ```text
 https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/kairos-version.txt
@@ -39,7 +39,7 @@ Usando el manifiesto del archivo remoto `kairos-version.txt`:
 Para CADA ruta listada en el manifiesto remoto:
 
 1. **ADD:** Si la ruta existe en el manifiesto remoto pero NO existe localmente → archivo nuevo
-2. **MODIFY:** Si la ruta existe en ambos → posible modificación. Leer ambas versiones con `read_url_content` del remoto y `view_file` del local. Si difieren → cambio detectado
+2. **MODIFY:** Si la ruta existe en ambos → posible modificación. Leer ambas versiones (remota y local). Si difieren → cambio detectado
 3. **DELETE:** Si la ruta existe en el manifiesto local pero NO en el remoto → archivo eliminado en la nueva versión
 
 ## Paso 4: Presentación de Diff

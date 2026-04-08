@@ -29,8 +29,8 @@ Ante la invocación de `/kairos`, evalúa la **entropía del mensaje**:
 ### Caso B: `/kairos` (Sin texto)
 
 - **Acción:** Auditoría Exploratoria de Estado.
-- **Mecánica:** Si se detecta desincronización entre código y docs → invocar `/document`. Si la sesión ha concluido → invocar `/audit`.
-- **Output:** Informe de Situación Estratégica centrado en la **Sintonía de Tensión Dinámica**.
+- **Mecánica:** Si se detecta desincronización entre código y docs → invocar `/document`.
+- **Output:** Informe de Situación Estratégica.
 
 ---
 

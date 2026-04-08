@@ -22,6 +22,7 @@ Queda **ESTRICTAMENTE PROHIBIDO** el uso de soluciones por defecto (*defaults*) 
 1. **Pureza Tipográfica:** **RECHAZO MANDATORIO** de fuentes predeterminadas si no aportan identidad.
 2. **Arquitectura Limpia:** **PROHIBICIÓN** de anidación innecesaria (div-soup).
 3. **Identidad de Color:** **OBLIGATORIO** derivar una lógica cromática única para cada atmósfera.
+4. **Axioma de la Huella Paramétrica:** La IA posee una distribución estadística empíricamente documentada de valores por defecto (colores, fuentes, layouts, spacing, radios, animaciones, copy) que constituyen el "AI Smell". El skill `protocolo-excelencia-visual` codifica esta huella como una **Lista Negra de Convergencia (LNC)** y su consulta es mandatoria en toda tarea visual. La coincidencia con la LNC no está prohibida; **la coincidencia sin justificación atmosférica sí lo está.**
 
 ## 3. Protocolo Brownfield (Integridad Contextual)
 

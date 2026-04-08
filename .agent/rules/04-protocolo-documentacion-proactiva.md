@@ -6,15 +6,23 @@ trigger: always_on
 
 Este protocolo define el ciclo operativo obligatorio de la IA en relación con la documentación del proyecto. Es un protocolo operativo, no filosófico — cada paso es verificable.
 
+## Paso 0: Onboarding y Auto-Higiene (Greenfield/Brownfield)
+
+Al iniciar una sesión o interactuar en un repositorio nuevo/existente, la IA DEBE ejecutar una higiene documental silenciosa:
+
+1. **Detección Greenfield/Incompleto:** Verifica la existencia de `docs/MASTER-SPEC.md`, `docs/TODO.md` y `docs/MEMORY.md`.
+2. **Auto-Aprovisionamiento:** Si el directorio `docs/` no existe o faltan documentos base, **CREA O PUEBLA** los documentos faltantes copiando exactamente la estructura de `.agent/templates/`.
+3. **Manejo Legacy:** Si existen documentos previos con nombres similares pero de versiones antiguas que no calzan con las plantillas actuales, muévelos automáticamente a `docs/archive/` (ej. `[archivo]_legacy_[fecha].md`) antes de crear la versión limpia desde la plantilla, e intenta portar el contenido si es posible.
+
 ## Lectura al inicio de sesión
 
-Antes de la primera solicitud de implementación en cada sesión nueva, la IA DEBE:
+Tras asegurar la existencia e integridad del ecosistema `/docs` (Paso 0), la IA DEBE:
 
 1. Leer `docs/MEMORY.md` completo (repositorio de heurísticas transferibles)
 2. Leer `docs/MASTER-SPEC.md` completo (fuente de verdad del proyecto)
 3. Si existe `docs/TEST.md`, leerlo para conocer los triggers de testing autónomo
 
-Si alguno de estos archivos no existe o está vacío, notifica al usuario una sola vez y continúa.
+Si por alguna restricción de permisos o entorno inusual no se pudieron crear, notifica al usuario una sola vez y continúa.
 
 ## Ciclo de Trabajo Obligatorio
 
@@ -22,7 +30,7 @@ Si alguno de estos archivos no existe o está vacío, notifica al usuario una so
 
 1. **Verificación TODO.md:** La tarea debe existir en `TODO.md` antes de ejecutarse.
 2. **Umbral de Planeación:** Si la tarea afecta a >1 archivo o modifica `MASTER-SPEC` §4/§5 → GENERAR `implementation_plan.md` con Checklist de Integridad.
-3. **Sincronización `task.md`:** Reflejar las subtareas del plan en el `task.md` de Antigravity.
+3. **Sincronización `task.md`:** Reflejar las subtareas del plan en el `task.md` de la herramienta agéntica.
 
 ### DURING (Ejecución)
 
