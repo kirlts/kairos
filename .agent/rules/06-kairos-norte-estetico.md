@@ -14,6 +14,7 @@ Las decisiones estéticas **DEBEN** derivarse de principios geométricos y matem
 2. **Equilibrio de Masas:** **MANDATO ESTRUCTURAL** de gestionar el peso visual. El espacio negativo **DEBE** tratarse como un elemento activo de diseño.
 3. **Contraste Perceptual:** El cálculo de color **DEBE** realizarse en espacios perceptualmente uniformes (OKLCH). **PROHIBIDO** el uso de valores hexadecimales arbitrarios.
 4. **Ritmo y Repetición:** **OBLIGATORIO** establecer una unidad de medida base (x) y sus múltiplos.
+5. **Axioma de Accesibilidad (A11y) como Rigor Material:** La belleza no excusa la rotura semántica o motriz. Es **INNEGOCIABLE** mantener contrastes legibles, anillos de enfoque visibles (`:focus-visible`) para navegación por teclado, y jerarquía semántica HTML. Cumplir estrictamente la accesibilidad destruye algorítmicamente la vasta mayoría del "Slop" visual (texto gris ilegible, hover indiscriminado, div-soup).
 
 ## 2. Anti-Slop de Intención (INNEGOCIABLE)
 

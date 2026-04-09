@@ -1,6 +1,6 @@
 # Kairós — Sistema de Gobernanza para Desarrollo Asistido por IA
 
-> **Versión:** v2.0.0
+> **Versión:** v2.1.1
 > **Metodología:** Kairós v2
 
 ## ¿Qué es Kairós?

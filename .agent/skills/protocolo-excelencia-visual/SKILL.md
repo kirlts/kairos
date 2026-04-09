@@ -33,9 +33,10 @@ Antes de inhalar contexto o derivar tokens, el agente **DEBE** cargar consciente
 El agente **DEBE** realizar los siguientes pasos antes de generar código:
 
 1. **Auditoría de Contexto Brownfield:** **OBLIGATORIO** inspeccionar archivos de estilo existentes (`css`, `tailwind.config`, `theme`). Identificar constraints legacy.
-2. **Extracción de ADN Visual:** Si se solicita una atmósfera nueva, derivar el sistema de espaciado, curvatura y luz.
-3. **Identidad Tipográfica:** **MANDATO** de calcular peso, tracking y leading específicos.
-4. **Curva Cromática OKLCH:** Establecer la lógica de color innegociable.
+2. **Test Interno de Intercambiabilidad (Prueba de Dominio):** **FILTRO COGNITIVO SILENCIOSO.** El agente debe preguntarse internamente: *"Si sustituyo el logo por el de una panadería o una corporación genérica cruzada, ¿este copy/layout seguiría aplicando perfectamente?"*. Si es así, el artefacto carece de anclaje de dominio y es esclavo del slop estadístico. Se debe inyectar intencionalidad específica (funcionalidad de alto valor o copy experto) antes de emitirlo.
+3. **Extracción de ADN Visual:** Si se solicita una atmósfera nueva, derivar el sistema de espaciado, curvatura y luz.
+4. **Identidad Tipográfica:** **MANDATO** de calcular peso, tracking y leading específicos.
+5. **Curva Cromática OKLCH:** Establecer la lógica de color innegociable.
 
 ## 2. Derivación de Tokens (PROHIBIDO EL HARDCODING)
 

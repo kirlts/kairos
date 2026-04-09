@@ -1,11 +1,11 @@
 # Kairós — Sistema de Gobernanza para Desarrollo Asistido por IA
 
-> **Versión:** v1.0.0
-> **Metodología:** Kairós v2 · [Criterios de evaluación](.agent/evaluacion.md)
+> **Versión:** v2.1.1
+> **Metodología:** Kairós v2
 
 ## ¿Qué es Kairós?
 
-Kairós es un sistema de gobernanza de desarrollo diseñado para proyectos solo-dev o equipos pequeños que desarrollan con asistencia de IA. Eleva la colaboración Humano-IA del nivel de "asistencia táctica" al nivel de "socio estratégico", maximizando la calidad del artefacto y el crecimiento del desarrollador.
+Kairós es un sistema de gobernanza y colaboración diseñado para proyectos solo-dev o equipos pequeños que desarrollan con asistencia de IA. Eleva la colaboración Humano-IA del nivel de "asistencia táctica" al nivel de "socio estratégico", asegurando la integridad del artefacto, la sostenibilidad del proceso y el crecimiento del desarrollador.
 
 **La opinión de Kairós:** La calidad del artefacto es un lagging indicator de la calidad del diálogo. La complacencia de la IA es un riesgo sistémico. La agencia humana es un recurso escaso que el sistema debe preservar activamente.
 
@@ -14,10 +14,10 @@ Kairós es un sistema de gobernanza de desarrollo diseñado para proyectos solo-
 | Componente | Ubicación | Función |
 | --- | --- | --- |
 | Eje documental | `docs/` | MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS |
-| Reglas de comportamiento | `.agent/rules/` | Protocolo operativo de la IA |
-| Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/kairos, /audit, /test, etc.) |
-| Skills | `.agent/skills/` | Capacidades especializadas activables |
-| Instrumento de medición | `.agent/evaluacion.md` | Rúbrica de evaluación de la colaboración |
+| Reglas operativas | `.agent/rules/` | Protocolos de comportamiento y física del sistema |
+| Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/kairos, /derive, /test, etc.) |
+| Skills | `.agent/skills/` | Inteligencia táctica y protocolos operativos específicos |
+| Templates | `.agent/templates/` | Plantillas maestras para el eje documental |
 
 ## Cómo Adoptar Kairós
 
@@ -43,13 +43,14 @@ Para actualizar a una nueva versión del sistema de gobernanza sin perder la doc
 | Comando | Cuándo usarlo |
 | --- | --- |
 | `/kairos [intención]` | Al iniciar un proyecto o cuando la dirección estratégica necesita revisión |
-| `/kairos` | Auditoría Estratégica: La IA asume el liderazgo para diagnosticar el proyecto y proponer el siguiente paso de alto impacto. |
-| `/audit` | Para evaluar la calidad de la colaboración |
+| `/kairos` | Auditoría Estratégica: La IA diagnostica el proyecto y propone el siguiente paso de alto impacto |
+| `/derive` | Para derivar checks exhaustivos desde cualquier input y sincronizarlos con la documentación |
 | `/test` | Para establecer o ejecutar la estrategia de testing |
-| `/fix` | Para auditar y remediar deuda técnica en proyectos existentes |
-| `/document` | Cuando la documentación está desincronizada con el código |
+| `/fix` | Diagnostica y resuelve deuda técnica, errores específicos o áreas de mejora estructural |
+| `/document` | Sincroniza el eje documental (MASTER-SPEC, TODO, MEMORY) con el estado real del proyecto |
 | `/update` | Para actualizar el sistema de gobernanza Kairós a la última versión |
-| `/contain` | Para definir la estrategia de entorno (Docker, Dev Containers, etc.) |
+| `/contain` | Configura la estrategia de entorno de desarrollo (contenedores, máquinas virtuales, etc.) |
+| `/release` | Genera una nueva versión oficial del framework (uso exclusivo en repo canónico) |
 
 ## Versión
 

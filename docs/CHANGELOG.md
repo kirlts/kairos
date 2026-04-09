@@ -5,6 +5,11 @@
 
 ## [Unreleased]
 
+## [v2.1.1] - 2026-04-08
+
+### Changed
+- Actualización de reglas operativas (`06-kairos-norte-estetico`, `07-desarrollo-end-to-end`) para integrar directivas semánticas contra interfaces genéricas ("AI Slop") basadas en intencionalidad, accesibilidad y datos reales.
+- Expansión de `protocolo-excelencia-visual` con el Filtro Cognitivo interno de "Test de Intercambiabilidad".
 ## [v2.1.0] - 2026-04-08
 
 ### Added
