@@ -1,4 +1,4 @@
-v2.1.1
+v2.2.0
 .agent/rules/00-kairos-identidad-y-lealtad.md
 .agent/rules/01-kairos-evaluacion-y-fuerzas.md
 .agent/rules/02-kairos-trazabilidad-y-operativa.md
@@ -17,6 +17,8 @@ v2.1.1
 .agent/skills/protocolo-friccion-productiva/SKILL.md
 .agent/skills/protocolo-vacio-fertil/SKILL.md
 .agent/templates/changelog.md
+.agent/templates/checklist-output.md
+.agent/templates/checklist-working.md
 .agent/templates/derive-checklist.md
 .agent/templates/derive-working.md
 .agent/templates/deuda-tecnica.md
@@ -24,6 +26,7 @@ v2.1.1
 .agent/templates/memory.md
 .agent/templates/todo.md
 .agent/templates/user-decisions.md
+.agent/workflows/checklist.md
 .agent/workflows/contain.md
 .agent/workflows/derive.md
 .agent/workflows/document.md

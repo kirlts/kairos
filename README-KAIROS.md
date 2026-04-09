@@ -1,55 +1,40 @@
-# Kairós — Sistema de Gobernanza para Desarrollo Asistido por IA
+# Kairós — Referencia Rápida
 
-> **Versión:** v2.1.1
-> **Metodología:** Kairós v2
+> **Versión:** v2.2.0
 
-## ¿Qué es Kairós?
+## Sobre este archivo
 
-Kairós es un sistema de gobernanza y colaboración diseñado para optimizar el desarrollo asistido por IA. Facilita la alineación estratégica entre la intención del usuario y la ejecución técnica, asegurando la integridad del artefacto y la sostenibilidad del proceso.
+Este archivo es parte del sistema de gobernanza Kairós. No es documentación de tu proyecto — es la referencia operativa del framework que asiste a la IA durante el desarrollo.
 
-## Componentes del Sistema
+## Estructura del sistema
 
-| Componente | Ubicación | Función |
-| --- | --- | --- |
-| Eje documental | `docs/` | MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS |
-| Reglas operativas | `.agent/rules/` | Protocolos de comportamiento y física del sistema |
-| Workflows | `.agent/workflows/` | Flujos de trabajo estructurados (/kairos, /test, /document, etc.) |
-| Skills | `.agent/skills/` | Inteligencia táctica y protocolos operativos específicos |
-| Templates | `.agent/templates/` | Plantillas maestras para el eje documental |
+| Carpeta | Función |
+| --- | --- |
+| `.agent/rules/` | Reglas de comportamiento de la IA |
+| `.agent/workflows/` | Flujos de trabajo invocables con comandos |
+| `.agent/skills/` | Protocolos automáticos activados por contexto |
+| `.agent/templates/` | Plantillas para documentos del proyecto |
+| `docs/` | Documentación viva del proyecto (MASTER-SPEC, TODO, MEMORY, CHANGELOG, USER-DECISIONS) |
 
-## Cómo Adoptar Kairós
-
-### Proyectos nuevos
-
-1. Clonar o copiar este repositorio como base
-2. Ejecutar `/kairos [intención]` en tu primera sesión de chat para establecer el MASTER-SPEC
-3. Comenzar a desarrollar — la IA aplicará la gobernanza automáticamente
-
-### Proyectos existentes
-
-1. Copiar la carpeta `.agent/` y los archivos raíz (`kairos-version.txt`, `README-KAIROS.md`, `.gitignore`) a tu repo
-2. Ejecutar `/fix` para auditar la deuda técnica existente
-3. Poblar `docs/MASTER-SPEC.md` con el contexto actual del proyecto
-4. Ejecutar `/kairos [intención]` para alinear la estrategia actual y continuar.
-
-## Actualización de Kairós
-
-Para actualizar a una nueva versión del sistema de gobernanza sin perder la documentación del proyecto, ejecutar el workflow `/update` en cualquier sesión. El workflow detecta automáticamente cambios en reglas, workflows y skills, y propone las actualizaciones con diffs para aprobación.
-
-## Workflows Disponibles
+## Comandos
 
 | Comando | Cuándo usarlo |
 | --- | --- |
-| `/kairos [intención]` | Al iniciar un proyecto o cuando la dirección estratégica necesita revisión |
-| `/kairos` | Auditoría Estratégica: La IA asume el liderazgo para diagnosticar el proyecto y proponer el siguiente paso de alto impacto. |
-| `/derive` | Para derivar checks exhaustivos desde cualquier input y sincronizarlos con la documentación. |
-| `/release` | Para generar una nueva versión oficial del framework Kairós (Version Bump + Manifiesto). Uso exclusivo en repo canónico. |
-| `/document` | Sincroniza el eje documental (MASTER-SPEC, TODO, MEMORY) con el estado real del proyecto. |
-| `/test` | Para establecer o ejecutar la estrategia de testing |
-| `/fix` | Diagnostica y resuelve deuda técnica, errores específicos o áreas de mejora estructural |
-| `/update` | Para actualizar el sistema de gobernanza Kairós a la última versión |
-| `/contain` | Configura la estrategia de entorno de desarrollo (contenedores, máquinas virtuales, etc.) |
+| `/kairos [intención]` | Al iniciar un proyecto o redefinir la dirección estratégica |
+| `/kairos` | Para obtener un diagnóstico del estado actual y la siguiente acción de alto impacto |
+| `/derive` | Para generar un checklist de verificación exhaustivo desde código o documentación, integrado con MASTER-SPEC y TODO |
+| `/checklist` | Para generar un checklist de verificación desde cualquier input, standalone y agnóstico al dominio |
+| `/test` | Para definir o ejecutar la estrategia de testing |
+| `/fix` | Para diagnosticar y resolver deuda técnica o errores |
+| `/document` | Para sincronizar la documentación con el estado real del proyecto |
+| `/update` | Para actualizar el sistema de gobernanza a la última versión |
+| `/contain` | Para configurar el entorno de desarrollo (contenedores, VMs) |
+| `/release` | Para generar una nueva versión oficial del framework (solo repo canónico) |
+
+## Actualización
+
+Ejecuta `/update` en cualquier sesión. El workflow compara tu versión local con la última publicada y propone cambios sin afectar tu documentación de proyecto.
 
 ## Versión
 
-Kairós sigue Semantic Versioning. La versión instalada está en `kairos-version.txt`. Para ver el historial de cambios del sistema de gobernanza, consultar `docs/CHANGELOG.md`.
+`kairos-version.txt` contiene la versión instalada y el manifiesto de archivos del framework.

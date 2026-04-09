@@ -48,24 +48,34 @@ Once GATE 5 is successfully resolved:
 2. Copy the template from `.agent/templates/derive-checklist.md`.
 3. Extract ONLY the final list of synthesized checks from Phase 4 and group them cleanly under each Actor. Eliminate all reasoning matrices, gate tables, or phase markers.
    - *ANTI-PATTERN:* Including traces of your logic (e.g., "Because this is an operator actor...") or retaining table formats in the clean document. `[subject]_checklist.md` must be noise-free.
-4. Present the `[subject]_checklist.md` to the user in chat.
+   - *ANTI-PATTERN:* Rewriting or paraphrasing checks during extraction to "improve readability" or "smooth the language." The check text in the deliverable MUST be semantically identical to the synthesized check in Phase 4. Cosmetic rewording that dilutes specificity is a corruption of the algorithm's output.
+4. Populate the abbreviation key and the quantitative summary table.
 
-## STEP 4: Autonomous Integration
+## STEP 4: Self-Verification Audit (GATE 6)
 
-You MUST NOT ask the user for permission to integrate the checks. Upon successfully generating the `[subject]_checklist.md` artifact, immediately proceed to Step 5 and Step 6 to synchronize the project's macro-documentation autonomously.
+This is the terminal gate. You MUST execute it AFTER generating the deliverable but BEFORE proceeding to integration.
+
+1. Return to the working document and fill GATE 6 by auditing `[subject]_checklist.md` against the invariants.
+2. For EACH invariant, write your empirical reasoning FIRST, then the verdict.
+3. **Hard Failure Protocol:** If G6-DENSITY fails for ANY actor (any actor has <10 checks), you MUST return to Phase 2 in the working document, expand the Promise Matrix for that actor, propagate through Phases 3-4, regenerate the deliverable, and re-run GATE 6. There are NO exceptions.
+4. Once all GATE 6 invariants pass, proceed to autonomous integration.
+
+## STEP 5: Autonomous Integration
+
+You MUST NOT ask the user for permission to integrate the checks. Upon successfully passing GATE 6, immediately proceed to Step 6 and Step 7 to synchronize the project's macro-documentation autonomously.
    - *ANTI-PATTERN:* Halting execution to prompt the user with: "I have generated the checklist, would you like me to integrate it into MASTER-SPEC?". Do not break the operational flow. Integrate silently.
 
 ---
 
-## STEP 5: Integration into MASTER-SPEC §8
+## STEP 6: Integration into MASTER-SPEC §8
 
 1. Read `docs/MASTER-SPEC.md`. Locate `§8`.
 2. **Additive Integration Protocol:** The derive algorithm exists to generate ADDITIONAL, NON-OVERLAPPING checks. If §8 already contains valid Kairós-formatted checks (`[ACTOR.CAT.NN]`), you MUST NOT delete or archive them. You must strictly APPEND your newly derived checks into the existing list, continuing the numbering sequence logically.
 3. **Format-Based Legacy Archiving:** The ONLY scenario where you archive existing checks to `docs/archive/checks_LEGACY_[YYYY-MM-DD_HH-MM].md` is if they are written in an obsolete, non-taxonomic format. If archiving is required, rewrite them into the new taxonomy and append your fresh checks.
-   - *ANTI-PATTERN:* Overwriting or destroying perfectly valid pre-existing checks just to "start fresh," OR suffering from No-Op Bias and skipping the addition of your new checks just because the section "looks complete." You are an additive, expanding pipeline.
+   - *ANTI-PATTERN:* Overwriting or destroying perfectly valid pre-existing checks just to "start fresh," OR suffering from No-Op Bias and skipping the addition of your new checks just because the section "looks complete."
 4. **Current State Evaluation:** Cross-reference each newly added check with the existing codebase. If it is already fulfilled, mark exactly `✅ Implementado`. Otherwise leave it unmarked.
 
-## STEP 6: Integration into TODO.md
+## STEP 7: Integration into TODO.md
 
 Integrating checks into the TODO.md requires deep Architectural Nuance. AI models often exhibit "associative complacency" by lazily dumping massive amounts of generated checks into a single generic Task. You must prevent this.
 
