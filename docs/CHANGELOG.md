@@ -5,6 +5,19 @@
 
 ## [Unreleased]
 
+## [v3.1.0] - 2026-04-14
+
+### Added
+- **Translation Tax Suppression** (English-Pivoted CoT) implementado en las reglas para suprimir la degradación de atención en contextos largos e idiomas periféricos.
+- **Declarative System Framing** (ADR) implementado a lo largo de todos los flujos de trabajo (*workflows*) y habilidades (*skills*), erradicando el fraseo imperativo, la falsa modestia y el "AI slop".
+- Múltiples habilidades y plantillas traducidas a inglés estructural para preservar arquitectura latente pura (`standard-research`, `visual-excellence-protocol`, `conflict-resolution-protocol`, `productive-friction-protocol`, `fertile-void-protocol`, `technical-debt.md`).
+
+### Changed
+- Regla operativa `03-constraints.md` convertida de almacén de datos a regla de ejecución dinámica orientada exclusivamente a enforzar el `MASTER-SPEC.md §4/§5`.
+- Versión manifestada a v3.1.0 como _baseline_ determinista.
+- Actualización íntegra de `02-documentation.md` para sellar la hermeticidad del framework (Regla de Repositorio Localizado).
+- Actualización de los READMEs para reflejar el principio fundamentado de diseño por supresión de impuesto de traducción.
+
 ## [v3.0.1] - 2026-04-14
 
 ### Added

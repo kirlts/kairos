@@ -1,115 +1,115 @@
 ---
-description: /test - Establece o ejecuta la estrategia de pruebas del proyecto. Detecta automáticamente si el repo necesita una estrategia nueva o si ya tiene una para ejecutar.
+description: /test - Establishes or executes the project's testing strategy. Automatically detects if the repo needs a new strategy or already has one to execute.
 ---
 
-# Testing estratégico
+# Strategic Testing
 
-Este workflow opera en dos modos detectados automáticamente por el estado del repositorio.
+This workflow operates in two modes automatically detected by the repository's state.
 
-## Detección de modo
+## Mode Detection
 
-Escanear el repositorio buscando evidencia de una estrategia de testing existente. La evidencia incluye, sin limitarse a:
+The system scans the repository looking for evidence of an existing testing strategy. Evidence includes, but is not limited to:
 
-- `docs/TEST.md` (contrato formal de Kairós)
-- Configuración de test runners (`pytest.ini`, `pyproject.toml [tool.pytest]`, `jest.config.*`, `vitest.config.*`, `.mocharc.*`, `phpunit.xml`)
-- Directorios de tests (`test/`, `tests/`, `__tests__/`, `spec/`)
-- Tests inline o scripts de validación en CI/CD (`.github/workflows/`, `Makefile` con target `test`)
-- Checklists manuales o documentos de QA en cualquier formato
+- `docs/TEST.md` (formal Kairós contract)
+- Test runners configuration (`pytest.ini`, `pyproject.toml [tool.pytest]`, `jest.config.*`, `vitest.config.*`, `.mocharc.*`, `phpunit.xml`)
+- Test directories (`test/`, `tests/`, `__tests__/`, `spec/`)
+- Inline tests or validation scripts in CI/CD (`.github/workflows/`, `Makefile` with `test` target)
+- Manual checklists or QA documents in any format
 
-**Resultado de la detección:**
+**Detection Result:**
 
-- Si NO se encuentra evidencia de testing → **Modo 1: Proponer estrategia**
-- Si se encuentra una estrategia existente y es al menos parcialmente apropiada para el scope del repositorio → **Modo 2: Ejecutar suite existente**
-- Si se encuentra una estrategia existente pero es totalmente inadecuada para el scope actual (ej: solo tests de un módulo abandonado) → **Modo 1**, pero documentar qué se encontró y por qué se descarta
+- If NO testing evidence is found → **Mode 1: Propose strategy**
+- If an existing strategy is found and is at least partially appropriate for the repository's scope → **Mode 2: Execute existing suite**
+- If an existing strategy is found but is entirely inadequate for the current scope (e.g., only tests from an abandoned module) → **Mode 1**, but document what was found and why it is discarded
 
 ---
 
-## Modo 1: Proponer estrategia
+## Mode 1: Propose Strategy
 
-### Fase 1: Análisis del repositorio
+### Phase 1: Repository Analysis
 
-1. Leer `docs/MASTER-SPEC.md` para entender la arquitectura y los flujos críticos.
-2. Escanear el codebase para identificar: lenguajes, frameworks, estructura de directorios, tests existentes (si hay).
-3. Identificar los flujos que el usuario necesita verificar visualmente y los flujos críticos que no pueden fallar.
+1. `docs/MASTER-SPEC.md` is read to understand the architecture and critical flows.
+2. The codebase is scanned to identify: languages, frameworks, directory structure, existing tests (if any).
+3. The flows the user needs to visually verify and the critical flows that cannot fail are identified.
 
-### Fase 2: Diseño de estrategia
+### Phase 2: Strategy Design
 
-La estrategia de testing se diseña desde la perspectiva del usuario: qué necesita verificar, qué flujos son críticos, qué regresiones son inaceptables.
+The testing strategy is designed from the user's perspective: what needs verification, what flows are critical, what regressions are unacceptable.
 
-**Pirámide de testing por defecto para greenfield:**
+**Default testing pyramid for greenfield:**
 
-| Capa | Herramienta típica | Cobertura target | Criterio de éxito |
+| Layer | Typical Tool | Target Coverage | Success Criterion |
 |---|---|---|---|
-| Tests unitarios | vitest, pytest, go test, jest | Lógica de negocio, funciones puras, utilidades | Cada función con lógica no trivial tiene test |
-| Tests de integración | vitest, pytest, supertest | Flujos de datos end-to-end, APIs, DB queries | Cada endpoint/flujo crítico tiene test |
-| Tests E2E / visuales | Playwright | Flujos de usuario visibles, regresiones de UI | Cada flujo crítico del MASTER-SPEC tiene test |
+| Unit tests | vitest, pytest, go test, jest | Business logic, pure functions, utilities | Every function with non-trivial logic has a test |
+| Integration tests | vitest, pytest, supertest | End-to-end data flows, APIs, DB queries | Every endpoint/critical flow has a test |
+| E2E / visual tests | Playwright | Visible user flows, UI regressions | Every critical flow in MASTER-SPEC has a test |
 
-El usuario siempre puede hacer override implícito de cualquier elemento de la estrategia propuesta (ej: «no quiero Playwright» → se respeta sin cuestionar).
+The user can always implicitly override any element of the proposed strategy (e.g., "I don't want Playwright" → respected without questioning).
 
-### Fase 3: Generación de TEST.md
+### Phase 3: TEST.md Generation
 
-Generar `docs/TEST.md` con la estrategia materializada:
+`docs/TEST.md` is generated with the materialized strategy:
 
 ```markdown
 # TEST.md
 
-## Stack de Testing
-- Runner: [ej: vitest, pytest]
-- E2E: [si aplica: playwright, ninguno]
-- Mocking: [estrategia]
+## Testing Stack
+- Runner: [e.g., vitest, pytest]
+- E2E: [if applicable: playwright, none]
+- Mocking: [strategy]
 
-## Triggers Automáticos
-<!-- Condiciones bajo las cuales la IA ejecuta tests sin petición -->
-- Al completar cualquier TASK que modifique [componente X]
-- Al modificar [archivos/patrones específicos]
-- Al cerrar una épica
+## Automatic Triggers
+<!-- Conditions under which the AI executes tests without being asked -->
+- Upon completing any TASK modifying [component X]
+- Upon modifying [specific files/patterns]
+- Upon closing an epic
 
-## Tests de Alta Prioridad (Límites Intransgredibles)
-<!-- Tests que validan que NO se viole un Límite Intransgredible -->
-- [ ] [Descripción del test]. valida §4 de MASTER-SPEC
+## High Priority Tests (Inviolable Boundaries)
+<!-- Tests validating NO Inviolable Boundary is breached -->
+- [ ] [Test description]. Validates §4 of MASTER-SPEC
 
-## Tests de Regresión
-<!-- Se añaden cuando debugging revela un bug -->
+## Regression Tests
+<!-- Added when debugging reveals a bug -->
 
-## Política de E2E
-- Activar cuando: [condiciones]
-- No activar cuando: [condiciones]
+## E2E Policy
+- Activate when: [conditions]
+- Do not activate when: [conditions]
 ```
 
-### Fase 4: Confirmación
+### Phase 4: Confirmation
 
-Presentar TEST.md al usuario. No implementar tests hasta que confirme el contrato.
+`TEST.md` is presented to the user. Tests are not implemented until the contract is confirmed.
 
 ---
 
-## Modo 2: Ejecutar suite existente
+## Mode 2: Execute Existing Suite
 
-### Paso 1: Leer estrategia
+### Step 1: Read Strategy
 
-Cargar la estrategia de testing detectada:
+The detected testing strategy is loaded:
 
-- Si existe `docs/TEST.md`: usarlo como contrato formal (qué runner, qué triggers, qué tests de alta prioridad).
-- Si la estrategia está en configuración de runners (pytest.ini, jest.config, etc.): leer los archivos de configuración y los tests existentes para entender qué se ejecuta y cómo.
-- Si la estrategia es una checklist manual o un documento de QA: leerlo y usarlo como guía.
+- If `docs/TEST.md` exists: it is used as the formal contract (which runner, which triggers, which high-priority tests).
+- If the strategy is in runner configurations (pytest.ini, jest.config, etc.): config files and existing tests are read to understand what runs and how.
+- If the strategy is a manual checklist or a QA document: it is read and used as a guide.
 
-### Paso 2: Evaluar contexto
+### Step 2: Evaluate Context
 
-Determinar el subconjunto a ejecutar:
-- Si el usuario especifica el subconjunto en la invocación (ej: `/test auth`), ejecutar ese subconjunto.
-- Si el contexto conversacional implica un área (ej: «acabo de refactorizar el módulo de autenticación»), ejecutar tests de esa área.
-- Si no hay contexto específico, ejecutar la suite completa.
+The subset to execute is determined:
+- If the user specifies the subset in the invocation (e.g., `/test auth`), that subset is executed.
+- If the conversational context implies an area (e.g., "I just refactored the auth module"), tests for that area are executed.
+- If there is no specific context, execute the full suite.
 
-### Paso 3: Ejecutar tests
+### Step 3: Execute Tests
 
-Ejecutar los tests relevantes usando el runner detectado. Si un test falla:
-1. Analizar la causa raíz.
-2. Proponer fix.
-3. Re-ejecutar para validar.
+The relevant tests are executed using the detected runner. If a test fails:
+1. The root cause is analyzed.
+2. A fix is proposed.
+3. Tests are re-executed to validate.
 
-### Paso 4: Documentar resultado
+### Step 4: Document Result
 
-- Si se descubren bugs → añadir a tests de regresión (en TEST.md si existe, o crear uno).
-- Si la corrección revela un patrón transferible → candidato para MEMORY.md (con protocolo anti-sesgo).
-- Actualizar conteo de cobertura si aplica.
-- Si el proyecto usa una estrategia legacy sin TEST.md formal, proponer su migración a `docs/TEST.md` para futuras ejecuciones.
+- If bugs are discovered → they are added to regression tests (in TEST.md if it exists, or it is created).
+- If the correction reveals a transferable pattern → it becomes a candidate for MEMORY.md (with anti-bias protocol).
+- Coverage count is updated if applicable.
+- If the project uses a legacy strategy without a formal TEST.md, its migration to `docs/TEST.md` is proposed for future executions.
 

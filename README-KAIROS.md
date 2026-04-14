@@ -1,6 +1,6 @@
 # Kairós: Referencia Rápida
 
-> v3.0.1
+> v3.1.0
 
 Este archivo es la referencia operativa del framework de gobernanza, no documentación del proyecto. Todo el contenido del directorio `.agents/` (reglas, skills, workflows, plantillas) está escrito para ser leído y ejecutado autónomamente por la IA. El agente es el operador del framework; el usuario define la intención.
 
@@ -39,6 +39,7 @@ Este archivo es la referencia operativa del framework de gobernanza, no document
 | State Isolation | Mitiga -39% degradación multi-turno | Ciclo BEFORE/DURING/AFTER: reconstruye el estado desde artefactos aislados en cada turno, sin acumulación entre conversaciones | OpenReview (LLMs Get Lost In Multi-Turn Conversation) |
 | Positive Directive Mapping | -50% desviación comportamental | Espacio de conducta explícito. Las prohibiciones cubren solo fallos catastróficos; mapear lo permitido supera en eficacia a mapear lo prohibido | arXiv 2604.01438 (ClawSafety) |
 | Traceable Identifiers | 80.4% F1 multi-paso | `[ACTOR.CAT.NN.VER]`, `[R-NNN]`, `[LNC-NN]`. Anclan cada verificación a un artefacto concreto en cadenas de razonamiento largas | ResearchGate (LLMs for Doc-to-Code Traceability) |
+| Translation Tax Suppression | Elimina "Linguistic Heterogeneity Penalty" | Los protocolos internos operan en inglés determinista para alinearse con el espacio latente de la IA, maximizando la comprensión lógica, mientras la interacción y escritura final reflejan el idioma del usuario. | Adherencia Lingüística en IA Frontera (Abril 2026) |
 | Axiomatic Pre-Contextualization | Previene -6.81% degradación | Meta-instrucciones preceden a los datos que gobiernan. El modelo lee el marco antes que el contenido que debe interpretar | arXiv 2412.17189 (input design studies) |
 | Modular Context Partitioning | Previene degradación >32K tokens | rules (siempre activas), skills (por demanda), knowledge (@referencia). Mantiene el contexto activo bajo el umbral de degradación documentado | arXiv 2601.10343 (OctoBench); arXiv 2603.16021 (Folder Structure as Agent Architecture) |
 
@@ -60,7 +61,7 @@ Convergencia paramétrica de LLMs en interfaces visuales.
 |---|---|
 | Lista Negra de Convergencia (10 vectores con valores, contexto y desvío) | `.agents/knowledge/ai-smell-registry.md` |
 | Regla de desvío justificado | `.agents/rules/04-aesthetics.md` |
-| Gate visual de 3 pasos (Anti-Slop, Armonía, Integridad) | `.agents/skills/protocolo-excelencia-visual/SKILL.md` |
+| Gate visual de 3 pasos (Anti-Slop, Armonía, Integridad) | `.agents/skills/visual-excellence-protocol/SKILL.md` |
 
 **Fuente:** Síntesis de patrones de convergencia en interfaces generadas por IA (2025-2026). Wikipedia, "Signs of AI Writing".
 

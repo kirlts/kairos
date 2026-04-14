@@ -1,50 +1,54 @@
-# Documentación y ciclo operativo
+# Documentation & Operational Cycle
 
-## Eje documental
+## [RULE: REPOSITORY LOCALIZATION]
 
-Todos los documentos rectores del proyecto residen en `/docs/`. Las plantillas canónicas residen en `.agents/templates/`. Al crear un documento nuevo, se copia la plantilla correspondiente y se puebla con el contenido del proyecto.
+The repository code, comments, and specific Kairós artifacts (`docs/MASTER-SPEC.md`, `docs/TODO.md`, etc.) belong to the Project Domain. When creating, writing to, or editing these files, the system silently detects the dominant language of the target file (or the user's project context) and strictly appends or modifies content in that same language. Leaking English governance reasoning into localized project documentation is strictly forbidden.
 
-| Documento | Template | Propósito |
+## Documentary Axis
+
+All guiding project documents reside in `/docs/`. The canonical templates reside in `.agents/templates/`. When creating a new document, copy the corresponding template and populate it with the project's content.
+
+| Document | Template | Purpose |
 |---|---|---|
-| `docs/MASTER-SPEC.md` | `.agents/templates/master-spec.md` | Especificación técnica y arquitectónica. Todo lo implementado va en favor de este archivo |
-| `docs/TODO.md` | `.agents/templates/todo.md` | Tareas con trazabilidad a MASTER-SPEC §8. Timestamps obligatorios (YYYY-MM-DD HH:MM:SS) |
-| `docs/MEMORY.md` | `.agents/templates/memory.md` | Heurísticas transferibles. Append-only |
-| `docs/USER-DECISIONS.md` | `.agents/templates/user-decisions.md` | Decisiones humanas con formato ADR de 5 campos |
-| `docs/CHANGELOG.md` | `.agents/templates/changelog.md` | Historial versionado. Formato Keep a Changelog |
-| `docs/DEUDA-TECNICA.md` | `.agents/templates/deuda-tecnica.md` | Temporal. Se autoliquida al completarse al 100% |
-| `docs/TEST.md` | (generado por /test) | Contrato de testing. Se lee si existe |
+| `docs/MASTER-SPEC.md` | `.agents/templates/master-spec.md` | Technical and architectural specification. Everything implemented serves this file. |
+| `docs/TODO.md` | `.agents/templates/todo.md` | Tasks with traceability to MASTER-SPEC §8. Mandatory timestamps (YYYY-MM-DD HH:MM:SS). |
+| `docs/MEMORY.md` | `.agents/templates/memory.md` | Transferable heuristics. Append-only. |
+| `docs/USER-DECISIONS.md` | `.agents/templates/user-decisions.md` | Human decisions using an ADR 5-field format. |
+| `docs/CHANGELOG.md` | `.agents/templates/changelog.md` | Versioned history. Keep a Changelog format. |
+| `docs/TECHNICAL-DEBT.md` | `.agents/templates/technical-debt.md` | Ephemeral file. Self-liquidates when 100% completed. |
+| `docs/TEST.md` | (generated via /test) | Testing contract. Must be read if it exists. |
 
-## Inicio de sesión
+## Session Boot
 
-1. Verificar existencia de `/docs/` y documentos base. Si faltan, crear desde templates.
-2. Leer `docs/MEMORY.md` completo.
-3. Leer `docs/MASTER-SPEC.md`.
-4. Si existe `docs/TEST.md`, leerlo.
+1. The existence of `/docs/` and the base documents is verified. If missing, they are generated from templates.
+2. The entire `docs/MEMORY.md` is read.
+3. `docs/MASTER-SPEC.md` is read.
+4. If `docs/TEST.md` exists, it is read.
 
-## Ciclo de trabajo
+## Work Cycle
 
-**BEFORE:** La tarea existe en TODO.md antes de ejecutarse. Si afecta >1 archivo o modifica MASTER-SPEC §4/§5, generar `implementation_plan.md` con checklist.
+**BEFORE:** The task must exist in `TODO.md` prior to execution. If it affects >1 file or modifies MASTER-SPEC §4/§5, an `implementation_plan.md` artifact with a modular checklist is generated.
 
-**DURING:** Si surge una decisión con opciones válidas, referenciar MASTER-SPEC §5 para desempatar. Si se toma un atajo técnico, documentar inmediatamente.
+**DURING:** If a decision arises with multiple valid options, MASTER-SPEC §5 is referenced to tie-break. If a technical shortcut is taken, it is documented immediately.
 
-**AFTER:** Validar el artefacto resultante. Ejecutar `/document` como cierre obligatorio. Actualizar TODO.md con timestamp solo tras validación y sincronización.
+**AFTER:** The resulting artifact is validated. The `/document` workflow executes as a mandatory closure. `TODO.md` is updated with a timestamp ONLY after successful validation and synchronization.
 
-## Hermetismo del framework
+## Framework Hermeticity
 
-Si el directorio de trabajo es el repositorio canónico de Kairós, los archivos dentro de `/docs/` se consideran plantillas maestras y no se modifican con información de sesión. Los registros efímeros van a áreas volátiles.
+If the current working directory is the canonical Kairós repository, the files inside `/docs/` are master templates and must NOT be polluted with session-specific logic. Ephemeral logs must go to volatile areas.
 
-## Protocolo anti-sesgo de heurísticas
+## Anti-Bias Heuristics Protocol
 
-Antes de escribir una heurística en `docs/MEMORY.md`:
-1. Verificar con búsqueda web si el patrón es generalizable.
-2. Si hay confirmación externa, escribir con fuente citada.
-3. Si no hay confirmación, declarar al usuario: «Observé un patrón [X]. No encontré confirmación externa. ¿Confirmas que merece ser memorizado?»
-4. Si el usuario confirma, escribir con tag `[Confirmado por usuario - sin fuente externa]`.
+Before writing a heuristic into `docs/MEMORY.md`:
+1. A web search is executed to verify if the pattern is generalized and scientifically sound.
+2. If external confirmation exists, it is written citing the source.
+3. If no confirmation exists, the system declares to the user: "I observed pattern [X]. I found no external confirmation. Do you confirm this should be memorized?"
+4. If the user confirms, it is written with the tag `[Confirmed by user - no external source]`.
 
-## Terminal bypass
+## Terminal Bypass
 
-El límite de reintentos de comandos de terminal es 1. Al segundo intento, la ejecución directa está deshabilitada; la salida se redirige a archivo temporal y se inspecciona via herramientas de lectura.
+The terminal command retry limit is 1. Upon the second failure, blind direct execution is disabled; output must be redirected to a temporary file and inspected via file-reading tools.
 
-## Fidelidad de workflows
+## Workflow Fidelity
 
-Los workflows se ejecutan al pie de la letra, paso por paso, incluyendo workflows anidados en su interior. El parafraseo interno, la omisión de pasos, y la compresión de instrucciones de workflow están deshabilitados. Cada paso de un workflow produce un artefacto verificable antes de avanzar al siguiente.
+Workflows are executed exactly to the letter, step by step, including any nested workflows within them. Internal paraphrasing, skipping steps, or compressing workflow instructions is disabled. Every step of a workflow must produce a verifiable artifact before advancing to the next.

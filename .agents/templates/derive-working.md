@@ -236,9 +236,9 @@ ANTI-PATTERN: Assigning a verificability suffix that contradicts the parent obse
 | Full Name | Abbreviation | Type |
 |---|---|---|
 | [pending] | [pending] | Actor / Category |
-| Verificable por IA/herramienta automatizada | LLM | Verificador |
-| Requiere verificación humana | HUM | Verificador |
-| Pre-verificable por IA, validación final humana | MIX | Verificador |
+| Verifiable by AI/automated tool | LLM | Verifier |
+| Requires human verification | HUM | Verifier |
+| Pre-verifiable by AI, final human validation | MIX | Verifier |
 
 ### Checklist Draft
 - 🧑 `[ACTOR.CAT.NN.HUM]` Action → Expected Result. *(Promise: ...)*
@@ -250,7 +250,7 @@ ANTI-PATTERN: Assigning a verificability suffix that contradicts the parent obse
 
 ANTI-PATTERN: Marking all checks as ATOMIC without examining each one. The verdict column must be filled ONLY after all boolean columns are evaluated. -->
 
-| Check ID | Singular Action? | Singular Result? | Implicit Compound? | Verificador Coherente? | Verdict (ATOMIC/COMPOUND) |
+| Check ID | Singular Action? | Singular Result? | Implicit Compound? | Coherent Verifier? | Verdict (ATOMIC/COMPOUND) |
 |---|---|---|---|---|---|
 | [ID] | [Write: Does this check contain exactly ONE verb/action?] | [Write: Does this check describe exactly ONE observable outcome?] | [Write: Could this check be split into two checks that verify different things?] | [Write: Does the .LLM/.HUM/.MIX suffix match the Decision Tree applied to this check's parent observable? If the check was decomposed from a compound, was the Decision Tree re-evaluated for each atomic part?] | [pending; fill ONLY after all columns] |
 
@@ -332,7 +332,7 @@ ANTI-PATTERN: Filling this gate by referencing Phase 4 counts instead of countin
 | G7-NEG-PARALLELISM | Negative parallelisms | Scan for: «not just X, but Y», «no solo X, sino Y», «more than just» | [Write: List any instances found.] | ☐ |
 | G7-CORPORATE-COPY | Copy corporativo-motivacional | Scan for: «cutting-edge», «seamless», «innovative», «unlock», «empower», «transform your», «leverage» | [Write: List any instances found.] | ☐ |
 | G7-SERVILE-POSITIVITY | Positividad servil | Scan for: «¡Excelente pregunta!», «Gran observación», «Eso es muy interesante», «Great question» | [Write: List any instances found.] | ☐ |
-| G7-EM-DASHES | Em dashes | Scan deliverable for ANY em dash character (—). Zero tolerance: if count > 0, flag. Replace with punto, coma, punto y coma, o paréntesis según corresponda | [Write: Total count. If > 0, list each instance and its replacement.] | ☐ |
+| G7-EM-DASHES | Em dashes | Scan deliverable for ANY em dash character (—). Zero tolerance: if count > 0, flag. Replace with period, comma, semicolon, or parentheses as appropriate | [Write: Total count. If > 0, list each instance and its replacement.] | ☐ |
 
 If ANY gate fails: remediate the deliverable by replacing the flagged patterns with domain-specific language derived from the input.
 

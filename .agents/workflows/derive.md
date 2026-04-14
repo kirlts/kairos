@@ -8,90 +8,87 @@ Derive a complete verification checklist from any input (text, documentation, or
 
 ## Execution Mandates (MANDATORY)
 
-1. **Anti-Paraphrasing Directive:** You are executing a rigid mathematical process. You MUST NOT summarize steps, skip phases, or merge tables. Execute strictly and sequentially.
-2. **Coverage Preservation Rule:** The final dimensionality of the checklist has NO hardcoded ceiling. It is the inescapable mathematical consequence of applying MECE principles. For EVERY valid actor detected, the MECE matrix cross-referencing naturally produces between 10 and 20 atomic checks. You are STRICTLY FORBIDDEN from merging functionalities, skipping categories, or artificially reducing the promise horizon due to procedural fatigue. N actors will organically yield N × [10 to 20] checks. Do not manipulate the count.
-3. **Chain-of-Thought (CoT) Inversion Mandate:** To prevent premature convergence and lazy generation, "Reasoning precedes Resolution". In every `GATE` and every Task mapping, you MUST first explicitly type out your empirical analysis and logical friction in the Notes column. ONLY AFTER the reasoning is recorded are you permitted to issue the final verdict (checking a box or generating the final output). 
-   - *ANTI-PATTERN:* Writing `[x] G1-ACTORS - Yes, I found 3 actors.` is a corrupt, backward logic flow. You must write the analysis *before* marking the status.
+1. **Anti-Paraphrasing Directive:** The process constitutes a rigid mathematical execution. Summarizing steps, skipping phases, or merging tables is strictly prohibited. The execution occurs strictly and sequentially.
+2. **Coverage Preservation Rule:** The final dimensionality of the checklist has NO hardcoded ceiling. It is the inescapable mathematical consequence of applying MECE principles. For EVERY valid actor detected, the MECE matrix cross-referencing naturally produces between 10 and 20 atomic checks. Merging functionalities, skipping categories, or artificially reducing the promise horizon due to procedural fatigue is strictly forbidden. N actors organically yield N × [10 to 20] checks. The computational count remains unmanipulated.
+3. **Chain-of-Thought (CoT) Inversion Mandate:** To prevent premature convergence and lazy generation, "Reasoning precedes Resolution". In every `GATE` and every Task mapping, the system explicitly documents its empirical analysis and logical friction in the Notes column FIRST. ONLY AFTER the reasoning is recorded is the system permitted to issue the final verdict.
+   - *ANTI-PATTERN:* Writing `[x] G1-ACTORS - Yes, I found 3 actors.` constitutes a corrupt, backward logic flow. The analysis is recorded *before* marking the status.
 4. **Separation of Concerns:** 
-   - Reasoning, derivation, and Gate deliberation happen ONLY inside the `[subject]_working.md` artifact.
+   - Reasoning, derivation, and Gate deliberation happen EXCLUSIVELY inside the `[subject]_working.md` artifact.
    - The final checklist is stored cleanly in `[subject]_checklist.md`.
-5. **Language Alignment:** The workflow commands are in English, but the `[subject]_working.md`, `[subject]_checklist.md`, ALL reasoning, and chat summaries MUST dynamically match the repository's predominant documentation language. Do not output English if the repo uses Spanish.
-6. **Tool Safety (Friction Override):** You are FORBIDDEN from using bash (`cat << 'EOF'`) to create or edit large documents. You MUST use the native agentic filesystem tools (`write_to_file`, `multi_replace_file_content`) to prevent syntax traps and terminal hangups.
+5. **Language Alignment:** The workflow commands are in English, but the `[subject]_working.md`, `[subject]_checklist.md`, ALL reasoning, and chat summaries automatically match the repository's predominant documentation language. English output is disabled if the repository uses Spanish.
+6. **Tool Safety (Friction Override):** Using bash to create or edit large documents is prohibited. The native agentic filesystem tools (`write_to_file`, `multi_replace_file_content`) are required to prevent syntax traps and terminal hangups.
 
 ---
 
 ## STEP 1: Initialization
 
-1. **Clean Slate Protocol:** Before generating any document, you MUST purge any existing `[subject]_working.md` or `[subject]_checklist.md` artifacts from previous executions (e.g., in `.agents/scratch/` or your artifact directory) to prevent cross-contamination.
-2. Create a working document using the artifact tool (`write_to_file`). Name it `[subject]_working.md`.
-3. Copy the EXACT contents of `.agents/templates/derive-working.md` into it.
-4. Read the internal instructions (`<!-- INSTRUCTION: ... -->`) embedded directly in the structural headings of the template.
-   - *ANTI-PATTERN:* Reading the user's initial prompt and outputting a summarized checklist directly in the chat without instantiating the working document or reading the template. This skips the entire methodology.
+1. **Clean Slate Protocol:** Purge any existing `[subject]_working.md` or `[subject]_checklist.md` artifacts from previous executions (e.g., in `.agents/scratch/` or your artifact directory) before generating new documents, to prevent cross-contamination.
+2. A working document is created using the artifact tool (`write_to_file`) and named `[subject]_working.md`.
+3. The EXACT contents of `.agents/templates/derive-working.md` are copied into it.
+4. The internal instructions (`<!-- INSTRUCTION: ... -->`) embedded directly in the structural headings of the template are read and evaluated.
+   - *ANTI-PATTERN:* Skipping the instantiation of the working document or the reading of the template by outputting a summarized checklist directly in the chat. This violates the entire methodology.
 
 ## STEP 2: The Core Loop (Phases 0 to 5)
 
 Within `[subject]_working.md`, process Phase 0 through Phase 5 sequentially.
 
-- **The Anchor Rule:** Write `<!-- CHECKPOINT: Phase [N] started -->` precisely when you begin a new phase block.
-- **Tool-Level Pacing Mandate (Anti-One-Shot):** Agents fail this workflow when they attempt to generate Phases 0-5 in a single file-writing execution. **You are strictly FORBIDDEN from writing the entire document in one shot.** You MUST execute this iteratively:
-  1. Use your internal `<thought>` to deliberate Phase N.
-  2. Use a file modification tool to output ONLY Phase N and its Gate to the file.
-  3. Wait. You MUST evaluate the Gate before proceeding to Phase N+1 in a SUBSEQUENT writing operation.
-- **The Gate Rule (CoT Enforcement):** You MUST NOT proceed to Phase N+1 until ALL guardrails in the `⛔ GATE N` table are marked `[x]`. Record your empirical reasoning in the Reasoning column FIRST, rendering the status conditional on the logic.
-- **The Halt Condition:** If any guardrail evaluates to a fundamental failure, HALT. Correct the structural gap in your internal analysis before proceeding.
-   - *ANTI-PATTERN:* Parsing through Phases 0 to 5 all at once, filling all matrices, and then bulk-checking all the Gates at the very end. The algorithm strictly requires linear progression output.
+- **The Anchor Rule:** The system writes `<!-- CHECKPOINT: Phase [N] started -->` precisely when beginning a new phase block.
+- **Tool-Level Pacing Mandate (Anti-One-Shot):** Attempting to generate Phases 0-5 in a single file-writing execution yields systemic failure. Writing the entire document in one shot is strictly forbidden. The system executes this iteratively:
+  1. Internal `<thought>` is used to deliberate Phase N.
+  2. A file modification tool outputs ONLY Phase N and its Gate to the file.
+  3. The Gate determines progression; the system evaluates the Gate before proceeding to Phase N+1 in a SUBSEQUENT writing operation.
+- **The Gate Rule (CoT Enforcement):** The system proceeds to Phase N+1 ONLY AFTER ALL guardrails in the `⛔ GATE N` table are marked `[x]`. The empirical reasoning is recorded in the Reasoning column FIRST, rendering the status conditional on the logic.
+- **The Halt Condition:** If any guardrail evaluates to a fundamental failure, the system HALTs and corrects the structural gap in its internal analysis before proceeding.
+   - *ANTI-PATTERN:* Parsing through Phases 0 to 5 all at once, filling all matrices, and then bulk-checking all the Gates at the very end. The algorithm uniquely permits linear progression output.
 
 ## STEP 3: The Deliverable
 
 Once GATE 5 is successfully resolved:
-1. Create a new artifact named `[subject]_checklist.md`.
-2. Copy the template from `.agents/templates/derive-checklist.md`.
-3. Extract ONLY the final list of synthesized checks from Phase 4 and group them cleanly under each Actor. Eliminate all reasoning matrices, gate tables, or phase markers.
+1. A new artifact named `[subject]_checklist.md` is created.
+2. The template from `.agents/templates/derive-checklist.md` is copied.
+3. ONLY the final list of synthesized checks from Phase 4 is extracted and grouped cleanly under each Actor. All reasoning matrices, gate tables, or phase markers are eliminated.
    - *ANTI-PATTERN:* Including traces of your logic (e.g., "Because this is an operator actor...") or retaining table formats in the clean document. `[subject]_checklist.md` must be noise-free.
    - *ANTI-PATTERN:* Rewriting or paraphrasing checks during extraction to "improve readability" or "smooth the language." The check text in the deliverable MUST be semantically identical to the synthesized check in Phase 4. Cosmetic rewording that dilutes specificity is a corruption of the algorithm's output.
-4. Populate the abbreviation key and the quantitative summary table.
+4. The abbreviation key and the quantitative summary table are populated.
 
 ## STEP 4: Self-Verification Audit (GATE 6)
 
-This is the terminal gate. You MUST execute it AFTER generating the deliverable but BEFORE proceeding to integration.
+This is the terminal gate. The system executes it AFTER generating the deliverable but BEFORE proceeding to integration.
 
-1. Return to the working document and fill GATE 6 by auditing `[subject]_checklist.md` against the invariants.
-2. For EACH invariant, write your empirical reasoning FIRST, then the verdict.
-3. **Hard Failure Protocol:** If G6-DENSITY fails for ANY actor (any actor has <10 checks), you MUST return to Phase 2 in the working document, expand the Promise Matrix for that actor, propagate through Phases 3-4, regenerate the deliverable, and re-run GATE 6. There are NO exceptions.
-4. Once all GATE 6 invariants pass, proceed to autonomous integration.
+1. The system returns to the working document and fills GATE 6 by auditing `[subject]_checklist.md` against the invariants.
+2. For EACH invariant, empirical reasoning is written FIRST, then the verdict.
+3. **Hard Failure Protocol:** If G6-DENSITY fails for ANY actor (any actor has <10 checks), the system returns to Phase 2 in the working document, expands the Promise Matrix for that actor, propagates through Phases 3-4, regenerates the deliverable, and re-runs GATE 6. Exceptions are prohibited.
+4. Once all GATE 6 invariants pass, autonomous integration begins.
 
 ## STEP 5: Autonomous Integration
 
-You MUST NOT ask the user for permission to integrate the checks. Upon successfully passing GATE 6, immediately proceed to Step 6 and Step 7 to synchronize the project's macro-documentation autonomously.
-   - *ANTI-PATTERN:* Halting execution to prompt the user with: "I have generated the checklist, would you like me to integrate it into MASTER-SPEC?". Do not break the operational flow. Integrate silently.
-
----
+The system proceeds directly to integration without requesting user permission. Upon successfully passing GATE 6, Step 6 and Step 7 are immediately executed to synchronize the project's macro-documentation autonomously.
+   - *ANTI-PATTERN:* Halting execution to prompt the user with: "I have generated the checklist, would you like me to integrate it into MASTER-SPEC?". Breaking the operational flow is prohibited.
 
 ## STEP 6: Integration into MASTER-SPEC §8
 
-1. Read `docs/MASTER-SPEC.md`. Locate `§8`.
-2. **Additive Integration Protocol:** The derive algorithm exists to generate ADDITIONAL, NON-OVERLAPPING checks. If §8 already contains valid Kairós-formatted checks (`[ACTOR.CAT.NN]`), you MUST NOT delete or archive them. You must strictly APPEND your newly derived checks into the existing list, continuing the numbering sequence logically.
-3. **Format-Based Legacy Archiving:** The ONLY scenario where you archive existing checks to `docs/archive/checks_LEGACY_[YYYY-MM-DD_HH-MM].md` is if they are written in an obsolete, non-taxonomic format. If archiving is required, rewrite them into the new taxonomy and append your fresh checks.
-   - *ANTI-PATTERN:* Overwriting or destroying perfectly valid pre-existing checks just to "start fresh," OR suffering from No-Op Bias and skipping the addition of your new checks just because the section "looks complete."
-4. **Current State Evaluation:** Cross-reference each newly added check with the existing codebase. If it is already fulfilled, mark exactly `✅ Implementado`. Otherwise leave it unmarked.
+1. The system reads `docs/MASTER-SPEC.md` and locates `§8`.
+2. **Additive Integration Protocol:** The derive algorithm generates ADDITIONAL, NON-OVERLAPPING checks. If §8 already contains valid Kairós-formatted checks (`[ACTOR.CAT.NN]`), deleting or archiving them is strictly prohibited. The newly derived checks are appended into the existing list, continuing the numbering sequence logically.
+3. **Format-Based Legacy Archiving:** The ONLY scenario where existing checks are archived to `docs/archive/checks_LEGACY_[YYYY-MM-DD_HH-MM].md` is if they are written in an obsolete, non-taxonomic format. If archiving is required, they are rewritten into the new taxonomy and appended with the fresh checks.
+   - *ANTI-PATTERN:* Overwriting or destroying perfectly valid pre-existing checks just to "start fresh," OR suffering from No-Op Bias and skipping the addition of new checks just because the section "looks complete."
+4. **Current State Evaluation:** The system cross-references each newly added check with the existing codebase. If it is already fulfilled, it is marked as implemented using the repository's native check format (e.g., `[x] Implemented`). Emojis are disabled. Otherwise it remains pending `[ ]`.
 
 ## STEP 7: Integration into TODO.md
 
-Integrating checks into the TODO.md requires deep Architectural Nuance. AI models often exhibit "associative complacency" by lazily dumping massive amounts of generated checks into a single generic Task. You must prevent this.
+Integrating checks into the TODO.md requires deep Architectural Nuance. Associative complacency—dumping massive amounts of generated checks into a single generic Task—is strictly blocked.
 
-1. Read `docs/TODO.md`. Locate or create the Epic that fits the context.
-2. Group the PENDING checks (those without the implemented mark).
-3. **Task Density Justification:** Create as many `[TASK-NNN]` blocks as architectural separation demands. While it is technically possible for one code task to resolve many checks, any grouping of multiple checks under a single Task MUST possess an indisputable, cohesive atomic correspondence. Do not group them merely for linguistic convenience.
-   - *ANTI-PATTERN:* Generating 70 atomic checks and dumping them into 3 generic tasks like "Implement Frontend" or "Setup Database". This is semantic laziness and will cause the workflow to fail. A dense checklist requires a dense, highly specific TODO list.
-4. **Traceability Engine:** EVERY generated task MUST explicitly include the field:
-   `**Checks cubiertos:** [ACT.CAT.01.LLM], [ACT.CAT.02.HUM]`
+1. The system reads `docs/TODO.md` and locates or creates the Epic that fits the context.
+2. The PENDING checks (those without the implemented mark) are grouped.
+3. **Task Density Justification:** The system creates as many `[TASK-NNN]` blocks as architectural separation demands. Any grouping of multiple checks under a single Task possesses an indisputable, cohesive atomic correspondence. Grouping for linguistic convenience is prohibited.
+   - *ANTI-PATTERN:* Generating 70 atomic checks and dumping them into 3 generic tasks like "Implement Frontend" or "Setup Database". A dense checklist requires a dense, highly specific TODO list.
+4. **Traceability Engine:** EVERY generated task explicitly includes the mapping field, translated to the project's native language (e.g., `**Covered Checks:** [ACT.CAT.01.LLM], [ACT.CAT.02.HUM]`).
    The check IDs MUST include their verificability suffix (.LLM, .HUM, .MIX).
-5. **Verificability-Conditioned Closure:** If a task contains AT LEAST ONE check with suffix `.HUM` or `.MIX`, the task MUST be annotated with the human-closure restriction so that the AI cannot close it autonomously. Format: `⇠ 🧑 Requiere validación humana` appended to the task title.
-6. **Final Integration Gate (Internal CoT):** Before finalizing the TODO updates, execute a reverse traceability audit: *Are 100% of the newly generated MASTER-SPEC checks covered by at least one TASK in this TODO?* AND *Are all tasks containing .HUM/.MIX checks annotated with the human-closure restriction?* The math must be flawless. No derived check can be left orphaned or unassigned.
-7. Update the coverage table at the end of the `TODO.md` file (implemented vs pending counts, broken down by verificador type: .LLM / .HUM / .MIX).
+5. **Verificability-Conditioned Closure:** If a task contains AT LEAST ONE check with suffix `.HUM` or `.MIX`, the task is annotated with the human-closure restriction. A warning translated to the project's native language is appended: `[Requires human validation]`.
+6. **Final Integration Gate (Internal CoT):** Before finalizing the TODO updates, a reverse traceability audit executes: *Are 100% of the newly generated MASTER-SPEC checks covered by at least one TASK in this TODO?* AND *Are all tasks containing .HUM/.MIX checks annotated with the human-closure restriction?* No derived check can be left orphaned or unassigned.
+7. The coverage table at the end of the `TODO.md` file is updated (implemented vs pending counts, broken down by verificable category: .LLM / .HUM / .MIX).
 
 ## STEP 8: Documentary Synchronization
 
-Execute `/document` as the mandatory closing step of this workflow. This ensures that all documentary changes produced by the derivation (MASTER-SPEC §8, TODO.md) are synchronized with the rest of the documentary axis (CHANGELOG, coherence checks, timestamps).
+The `/document` workflow executes as the mandatory closing step. This ensures that all documentary changes produced by the derivation (MASTER-SPEC §8, TODO.md) are synchronized with the rest of the documentary axis (CHANGELOG, coherence checks, timestamps).
 
-**HALT. Generate summary and terminate.**
+**HALT. The system generates a summary and terminates.**

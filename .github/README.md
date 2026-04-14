@@ -1,6 +1,6 @@
 # Kairós
 
-> Sistema de gobernanza para desarrollo asistido por IA. v3.0.1
+> Sistema de gobernanza para desarrollo asistido por IA. v3.1.0
 
 ## Qué es
 
@@ -54,7 +54,7 @@ docs/
 
 ## Fundamentos técnicos
 
-El framework aplica patrones de adherencia extraídos de investigación empírica (corte: abril 2026). Cada patrón tiene un efecto medido y una implementación concreta.
+El framework aplica patrones de adherencia extraídos de investigación empírica (corte: abril 2026). Cada patrón tiene un efecto medido y una implementación concreta. Notablemente, Kairós implementa una política de **Supresión del Impuesto de Traducción**: sus instrucciones y flujos internos operan en inglés para alinearse nativamente con el espacio latente de los modelos frontera, mientras que el output espeja el idioma del usuario (Ej: español).
 
 | Patrón | Efecto medido | Decisión de diseño | Fuente |
 |---|---|---|---|
@@ -64,6 +64,7 @@ El framework aplica patrones de adherencia extraídos de investigación empíric
 | State Isolation | Mitiga -39% degradación multi-turno | El ciclo BEFORE/DURING/AFTER reconstruye el estado desde artefactos aislados en cada turno, impidiendo la acumulación de la degradación registrada en conversaciones largas | LLMs Get Lost In Multi-Turn Conversation (OpenReview, NeurIPS) |
 | Positive Directive Mapping | -50% desviación comportamental | Las reglas definen el espacio de conducta permitido; las prohibiciones cubren solo los fallos catastróficos. Mapear el espacio positivo reduce un 50% la desviación respecto a sistemas basados únicamente en prohibiciones | ClawSafety: "Safe" LLMs, Unsafe Agents (arXiv 2604.01438) |
 | Traceable Identifiers | 80.4% F1 en cadenas lógicas multi-paso | Taxonomía `[ACTOR.CAT.NN.VER]`, IDs `[R-NNN]`, `[LNC-NN]`. Los identificadores explícitos anclan cada verificación a un artefacto concreto, sosteniendo la trazabilidad en razonamientos multi-paso | Evaluating the Use of LLMs for Documentation to Code Traceability (ResearchGate) |
+| Translation Tax Suppression | Elimina "Linguistic Heterogeneity Penalty" | Los protocolos internos operan en inglés determinista para alinearse con el espacio latente de la IA, maximizando la comprensión lógica, mientras la interacción y escritura final reflejan el idioma del usuario. | Adherencia Lingüística en IA Frontera (Abril 2026) |
 
 ### Asignación de dominio por diseño
 

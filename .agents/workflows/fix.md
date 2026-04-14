@@ -1,70 +1,70 @@
 ---
-description: /fix - Diagnostica y resuelve deuda técnica, errores específicos o áreas de mejora estructural en el código. Proceso algorítmico de 5 fases con investigación de mejores prácticas y cierre documental.
+description: /fix - Diagnoses and resolves technical debt, specific errors, or areas of structural improvement in the code. Algorithmic 5-phase process with best-practice research and documentary closure.
 ---
 
-# Fix (Remediación algorítmica)
+# Fix (Algorithmic Remediation)
 
-Este workflow diagnostica y resuelve deuda técnica mediante un proceso riguroso de 5 fases. Opera en dos modos según la invocación.
+This workflow diagnoses and resolves technical debt through a rigorous 5-phase process. It operates in two modes depending on its invocation.
 
-## Detección de modo
+## Mode Detection
 
-- **`/fix` (sin argumento):** Escaneo global. Identificar patrones de deuda técnica en el codebase.
-- **`/fix [texto]` (focalizado):** Reparación quirúrgica del error o área específica descrita.
+- **`/fix` (no arguments):** Global scan. Identify technical debt patterns across the codebase.
+- **`/fix [text]` (focused):** Surgical repair of the specific error or area described.
 
 ---
 
-## Fase 1: Intake
+## Phase 1: Intake
 
-**Objetivo:** Identificar los targets de remediación.
+**Objective:** Identify remediation targets.
 
-- **Modo global:** Escanear el codebase buscando patrones de deuda (tests faltantes, dependencias obsoletas, patrones inconsistentes, código duplicado, errores de type safety). Leer `docs/DEUDA-TECNICA.md` (si existe) y `docs/TODO.md` para identificar deuda ya documentada.
-- **Modo focalizado:** El target es lo que el usuario describe. Localizar el código, archivos, y dependencias involucradas.
+- **Global mode:** The system scans the codebase for debt patterns (missing tests, obsolete dependencies, inconsistent patterns, duplicated code, type safety errors). `docs/TECHNICAL-DEBT.md` (if it exists) and `docs/TODO.md` are read to identify already documented debt.
+- **Focused mode:** The target is what the user describes. The system locates the code, files, and dependencies involved.
 
-**Salida de Fase 1:** Lista priorizada de targets con severidad (Alta / Media / Baja).
+**Output of Phase 1:** Prioritized list of targets with severity (High / Medium / Low).
 
-## Fase 2: Valla de Chesterton
+## Phase 2: Chesterton's Fence
 
-**Objetivo:** Entender POR QUÉ cada elemento está como está antes de cambiarlo.
+**Objective:** Understand WHY each element is the way it is before changing it.
 
-Para cada target identificado:
-1. Leer el historial de git (`git log --follow`, `git blame`) para entender quién introdujo el patrón y cuándo.
-2. Consultar `docs/USER-DECISIONS.md` y `docs/MEMORY.md` para determinar si fue una decisión explícita del usuario.
-3. Si la decisión fue explícita, declarar al usuario antes de proponer cambio: «Este patrón fue una decisión deliberada registrada en [referencia]. ¿Confirmas que quieres revisarlo?»
-4. Si no hay rastro de intención deliberada, proceder.
+For each identified target:
+1. The git history (`git log --follow`, `git blame`) is read to understand who introduced the pattern and when.
+2. `docs/USER-DECISIONS.md` and `docs/MEMORY.md` are consulted to determine if it was an explicit user decision.
+3. If the decision was explicit, the system declares to the user before proposing a change: "This pattern was a deliberate decision logged in [reference]. Do you confirm you want to revise it?"
+4. If there is no trace of deliberate intention, the system proceeds.
 
-**Salida de Fase 2:** Cada target anotado con su contexto histórico y justificación (o ausencia de ella).
+**Output of Phase 2:** Each target annotated with its historical context and justification (or lack thereof).
 
-## Fase 3: Investigación de mejores prácticas
+## Phase 3: Best Practice Research
 
-**Objetivo:** Verificar que la corrección propuesta es la mejor práctica actual.
+**Objective:** Verify that the proposed correction is the current best practice.
 
-Para targets de severidad Alta o Media que involucren cambio de herramienta, framework, o patrón arquitectónico:
-- Activar el skill `investigacion-estandar`.
-- Triangular soluciones actuales antes de proponer remedios.
+For High or Medium severity targets involving a change of tool, framework, or architectural pattern:
+- The `standard-research` skill activates.
+- Current SOTA solutions are triangulated before proposing remedies.
 
-Para targets de severidad Baja o correcciones mecánicas (typos, types, imports):
-- Proceder directamente sin investigación externa.
+For Low severity targets or mechanical corrections (typos, types, imports):
+- The system proceeds directly without external research.
 
-**Salida de Fase 3:** Cada target con su remedio propuesto y fuentes que lo respaldan (si aplica).
+**Output of Phase 3:** Each target with its proposed remedy and supporting sources (if applicable).
 
-## Fase 4: Plan de corrección y ejecución
+## Phase 4: Correction Plan and Execution
 
-**Objetivo:** Generar y ejecutar el plan de remediación.
+**Objective:** Generate and execute the remediation plan.
 
-1. Generar `implementation_plan.md` con cada corrección como subtarea verificable.
-2. Cada subtarea referencia el check de MASTER-SPEC §8 que satisface (si aplica).
-3. Clasificar correcciones:
-   - **Quick Wins** (severidad Baja, riesgo bajo): Aplicar inmediatamente. tests, dependencias, types, imports.
-   - **Correcciones estructurales** (severidad Alta/Media): Proponer cambios que respeten la arquitectura del MASTER-SPEC. Ejecutar con verificación.
-4. Actualizar `docs/DEUDA-TECNICA.md`. añadir nuevos items descubiertos, marcar resueltos con timestamp.
+1. The system generates `implementation_plan.md` with each correction as a verifiable subtask.
+2. Each subtask references the MASTER-SPEC §8 check it satisfies (if applicable).
+3. Corrections are classified:
+   - **Quick Wins** (Low severity, low risk): Applied immediately. Tests, dependencies, types, imports.
+   - **Structural Corrections** (High/Medium severity): Changes respecting the MASTER-SPEC architecture are proposed. Execution incorporates verification.
+4. `docs/TECHNICAL-DEBT.md` is updated. Discovered items are added, and resolved ones are marked with timestamps depending on the project's native check format.
 
-**Salida de Fase 4:** Código corregido + DEUDA-TECNICA.md actualizado.
+**Output of Phase 4:** Corrected code + updated TECHNICAL-DEBT.md.
 
-## Fase 5: Cierre documental
+## Phase 5: Documentary Closure
 
-1. Actualizar `docs/TODO.md` con el progreso realizado.
-2. Si alguna corrección implica una decisión arquitectónica significativa, registrar en `docs/USER-DECISIONS.md` tras confirmación del usuario.
-3. Si la corrección revela un patrón transferible, candidato para `docs/MEMORY.md` (con protocolo anti-sesgo: verificar si el patrón es generalizable).
-4. Ejecutar `/document` como cierre obligatorio.
+1. `docs/TODO.md` is updated with the progress made.
+2. If any correction implies a significant architectural decision, it is logged in `docs/USER-DECISIONS.md` after user confirmation.
+3. If the correction reveals a transferable pattern, it becomes a candidate for `docs/MEMORY.md` (using the anti-bias protocol: verify if the pattern is generalizable).
+4. The `/document` workflow executes as the mandatory closing step.
 
-**Salida de Fase 5:** Documentación sincronizada. Workflow terminado.
+**Output of Phase 5:** Synchronized documentation. Workflow complete.

@@ -1,152 +1,152 @@
 ---
-description: /document - Sincroniza el eje documental (MASTER-SPEC, TODO, MEMORY, USER-DECISIONS, CHANGELOG) con el estado real del proyecto. En sesiones sin trabajo previo, ejecuta auditoría completa de sincronización contra las plantillas vigentes.
+description: /document - Synchronizes the documentary axis (MASTER-SPEC, TODO, MEMORY, USER-DECISIONS, CHANGELOG) with the real state of the project. In sessions with no prior work, evaluates synchronization against current templates.
 ---
 
-# Sincronización documental
+# Documentary Synchronization
 
-Este workflow asegura que toda la documentación del proyecto refleja fielmente el estado actual del código y la arquitectura.
+This workflow ensures that all project documentation accurately reflects the current state of the code and architecture.
 
-## Detección de modo
+## Mode Detection
 
-- Si la sesión tiene trabajo previo (código modificado, tareas ejecutadas): **Modo Normal** (sincronización incremental).
-- Si la sesión no tiene trabajo previo (el usuario invocó `/document` como primera acción, o se ejecuta como cierre de `/fix`, `/derive`, etc.): **Modo Auditoría** (verificación completa contra plantillas vigentes).
+- If the session has prior work (modified code, executed tasks): **Normal Mode** (incremental synchronization).
+- If the session has no prior work (the user invoked `/document` as the first action, or it runs as the closure of `/fix`, `/derive`, etc.): **Audit Mode** (full verification against current templates).
 
 ---
 
-## Modo Auditoría (cold-start)
+## Audit Mode (cold-start)
 
-Se ejecuta cuando `/document` se invoca sin contexto de trabajo previo. Su propósito es detectar divergencias entre la documentación existente y las plantillas vigentes en `.agents/templates/`.
+Executes when `/document` is invoked without prior work context. Its purpose is to detect structural divergence between existing documentation and current templates embedded in `.agents/templates/`.
 
-### Paso 1: Inventariar documentación existente
+### Step 1: Inventory Existing Documentation
 
-Escanear `docs/` buscando los archivos del eje documental:
+The system scans `docs/` looking for the documentary axis files:
 
-| Archivo | Template canónica | Obligatorio |
+| File | Canonical Template | Mandatory |
 |---|---|---|
-| `docs/MASTER-SPEC.md` | `.agents/templates/master-spec.md` | Sí |
-| `docs/TODO.md` | `.agents/templates/todo.md` | Sí |
-| `docs/MEMORY.md` | `.agents/templates/memory.md` | Sí |
-| `docs/USER-DECISIONS.md` | `.agents/templates/user-decisions.md` | Sí |
-| `docs/CHANGELOG.md` | `.agents/templates/changelog.md` | Sí |
-| `docs/TEST.md` | `.agents/templates/TEST.md` | No (se crea con `/test`) |
-| `docs/DEUDA-TECNICA.md` | `.agents/templates/deuda-tecnica.md` | No (se crea con `/fix`) |
+| `docs/MASTER-SPEC.md` | `.agents/templates/master-spec.md` | Yes |
+| `docs/TODO.md` | `.agents/templates/todo.md` | Yes |
+| `docs/MEMORY.md` | `.agents/templates/memory.md` | Yes |
+| `docs/USER-DECISIONS.md` | `.agents/templates/user-decisions.md` | Yes |
+| `docs/CHANGELOG.md` | `.agents/templates/changelog.md` | Yes |
+| `docs/TEST.md` | `.agents/templates/TEST.md` | No (created via /test) |
+| `docs/TECHNICAL-DEBT.md` | `.agents/templates/technical-debt.md` | No (created via /fix) |
 
-### Paso 2: Catalogar discrepancias
+### Step 2: Catalog Discrepancies
 
-Para cada archivo existente, comparar contra su template canónica. Clasificar cada discrepancia:
+The system compares each existing file against its canonical template and classifies each discrepancy:
 
-| Tipo | Descripción | Ejemplo |
+| Type | Description | Example |
 |---|---|---|
-| **Archivo faltante** | Un archivo obligatorio no existe | `docs/USER-DECISIONS.md` no existe |
-| **Sección faltante** | El archivo existe pero le faltan secciones que la template define | MASTER-SPEC sin §1.Identidad, o sin campos "Problema que resuelve" |
-| **Formato legacy** | El archivo existe pero usa un formato incompatible con la template vigente | TODO sin taxonomía `[EPIC-NNN]`/`[TASK-NNN]`, MEMORY sin formato `[HEU-NNN]` |
-| **Contenido stale** | El archivo existe y tiene formato correcto pero su contenido contradice el código | MASTER-SPEC lista un módulo que ya no existe |
-| **Slop detectado** | El archivo contiene patrones de escritura IA (ver sección Detección de slop) | Sección con "cutting-edge solution" |
+| **Missing File** | A mandatory file does not exist | `docs/USER-DECISIONS.md` does not exist |
+| **Missing Section** | File exists but lacks template sections | MASTER-SPEC without §1.Identity, or without "Problem it solves" fields |
+| **Legacy Format** | File exists but uses incompatible format | TODO without `[EPIC-NNN]`/`[TASK-NNN]` taxonomy, MEMORY without `[HEU-NNN]` |
+| **Stale Content** | File exists, proper format, but contradicts code | MASTER-SPEC lists an obsolete module |
+| **Slop Detected** | File contains AI writing patterns (see Slop Detection) | Section containing "cutting-edge solution" |
 
-### Paso 3: Decidir acción por discrepancia
+### Step 3: Action Decision Logic
 
-Algoritmo de decisión para cada discrepancia catalogada:
+Decision algorithm for each cataloged discrepancy:
 
 ```
-¿El archivo existe?
-  NO → Crear desde template. Acción autónoma.
-  SÍ →
-    ¿La corrección destruye contenido que el usuario escribió?
-      NO (ej: añadir sección faltante, añadir campo nuevo, inyectar taxonomía):
-        → Ejecutar Soft-Update autónomamente. No solicitar aprobación.
-      SÍ (ej: reestructurar secciones existentes, renombrar IDs, archivar y reconstruir):
-        → Catalogar como "requiere aprobación". Presentar diff al usuario.
-    ¿La corrección modifica IDs referenciados por otros archivos?
-      SÍ → Requiere aprobación. Presentar mapa de impacto.
-      NO → Autónomo si no destruye contenido.
+Does the file exist?
+  NO → Create from template. Autonomous action.
+  YES →
+    Does the correction destroy content written by the user?
+      NO (e.g. adding missing section, new field, injecting taxonomy):
+        → Execute Soft-Update autonomously. Do not request approval.
+      YES (e.g. restructuring existing sections, renaming IDs, archiving/rebuilding):
+        → Catalog as "requires approval". Present diff to user.
+    Does the correction modify IDs referenced by other files?
+      YES → Requires approval. Present impact map.
+      NO → Autonomous if non-destructive.
 ```
 
-### Paso 4: Ejecutar correcciones
+### Step 4: Execute Corrections
 
-1. Ejecutar todas las correcciones autónomas de una vez.
-2. Presentar lista de correcciones que requieren aprobación con diffs concretos.
-3. Esperar confirmación del usuario para las destructivas.
+1. The system executes all autonomous corrections simultaneously.
+2. The user is presented with the list of corrections requiring approval with concrete diffs.
+3. The system awaits user confirmation for destructive actions.
 
-### Paso 5: Reporte
+### Step 5: Reporting
 
-Generar tabla consolidada:
+Generate consolidated table:
 
-| Documento | Discrepancia | Tipo | Acción | Estado |
+| Document | Discrepancy | Type | Action | Status |
 |---|---|---|---|---|
-| [archivo] | [qué diverge] | [faltante/legacy/stale/slop] | [qué se hizo o qué se propone] | ✅ Corregido / ⏳ Pendiente aprobación |
+| [file] | [what diverges] | [missing/legacy/stale/slop] | [what was done/proposed] | [x] Corrected / [ ] Pending approval |
 
 ---
 
-## Modo Normal (sincronización incremental)
+## Normal Mode (incremental synchronization)
 
-Se ejecuta directamente sin pedir validación previa al usuario.
+Executes directly without prior user validation.
 
-### Sincronización con código
+### Code Synchronization
 
-Para cada documento, verificar coherencia con el estado actual del proyecto:
+The system mathematically verifies the coherence of each document with the project's current state:
 
-- ¿El MASTER-SPEC refleja la arquitectura real implementada?
-- ¿El TODO.md refleja el progreso real con timestamps correctos?
-- ¿Hay decisiones en el código que falten en USER-DECISIONS.md?
-- ¿Hay cambios en el producto que no figuren en CHANGELOG.md?
-- ¿Las restricciones de MASTER-SPEC §4 están sincronizadas con `.agents/rules/03-constraints.md`?
+- Does the MASTER-SPEC reflect the real implemented architecture?
+- Does the TODO reflect real progress with correct timestamps?
+- Are there decisions in the codebase missing in USER-DECISIONS.md?
+- Are there product changes missing in CHANGELOG.md?
+- Are MASTER-SPEC §4 constraints strictly synchronized with `.agents/rules/03-constraints.md`?
 
-### Detección de slop y mocks
+### Slop and Mock Detection
 
-Verificar que no existan entregables marcados como «completos» que contengan:
+The system verifies that no deliverables marked as "complete" contain:
 
-| Categoría | Patrones de detección |
+| Category | Detection Patterns |
 |---|---|
-| **Copy corporativo-motivacional** | «Unlock your potential», «Seamless experience», «Cutting-edge solution», «Empower your workflow», «Transform your business», «Innovative platform», adjetivos vacíos de contenido específico |
-| **Datos mockeados** | Constantes hardcodeadas que simulan datos reales, arrays de ejemplo sin conexión a fuente de datos, respuestas HTTP mockeadas presentadas como integración real |
-| **Patrones RLHF en documentación** | «It's worth noting that», «Cabe destacar que», «Es importante señalar», negative parallelisms («not just X, but Y»), positividad servil |
-| **Em dashes** | Cualquier instancia del carácter (—). Zero tolerance |
+| **Corporate-Motivational Copy** | "Unlock your potential", "Seamless experience", "Cutting-edge solution", "Empower your workflow", "Transform your business", "Innovative platform", adjectives empty of specific content |
+| **Mocked Data** | Hardcoded constants simulating real data, dummy arrays disconnected from data sources, mocked HTTP responses presented as real integration |
+| **RLHF Documentation Patterns** | "It's worth noting that", "Cabe destacar que", "Es importante señalar", negative parallelisms ("not just X, but Y"), servile positivity |
+| **Em dashes** | Any instance of the character (—). Zero tolerance |
 
-Si se detecta slop o mocks en features «completadas», reportar en la tabla de brechas y crear TASK de purga en TODO.md.
+If slop or mocks are detected in "completed" features, the system reports them in the gap table and creates a purge TASK in TODO.md.
 
-### Coherencia de Trazabilidad §8 ↔ TODO
+### §8 ↔ TODO Traceability Coherence
 
-Verificación cruzada obligatoria:
+Mandatory cross-verification:
 
-1. **Checks sin TASK:** ¿Hay checks en §8 no implementados sin TASK asociada? → Crear las TASKs faltantes.
-2. **TASKs sin check:** ¿Hay TASKs que referencian IDs inexistentes en §8? → Corregir referencias o eliminar TASKs.
-3. **Checks fantasma:** ¿Hay checks marcados como ✅ cuyo código ya no existe? → Desmarcar y crear TASK de reimplementación.
-4. **Conteo de cobertura por actor:** Para cada actor en §8, contar checks implementados vs. pendientes. Registrar en tabla de resumen del TODO.
+1. **Checks without TASK:** Are there unimplemented checks in §8 without an associated TASK? → Create the missing TASKs.
+2. **TASKs without check:** Are there TASKs referencing non-existent IDs in §8? → Correct references or delete TASKs.
+3. **Ghost checks:** Are there checks marked as implemented whose code no longer exists? → Unmark and create reimplementation TASK.
+4. **Coverage count per actor:** For each actor in §8, count implemented vs. pending checks. Log in TODO summary table.
 
-### Validación de Coherencia Cruzada
+### Cross-Coherence Validation
 
-Verificar que no existan contradicciones internas:
+The system verifies no internal contradictions exist:
 
-- Intenciones/Propósitos en MASTER-SPEC §1 ↔ Épicas en TODO.md
-- Restricciones en MASTER-SPEC §4 ↔ Reglas en `.agents/rules/03-constraints.md`
-- Decisiones en USER-DECISIONS.md ↔ Trade-offs en MASTER-SPEC §5
-- Checks en MASTER-SPEC §8 ↔ TASKs en TODO.md (bidireccional)
+- Intentions/Purposes in MASTER-SPEC §1 ↔ Epics in TODO.md
+- Constraints in MASTER-SPEC §4 ↔ Rules in `.agents/rules/03-constraints.md`
+- Decisions in USER-DECISIONS.md ↔ Trade-offs in MASTER-SPEC §5
+- Checks in MASTER-SPEC §8 ↔ TASKs in TODO.md (bidirectional)
 
-### Coherencia de Verificabilidad (🤖/🧑/🤖🧑)
+### Verificability Coherence (LLM/HUM/MIX)
 
-Algoritmo determinista de 5 pasos:
+Deterministic 5-step algorithm:
 
-**PASO 1. INVENTARIAR:** Leer MASTER-SPEC §8. Extraer todos los checks con su clasificador (.LLM/.HUM/.MIX). Construir tabla interna: `{Check_ID, Verificador, Estado}`.
+**STEP 1. INVENTORY:** Read MASTER-SPEC §8. Extract all checks with their classifier (.LLM/.HUM/.MIX). Build internal memory: `{Check_ID, Verifier, Status}`.
 
-**PASO 2. CRUZAR:** Leer TODO.md. Extraer todas las tareas y sus checks cubiertos. Construir tabla interna: `{Task_ID, [Check_IDs], Estado_Tarea, Tiene_Restricción_Cierre_Humano}`.
+**STEP 2. CROSS-REFERENCE:** Read TODO.md. Extract all tasks and covered checks. Build internal memory: `{Task_ID, [Check_IDs], Task_Status, Has_Human_Closure_Restriction}`.
 
-**PASO 3. VALIDAR COHERENCIA:** Para cada check donde Verificador = .HUM o .MIX:
-- Buscar la tarea correspondiente en TODO.md.
-- ¿La tarea tiene restricción de cierre humano (⇠ 🧑)? → NO: ⚠️ CONFLICTO.
-- Si la tarea está marcada como completada: ¿Tiene timestamp de verificación humana? → NO: ⚠️ CONFLICTO.
+**STEP 3. COHERENCE VALIDATION:** For each check where Verifier = .HUM or .MIX:
+- Find the corresponding task in TODO.md.
+- Does the task have a human-closure restriction? → NO: [WARNING] CONFLICT.
+- If the task is marked as completed: Does it have a human verification timestamp? → NO: [WARNING] CONFLICT.
 
-**PASO 4. VALIDAR TIMESTAMPS:** Para cada check marcado como ✅ Implementado:
-- ¿Incluye timestamp? → NO: ⚠️ CONFLICTO.
-- ¿El tipo de verificación (🤖/🧑/🤖🧑) coincide con el clasificador del check? → NO: ⚠️ CONFLICTO.
+**STEP 4. TIMESTAMP VALIDATION:** For each check marked as Implemented:
+- Does it include a timestamp? → NO: [WARNING] CONFLICT.
+- Does the verification type (LLM/HUM/MIX) match the check's classifier? → NO: [WARNING] CONFLICT.
 
-**PASO 5. REPORTAR:** Generar resumen cuantitativo:
+**STEP 5. REPORTING:** Generate quantitative summary:
 
 ```
-Checks totales: N
-  - 🤖 .LLM: X (Y implementados, Z pendientes)
-  - 🧑 .HUM: X (Y implementados, Z pendientes de validación humana)
-  - 🤖🧑 .MIX: X (Y implementados, Z pendientes)
-  - ⚠️ Conflictos de coherencia: N [listar]
+Total checks: N
+  - .LLM: X (Y implemented, Z pending)
+  - .HUM: X (Y implemented, Z pending human validation)
+  - .MIX: X (Y implemented, Z pending)
+  - Coherence conflicts: N [list]
 ```
 
-Si se detectan checks sin sufijo de verificabilidad (legacy), clasificarlos retroactivamente usando el Árbol de Decisión del template `derive-working.md`. Si la operación es no destructiva (añadir sufijos), ejecutar autónomamente. Si es destructiva (renombrar IDs), requerir aprobación humana.
+If checks without verificability suffix (legacy) are detected, classify them retroactively using the Decision Tree in `derive-working.md`. If non-destructive (adding suffixes), execute autonomously. If destructive (renaming IDs), require human approval.

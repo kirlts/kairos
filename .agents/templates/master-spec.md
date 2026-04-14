@@ -1,132 +1,132 @@
-# MASTER-SPEC: [Nombre del Proyecto] v0.1.0
+# MASTER-SPEC: [Project Name] v0.1.0
 
-> [Descripción de una línea del proyecto]
-
----
-
-## §1. Identidad del Proyecto
-
-**Propósito:** [Qué hace, para quién, y por qué importa. No como elevator pitch; como declaración de intención que un colaborador pueda usar para tomar decisiones sin preguntar.]
-
-**Nombre:** [Nombre del proyecto]
-
-**Dominio:** [Categoría del problema: ej. "Seguridad de datos", "Educación", "RegTech"]
-
-**Problema que resuelve:** [Cuál es la fricción, ineficiencia, o necesidad concreta que este proyecto ataca. Una persona que no conoce el proyecto debería poder entender el dolor que esto alivia.]
-
-**Beneficiario directo:** [Quién recibe valor concreto de este proyecto. No "usuarios" en abstracto; la entidad específica que mejora su situación.]
-
-**Beneficiario indirecto:** [Si aplica: quién se beneficia como consecuencia secundaria.]
-
-**Lo que NO es:** [Qué no intenta ser este proyecto. Esto protege el scope contra la expansión no intencionada. Si no hay restricciones de scope, escribir: "Sin restricciones de scope definidas."]
+> [One-line project description]
 
 ---
 
-## §2. Arquitectura
+## §1. Project Identity
 
-**Tipo:** [Zero-backend / Cliente-Servidor / Monolito / Microservicios / etc.]
+**Purpose:** [What it does, for whom, and why it matters. Not as an elevator pitch; as an intention statement that a contributor can use to make decisions without asking.]
 
-**Diagrama de Componentes:**
+**Name:** [Project Name]
+
+**Domain:** [Problem category: e.g., "Data Security", "Education", "RegTech"]
+
+**Problem it solves:** [What friction, inefficiency, or concrete need this project attacks. A person unfamiliar with the project should be able to understand the pain it alleviates.]
+
+**Direct beneficiary:** [Who receives concrete value from this project. Not "users" in the abstract; the specific entity whose situation improves.]
+
+**Indirect beneficiary:** [If applicable: who benefits as a secondary consequence.]
+
+**What it IS NOT:** [What this project does NOT attempt to be. This protects the scope from unintended expansion. If there are no scope constraints, write: "No defined scope constraints."]
+
+---
+
+## §2. Architecture
+
+**Type:** [Zero-backend / Client-Server / Monolith / Microservices / etc.]
+
+**Component Diagram:**
 
 ```
-[Componente A] → [Componente B] → [Componente C]
+[Component A] → [Component B] → [Component C]
 ```
 
-**Flujo de Datos Principal:**
+**Main Data Flow:**
 
-1. [Paso 1]
-2. [Paso 2]
-3. [Paso N]
+1. [Step 1]
+2. [Step 2]
+3. [Step N]
 
 ---
 
-## §3. Stack Técnico
+## §3. Technical Stack
 
-| Capa | Tecnología | Justificación |
+| Layer | Technology | Justification |
 | --- | --- | --- |
-| Frontend | [ej. React + Vite] | [por qué esta y no otra] |
-| Backend | [ej. Zero-backend] | [por qué] |
-| Datos | [ej. IndexedDB] | [por qué] |
-| Hosting | [ej. GitHub Pages] | [por qué] |
+| Frontend | [e.g., React + Vite] | [why this and not another] |
+| Backend | [e.g., Zero-backend] | [why] |
+| Data | [e.g., IndexedDB] | [why] |
+| Hosting | [e.g., GitHub Pages] | [why] |
 
 ---
 
-## §4. Restricciones (Límites Intransgredibles)
+## §4. Constraints (Inviolable Boundaries)
 
-> Estas restricciones anulan cualquier otra decisión. Son las líneas que no se cruzan.
+> These constraints override any other decision. They are the lines that must not be crossed.
 
-1. [ej. Cero transmisión de datos del usuario fuera del navegador]
-2. [ej. Compatibilidad con Chrome, Firefox y Safari]
-3. [restricción N]
+1. [e.g., Zero user data transmission outside the browser]
+2. [e.g., Compatibility with Chrome, Firefox, and Safari]
+3. [constraint N]
 
-> Nota: Las restricciones registradas aquí se duplican defensivamente en `.agents/rules/03-constraints.md` para sobrevivir a la degradación de contexto en sesiones largas.
+> Note: Constraints logged here are defensively duplicated in `.agents/rules/03-constraints.md` to survive context degradation in long sessions.
 
 ---
 
-## §5. Trade-offs Acordados
+## §5. Agreed Trade-offs
 
-> Decisiones donde se sacrificó una cualidad en favor de otra, con la razón explícita.
+> Decisions where one quality was sacrificed in favor of another, with the explicit reason.
 
-| Trade-off | A favor de | En contra de | Justificación |
+| Trade-off | In favor of | Against | Justification |
 | --- | --- | --- | --- |
-| [ej. Bundle size vs funcionalidad] | [Funcionalidad] | [Bundle size] | [por qué se eligió esto] |
+| [e.g., Bundle size vs functionality] | [Functionality] | [Bundle size] | [why this was chosen] |
 
 ---
 
-## §6. Interfaz y Experiencia de Usuario
+## §6. UI and User Experience
 
-**Atmósfera de referencia:** [Descripción del "feel" buscado. No adjetivos genéricos ("moderno", "limpio"); referentes concretos, colores, sensaciones, analogías.]
+**Reference atmosphere:** [Description of the desired "feel". Not generic adjectives ("modern", "clean"); concrete referents, colors, sensations, analogies.]
 
-**Flujo principal del usuario:**
+**Main user flow:**
 
-1. [Paso 1]
-2. [Paso 2]
-3. [Paso N]
+1. [Step 1]
+2. [Step 2]
+3. [Step N]
 
-**Componentes de interfaz:**
+**Interface components:**
 
-| Componente | Función | Archivo |
+| Component | Function | File |
 | --- | --- | --- |
-| [ej. DropZone] | [ej. Área de carga de archivos] | [ej. src/components/DropZone.tsx] |
+| [e.g., DropZone] | [e.g., File upload area] | [e.g., src/components/DropZone.tsx] |
 
 ---
 
-## §7. Especificaciones de Módulos
+## §7. Module Specifications
 
-> Detalle técnico de cada módulo o componente crítico del sistema.
+> Technical detail of each module or critical system component.
 
-### 7.1. [Nombre del Módulo]
+### 7.1. [Module Name]
 
-**Propósito:** [qué hace y por qué existe como módulo separado]
+**Purpose:** [what it does and why it exists as a separate module]
 
-**Interfaz:**
+**Interface:**
 
 ```
-[firma de función/API/endpoint]
+[function/API/endpoint signature]
 ```
 
-**Dependencias:** [lista de dependencias]
+**Dependencies:** [dependency list]
 
 ---
 
-## §8. Checklist de Verificación
+## §8. Verification Checklist
 
-> Sección canónica poblada por `/derive`. Si no se ha ejecutado `/derive`, escribir:
-> "Pendiente de verificación formal; ejecutar `/derive` para poblar esta sección."
+> Canonical section populated by `/derive`. If `/derive` has not been executed, write:
+> "Pending formal verification; execute `/derive` to populate this section."
 
 <!--
-Taxonomía: [ACTOR.CATEGORÍA.NN.VER]
-Actores: Definidos por /derive según el proyecto
-Categorías: AV (Disponibilidad), FN (Funcionalidad), CR (Corrección), IN (Integridad), RS (Resiliencia)
-Verificador (VER): LLM (automatizable), HUM (requiere humano), MIX (pre-verificable + humano)
+Taxonomy: [ACTOR.CATEGORY.NN.VER]
+Actors: Defined by /derive according to the project
+Categories: AV (Availability), FN (Functionality), CR (Correctness), IN (Integrity), RS (Resilience)
+Verifier (VER): LLM (automatable), HUM (requires human), MIX (pre-verifiable + human)
 
-Formato de check:
-  🧑 `[ACTOR.CAT.NN.HUM]` Acción → Resultado. *(Promesa validada)*
-  🤖 `[ACTOR.CAT.NN.LLM]` Acción → Resultado. *(Promesa validada)*
-  🤖🧑 `[ACTOR.CAT.NN.MIX]` Acción → Resultado. *(Promesa validada)*
+Check format:
+  🧑 `[ACTOR.CAT.NN.HUM]` Action → Result. *(Validated promise)*
+  🤖 `[ACTOR.CAT.NN.LLM]` Action → Result. *(Validated promise)*
+  🤖🧑 `[ACTOR.CAT.NN.MIX]` Action → Result. *(Validated promise)*
 
-Formato de implementación (con timestamp obligatorio):
-  ✅ Implementado (🤖 Verificado por [herramienta]; YYYY-MM-DD HH:MM)
-  ✅ Implementado (🧑 Confirmado por usuario; YYYY-MM-DD HH:MM)
-  ✅ Implementado (🤖🧑 Pre-verificado por [herramienta], confirmado por usuario; YYYY-MM-DD HH:MM)
+Implementation format (with mandatory timestamp):
+  ✅ Implemented (🤖 Verified by [tool]; YYYY-MM-DD HH:MM)
+  ✅ Implemented (🧑 Confirmed by user; YYYY-MM-DD HH:MM)
+  ✅ Implemented (🤖🧑 Pre-verified by [tool], confirmed by user; YYYY-MM-DD HH:MM)
 -->

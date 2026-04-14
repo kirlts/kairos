@@ -1,33 +1,33 @@
 # Changelog
 
-Todos los cambios notables del proyecto se documentan en este archivo.
+All notable changes to this project will be documented in this file.
 
-El formato está basado en [Keep a Changelog](https://keepachangelog.com/es/1.1.0/),
-y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-*Nada pendiente.*
+*Nothing pending.*
 
 <!--
-FORMATO DE ENTRADA:
+INPUT FORMAT:
 
 ## [X.Y.Z] - YYYY-MM-DD
 
 ### Added
-- Descripción de la funcionalidad agregada.
+- Description of the added functionality.
 
 ### Changed
-- Descripción de lo que cambió.
+- Description of what changed.
 
 ### Fixed
-- Descripción del bug corregido.
+- Description of the fixed bug.
 
 ### Removed
-- Descripción de lo que se eliminó.
+- Description of what was removed.
 
-REGLAS:
-- La IA añade entradas a [Unreleased] al completar trabajo.
-- Al hacer release, [Unreleased] se mueve a una versión numerada.
-- Cada entrada describe el QUÉ cambió, no el CÓMO.
+RULES:
+- The AI adds entries to [Unreleased] upon completing work.
+- When performing a release, [Unreleased] is moved to a numbered version.
+- Each entry describes WHAT changed, not HOW.
 -->

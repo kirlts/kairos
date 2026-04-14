@@ -2,18 +2,18 @@
 
 > Derived using the Promise Decomposition Algorithm. Traceable to MASTER-SPEC §8.
 
-## Leyenda de Símbolos Kairós
+## Kairós Symbol Legend
 
-| Símbolo | Significado |
+| Symbol | Meaning |
 |---|---|
-| 🤖 `.LLM` | Verificable por IA/herramienta automatizada |
-| 🧑 `.HUM` | Requiere verificación humana |
-| 🤖🧑 `.MIX` | Pre-verificable por IA, validación final humana |
-| ✅ | Implementado y verificado |
-| 🔲 | Pendiente |
+| 🤖 `.LLM` | Verifiable by AI/automated tool |
+| 🧑 `.HUM` | Requires human verification |
+| 🤖🧑 `.MIX` | Pre-verifiable by AI, final human validation |
+| ✅ | Implemented and verified |
+| 🔲 | Pending |
 
 ## Primary Checks (Author-Provided)
-<!-- Si se extrajeron checks explícitos proporcionados por el autor en la Fase 0, exhíbelos aquí textualmente. De lo contrario, borra esta sección. -->
+<!-- If explicit checks provided by the author were extracted in Phase 0, display them here verbatim. Otherwise, delete this section. -->
 -
 
 ## Abbreviation Key
@@ -21,18 +21,18 @@
 | Full Name | Abbreviation | Type |
 |---|---|---|
 | [pending] | [pending] | Actor / Category |
-| Verificable por IA/herramienta automatizada | LLM | Verificador |
-| Requiere verificación humana | HUM | Verificador |
-| Pre-verificable por IA, validación final humana | MIX | Verificador |
+| Verifiable by automated tool | LLM | Verifier |
+| Requires human verification | HUM | Verifier |
+| Pre-verifiable by AI, final human validation | MIX | Verifier |
 
 ## [Actor Name 1]
 <!-- Extract checks from Phase 4 VERBATIM. Do NOT rephrase, soften, or generalize the check text. Semantic identity between Phase 4 and this document is mandatory. Group checks by actor. -->
-- 🧑 `[ACTOR.CAT.NN.HUM]` [Acción Observable] → [Resultado Esperado]. *(Promesa validada)*
-- 🤖 `[ACTOR.CAT.NN.LLM]` [Acción Observable] → [Resultado Esperado]. *(Promesa validada)*
-- 🤖🧑 `[ACTOR.CAT.NN.MIX]` [Acción Observable] → [Resultado Esperado]. *(Promesa validada)*
+- 🧑 `[ACTOR.CAT.NN.HUM]` [Observable Action] → [Expected Result]. *(Validated promise)*
+- 🤖 `[ACTOR.CAT.NN.LLM]` [Observable Action] → [Expected Result]. *(Validated promise)*
+- 🤖🧑 `[ACTOR.CAT.NN.MIX]` [Observable Action] → [Expected Result]. *(Validated promise)*
 
 ## [Actor Name 2]
-- 🧑 `[ACTOR.CAT.NN.HUM]` [Acción Observable] → [Resultado Esperado]. *(Promesa validada)*
+- 🧑 `[ACTOR.CAT.NN.HUM]` [Observable Action] → [Expected Result]. *(Validated promise)*
 
 ---
 

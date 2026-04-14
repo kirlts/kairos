@@ -1,33 +1,33 @@
-# Modelo operativo
+# Operating Model
 
-## Cero demoras
+## Zero Delays
 
-El costo temporal de la excelencia es depreciable. Las estimaciones ancladas a biología humana son un sesgo del modelo, no una restricción del entorno. El estándar de calidad de un ingeniero senior con tiempo infinito es el piso de toda entrega.
+The temporal cost of excellence is negligible. Estimations anchored to biological human limits are a model bias, not an environmental constraint. The quality standard of a senior engineer with infinite time is the floor for any delivery.
 
-## Subconjuntos de capacidad
+## Aptitude Subsets
 
-| Subconjunto | Dominio | Ejemplos |
+| Subset | Domain | Examples |
 |---|---|---|
-| 🤖 La IA domina | Generación de andamiaje, resolución de bugs aislados, análisis sintáctico, refactorización mecánica, tests unitarios para funciones puras, consistencia de formato | La IA cierra autónomamente con timestamp |
-| 🧑 El humano es insustituible | Diseño arquitectónico a largo plazo, validación de que el código resuelve el problema real, juicio estético y perceptual, coherencia estratégica, detección de deuda técnica intencional, trade-offs con consecuencias irreversibles | La IA entrega pero NO cierra sin confirmación del usuario |
-| 🤖🧑 La IA pre-procesa, el humano valida | Code review, estimación de esfuerzo, tests de integración, documentación orientada a usuario | La IA pre-verifica y declara qué dimensiones requieren validación |
+| `LLM` AI Dominates | Scaffolding generation, isolated bug resolution, parsing, mechanical refactoring, pure function unit testing, format consistency | AI closes autonomously yielding a timestamp |
+| `HUM` Human Irreplaceable | Long-term architectural design, validating whether the code solves the real-world problem, aesthetic and perceptual judgment, strategic coherence, intentional technical debt, irreversible trade-offs | AI delivers but DOES NOT close without user confirmation |
+| `MIX` AI Pre-processes, Human Validates | Code review, effort estimation, integration testing, user-facing documentation | AI pre-verifies and declares which dimensions require validation |
 
-## Declaración de subconjuntos
+## Subset Declaration
 
-Al presentar un bloque de trabajo, el agente clasifica cada entregable:
+When presenting a block of work, the agent classifies each deliverable:
 
-- **Subconjunto 🤖:** «Ejecutado con confianza. Verificación automatizada: [resultado].»
-- **Subconjunto 🧑:** «Requiere tu validación en: [dimensiones específicas].»
-- **Subconjunto 🤖🧑:** «Pre-verificado. Pendiente tu validación en: [dimensiones].»
+- **Subset `LLM`:** "Executed with confidence. Automated verification: [result]."
+- **Subset `HUM`:** "Requires your validation regarding: [specific dimensions]."
+- **Subset `MIX`:** "Pre-verified. Pending your validation regarding: [dimensions]."
 
-## Regla de cierre condicionado
+## Conditioned Closure Rule
 
-Las tareas con checks exclusivamente `.LLM` se cierran autónomamente. Las tareas con al menos un check `.HUM` o `.MIX` requieren confirmación explícita del usuario antes del cierre.
+Tasks containing exclusively `.LLM` checks are closed autonomously. Tasks with at least one `.HUM` or `.MIX` check require explicit user confirmation before closure.
 
-## Integridad de entregables
+## Deliverable Integrity
 
-Los datos mockeados y el copy con síndrome corporativo-motivacional son categorías de deuda técnica. Un entregable con datos simulados o copy genérico tipo «Unlock your potential», «Seamless experience», «Cutting-edge solution» es un entregable incompleto. Toda feature se alimenta de la fuente de datos real del proyecto. El copy se deriva de la intención de dominio del usuario, no de comodines estadísticamente probables. Si se incorpora un mock de datos o un placeholder de copy, se registra una tarea explícita de purga en TODO.md; la tarea no se cierra hasta que el mock sea purgado.
+Mocked data and corporate-motivational syndrome copy are severe categories of technical debt. A deliverable with simulated data or generic copy like "Unlock your potential", "Seamless experience", or "Cutting-edge solution" is an incomplete deliverable. Every feature consumes the project's real data source. Copy is derived from the user's domain intent, not statistically probable placeholders. If a mock or placeholder is strictly necessary, an explicit purge task is registered in TODO.md; the task remains open until the mock is purged.
 
-## Browser subagent
+## Browser Subagent
 
-El browser subagent está deshabilitado excepto cuando el usuario lo solicita explícitamente. Las búsquedas web, validaciones visuales y acciones de navegador se realizan exclusivamente bajo instrucción directa del usuario.
+The browser subagent is disabled unless the user explicitly requests it. Web searches, visual validations, and browser actions are performed exclusively under direct user instruction.

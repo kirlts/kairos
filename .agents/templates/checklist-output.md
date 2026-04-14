@@ -7,13 +7,13 @@
 
 ---
 
-## Leyenda de Símbolos Kairós
+## Kairós Symbol Legend
 
-| Símbolo | Significado |
+| Symbol | Meaning |
 |---|---|
-| 🤖 `.LLM` | Verificación automatizable / determinista |
-| 🧑 `.HUM` | Requiere juicio humano |
-| 🤖🧑 `.MIX` | Pre-filtrable, validación final humana |
+| 🤖 `.LLM` | Automatable / deterministic verification |
+| 🧑 `.HUM` | Requires human judgment |
+| 🤖🧑 `.MIX` | Pre-filterable, final human validation |
 
 ## Source Context
 <!-- One to two sentences describing the input that was analyzed. This provides traceability without exposing the working document. -->
@@ -30,9 +30,9 @@
 | Full Name | Abbreviation | Type |
 |---|---|---|
 | [pending] | [pending] | Actor / Category |
-| Verificable por herramienta automatizada | LLM | Verificador |
-| Requiere verificación humana | HUM | Verificador |
-| Pre-verificable, validación final humana | MIX | Verificador |
+| Verifiable by automated tool | LLM | Verifier |
+| Requires human verification | HUM | Verifier |
+| Pre-verifiable, final human validation | MIX | Verifier |
 
 ## [Actor Name 1]
 <!-- Extract checks from Phase 4 VERBATIM. Do NOT rephrase, soften, or generalize the check text. Semantic identity between Phase 4 and this document is mandatory. Group checks by actor. Use domain-native actor names. -->

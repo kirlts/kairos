@@ -1,69 +1,69 @@
 ---
-description: /update - Actualiza el sistema de gobernanza Kairós a su última versión oficial sin afectar tu código.
+description: /update - Updates the Kairós governance system to its latest official version without affecting your project code.
 ---
 
-# Actualización
+# Update
 
-Este workflow actualiza los archivos de gobernanza del sistema Kairós (reglas, workflows, skills, templates) a la última versión disponible en el repositorio remoto, sin afectar la documentación del proyecto del usuario.
+This workflow updates the Kairós governance files (rules, workflows, skills, templates) to the latest version available in the remote repository, without affecting the user's project documentation.
 
-## Variables de Configuración
+## Configuration Variables
 
 - **REPO_OWNER:** kirlts
 - **REPO_NAME:** kairos
 - **BRANCH:** main
 - **VERSION_FILE:** kairos-version.txt
 
-## Paso 0: Detección de Versión Local
+## Step 0: Local Version Detection
 
-Leer la primera línea de `kairos-version.txt` en la raíz del repositorio local. Esta es la versión instalada.
+The first line of `kairos-version.txt` at the root of the local repository is read. This represents the installed version.
 
-## Paso 1: Detección de Versión Remota
+## Step 1: Remote Version Detection
 
-Leer el archivo de versión remoto en:
+The remote version file is read at:
 
 ```text
 https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/kairos-version.txt
 ```
 
-Extraer la primera línea como versión remota. El resto del archivo es el manifiesto de archivos de gobernanza.
+The first line is extracted as the remote version. The rest of the file represents the governance file manifest.
 
-## Paso 2: Comparación de Versiones
+## Step 2: Version Comparison
 
-- Si versión local == versión remota → informar "Kairós está actualizado" y detener
-- Si versión local < versión remota → continuar con actualización
+- If local version == remote version → report "Kairós is up to date" and stop.
+- If local version < remote version → proceed with update.
 
-## Paso 3: Detección de Cambios
+## Step 3: Change Detection
 
-Usando el manifiesto del archivo remoto `kairos-version.txt`:
+Using the manifest from the remote `kairos-version.txt`:
 
-Para CADA ruta listada en el manifiesto remoto:
+For EACH path listed in the remote manifest vs the local manifest:
 
-1. **ADD:** Si la ruta existe en el manifiesto remoto pero NO existe localmente → archivo nuevo
-2. **MODIFY:** Si la ruta existe en ambos → posible modificación. Leer ambas versiones (remota y local). Si difieren → cambio detectado
-3. **DELETE:** Si la ruta existe en el manifiesto local pero NO en el remoto → archivo eliminado en la nueva versión
+1. **ADD:** If the path exists in the remote manifest but NOT locally → new file.
+2. **MODIFY:** If the path exists in both → potential modification. Read both versions (remote and local). If they differ → change detected.
+3. **DELETE:** If the path exists in the local manifest but NOT in the remote → file removed in the new version. Also, ensure any resulting empty master directories (like old `skills/` folders) are subsequently purged.
 
-## Paso 4: Presentación de Diff
+## Step 4: Diff Presentation
 
-Presentar al usuario una tabla de cambios detectados:
+The user is presented with a table of detected changes:
 
-| Archivo | Tipo | Descripción del cambio |
+| File | Type | Change Description |
 | --- | --- | --- |
 
-**NO aplicar ningún cambio sin aprobación explícita del usuario.**
+**Applying any changes without explicit user approval is strictly forbidden.**
 
-Recordar: los archivos de `docs/` NUNCA se tocan en un /update. son propiedad del proyecto, no de Kairós.
+Files within `docs/` are NEVER touched during an `/update`. They belong to the project, not Kairós.
 
-## Paso 5: Aplicación
+## Step 5: Application
 
-Para cada archivo aprobado:
+For each approved file:
 
-- **ADD:** Crear el archivo con el contenido remoto
-- **MODIFY:** Reemplazar el archivo local con la versión remota
-- **DELETE:** Eliminar el archivo local
+- **ADD:** The file is created with remote content.
+- **MODIFY:** The local file is replaced with the remote version.
+- **DELETE:** The local file is deleted. Its parent directory is purged if it becomes empty.
 
-Actualizar `kairos-version.txt` local con la nueva versión + manifiesto.
+The local `kairos-version.txt` is updated with the new version and manifest.
 
-## Paso 6: Post-Update
+## Step 6: Post-Update
 
-- Añadir entrada a `docs/CHANGELOG.md` sección [Kairós]
-- Informar al usuario si alguna regla nueva requiere acción (ej: nuevo workflow disponible)
+- An entry is added to `docs/CHANGELOG.md` under the `[Kairós]` section.
+- The user is notified if any new rules require action (e.g., new available workflow).

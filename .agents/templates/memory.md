@@ -1,30 +1,30 @@
-# MEMORY: Heurísticas Transferibles
+# MEMORY: Transferable Heuristics
 
-> Repositorio de patrones y lecciones que serían útiles en cualquier proyecto, independientemente del dominio.
-> Archivo Append-Only. Prohibido reducir, borrar o sintetizar contenido previo.
+> Repository of patterns and lessons that would be useful in any project, regardless of the domain.
+> Append-Only file. Forbidden to reduce, delete, or synthesize prior content.
 
-| Símbolo | Significado |
+| Symbol | Meaning |
 |---|---|
-| 🧠 | Heurística transferible aprendida |
+| 🧠 | Transferable heuristic learned |
 
 ---
 
 <!--
-FORMATO DE ENTRADA:
+INPUT FORMAT:
 
-## [HEU-NNN] Título descriptivo del patrón
+## [HEU-NNN] Descriptive pattern title
 
-**Fecha:** YYYY-MM-DD
-**Origen:** [Contexto donde se descubrió el patrón]
-**Patrón:** [Descripción del comportamiento observado]
-**Lección:** [Qué hacer o evitar en el futuro, generalizable a cualquier proyecto]
-**Fuente:** [URL citada] | [Confirmado por usuario - sin fuente externa]
+**Date:** YYYY-MM-DD
+**Origin:** [Context where the pattern was discovered]
+**Pattern:** [Description of the observed behavior]
+**Lesson:** [What to do or avoid in the future, generalizable to any project]
+**Source:** [Cited URL] | [Confirmed by user - no external source]
 
-REGLAS:
-- Solo heurísticas TRANSFERIBLES a otros proyectos. No logs de sesión ni changelogs.
-- Antes de escribir, verificar con búsqueda web si el patrón es generalizable.
-- Si no hay confirmación externa, solicitar confirmación del usuario.
-- Si el usuario confirma: tag [Confirmado por usuario - sin fuente externa].
-- Si no confirma: NO escribir en MEMORY.
-- Citas textuales del usuario cuando capturen intención pura.
+RULES:
+- Only heuristics TRANSFERABLE to other projects. No session logs or changelogs.
+- Before writing, verify with web search if the pattern is generalizable.
+- If there is no external confirmation, request user confirmation.
+- If the user confirms: tag [Confirmed by user - no external source].
+- If not confirmed: DO NOT write in MEMORY.
+- Verbatim quotes from the user when they capture pure intention.
 -->
