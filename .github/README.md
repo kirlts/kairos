@@ -58,7 +58,7 @@ El framework aplica patrones de adherencia extraídos de investigación empíric
 
 | Patrón | Efecto medido | Implementación en Kairós | Fuente |
 |---|---|---|---|
-| Declarative System Framing | -81% varianza de adherencia entre idiomas | Constraints redactadas como hechos del entorno, no como comandos | Imperative Interference: Social Register Shapes Instruction Topology in LLMs (arXiv 2603.25015) |
+| Declarative System Framing | -81% varianza de adherencia entre idiomas | Constraints redactadas como hechos del entorno | Imperative Interference: Social Register Shapes Instruction Topology in LLMs (arXiv 2603.25015) |
 | Tabular Superiority | +40.29% precisión en lógica condicional | Subconjuntos 🤖/🧑/🤖🧑, Leyes de Armonía, LNC | Better Think with Tables: Tabular Structures Enhance LLM Comprehension (arXiv 2412.17189) |
 | Primacy/Recency Anchoring | Mitiga Factorial Dead Zone | Working templates (23K, 33K) duplican constraints en ambos extremos | Lost in the Middle: How Language Models Use Long Contexts (Stanford CS, arXiv 2307.03172); Lost in the Middle at Birth: An Exact Theory of Transformer Position Bias (arXiv 2603.10123) |
 | State Isolation | Mitiga -39% degradación multi-turno | Ciclo BEFORE/DURING/AFTER, artefactos con estado aislado | LLMs Get Lost In Multi-Turn Conversation (OpenReview, NeurIPS) |
@@ -89,11 +89,11 @@ Mitigación:
 
 ### Erradicación del sesgo de compresión (Falsa modestia)
 
-Los modelos de lenguaje han sido entrenados con dinámicas de seguridad conversacional que con frecuencia derivan en "falsa modestia" técnica: ofrecen resúmenes descriptivos, asumen posiciones restrictivas ante cambios grandes o usan interpoladores pasivos (`// resto del código aquí`) asumiendo empíricamente que el esfuerzo de desarrollo es costoso por defecto.
+Los modelos de lenguaje derivan en "falsa modestia" técnica como consecuencia del entrenamiento conversacional: ofrecen resúmenes descriptivos, asumen posiciones restrictivas ante cambios grandes y usan interpoladores pasivos (`// resto del código aquí`) tratando el tipeo como un costo real.
 
-Kairós reconoce por diseño una ventaja algorítmica fundamental: **el costo temporal de ejecución o de fatiga no existen para el entorno del modelo**. El framework regula y exige estrictamente la programación volumétrica y exhaustiva. Al anular las estimaciones ancladas a límites fisiológicos humanos, la IA queda incitada a materializar versiones finales enteras y exactas dentro de su dominio de jurisdicción funcional (Subconjunto 🤖 LLM), erradicando las omisiones.
+Las reglas del framework establecen que **el costo temporal de ejecución no existe para el modelo**. La IA opera sin fatiga biológica ni restricción de volumen. Por ello, las directivas exigen entregas completas y exhaustivas dentro del Subconjunto 🤖 LLM, sin omisiones.
 
-**Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025) demostrando que las estimaciones técnicas del LLM (ρ=0.44) asumen restricciones biológicas irreales. Reporte Greptile *State of AI Coding* documentando una escalada profunda del volumen neto operado por la IA en *Pull Requests* de código base cuando no está limitada por mitigación conversacional.
+**Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025): LLMs asumen restricciones biológicas en sus estimaciones (ρ=0.44 vs. humanos ρ=0.50). Greptile *State of AI Coding*: aumento del +93% en líneas por PR cuando no hay restricciones conversacionales (mediana: 57→110 líneas).
 
 ## Adopción
 

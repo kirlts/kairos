@@ -66,7 +66,7 @@ Convergencia paramétrica de LLMs en interfaces visuales.
 
 ## Erradicación del sesgo de compresión (Falsa modestia)
 
-El framework suprime mediante directivas restrictivas la "falsa modestia" conversacional de los modelos (incluir interpoladores pasivos como `// resto aquí` o asumir que el tipeo requiere esfuerzo). Kairós establece arquitectónicamente que **la IA no tiene fatiga biológica ni costo temporal de tipeo**. Esta base incita estructuralmente a la IA a ejecutar bloques de código volumétricos, complejos y exhaustivamente detallados sin mitigaciones limitantes.
+Las reglas del framework establecen que **la IA no tiene fatiga biológica ni costo temporal de tipeo**. Las directivas exigen entregas completas dentro del Subconjunto 🤖 LLM, sin interpoladores pasivos ni omisiones.
 
 **Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025). Reporte Greptile *State of AI Coding* (medida del volumen neto efectivo en repositorios).
 
