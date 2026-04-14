@@ -35,9 +35,9 @@ La IA determina el tipo de salto de versión (SemVer) basándose en la gravedad 
   - Correcciones de redacción (typos).
   - Actualización de prompts, lógicas internas, y bugfixes estructurales dentro de los mismos archivos, que no cambian el contrato primario. Ningún archivo fue eliminado.
 
-## Paso 3: Triaje con el Usuario
+## Paso 3: Triaje (Informativo)
 
-Presentar el plan de release:
+Presentar el plan de release al usuario y proceder directamente a la generación de artefactos:
 
 ```markdown
 **Versión actual:** vX.Y.Z
@@ -50,9 +50,7 @@ Presentar el plan de release:
 - [~] [Cambios registrados]
 ```
 
-**Preguntar explícitamente:** "¿Apruebas la generación de este release y el bump sugerido?"
-
-## Paso 4: Generación de Artefactos (Post-Aprobación)
+## Paso 4: Generación de Artefactos
 
 ### 4.1 Manifiesto de versión
 1. **Reescribir `kairos-version.txt`**:

@@ -1,10 +1,14 @@
 # Kairós
 
-> Sistema de gobernanza para desarrollo asistido por IA. v3.0.0
+> Sistema de gobernanza para desarrollo asistido por IA. v3.0.1
 
 ## Qué es
 
-Un framework que vive dentro de tu repositorio (`.agents/`) y estructura la interacción entre el desarrollador y su IA de codificación. Funciona con Cursor, Windsurf, Claude Code, Gemini CLI, o cualquier IDE que soporte agentes con acceso al filesystem.
+Un framework que vive dentro de tu repositorio (`.agents/`) y es operado autónomamente por la IA de codificación. Las reglas, workflows, skills y plantillas están escritas para ser leídas, interpretadas y ejecutadas por el agente sin mediación humana. El usuario define la intención del proyecto; la IA gestiona la ejecución del sistema de gobernanza completo, incluyendo la documentación del proyecto.
+
+**Entorno optimizado:** Antigravity IDE. El framework ha sido desarrollado y validado en este entorno.
+
+**Compatibilidad teórica:** Cursor, Windsurf, Claude Code, Gemini CLI, y cualquier IDE que soporte agentes con acceso al filesystem. Estas implementaciones son plausibles pero no han sido probadas en producción.
 
 ## Qué problema ataca
 

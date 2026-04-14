@@ -5,6 +5,17 @@
 
 ## [Unreleased]
 
+## [v3.0.1] - 2026-04-14
+
+### Added
+- Sección "Rol del agente" en `00-behavior.md`: declaración explícita de que la IA es el operador autónomo del framework.
+- Sección "Asignación de dominio por diseño" en ambos READMEs: diferenciador arquitectónico 🤖/🧑/🤖🧑 con fuentes empíricas.
+- Sección "Erradicación del sesgo de compresión (Falsa modestia)" en ambos READMEs: documentación del principio de ejecución volumétrica sin límites biológicos.
+
+### Changed
+- READMEs actualizados: Antigravity IDE como entorno optimizado; Cursor, Claude Code, Windsurf como compatibilidad teórica no probada.
+- Workflow `/release` ya no solicita confirmación explícita. El triaje es informativo y la generación de artefactos procede de inmediato.
+
 ## [v3.0.0] - 2026-04-14
 
 ### Added
