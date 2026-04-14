@@ -83,11 +83,13 @@ Mitigación:
 
 **Fuente:** Síntesis de hallazgos sobre convergencia paramétrica en interfaces generadas por IA (2025-2026). Patrones de detección de escritura IA: Wikipedia, "Signs of AI Writing".
 
-### Sesgo de compresión
+### Erradicación del sesgo de compresión (Falsa modestia)
 
-Los LLMs subestiman su capacidad de ejecución. El estudio Anthropic sobre estimación JIRA (2025, dataset JOSSE: proyectos Apache, JBoss, Spring) mostró que Claude obtuvo ρ=0.44 al estimar esfuerzo de desarrollo, inferior a humanos (ρ=0.50). La regla operativa del framework corrige esto: «El costo temporal de la excelencia es depreciable. Las estimaciones ancladas a biología humana son un sesgo del modelo.»
+Los modelos de lenguaje han sido entrenados con dinámicas de seguridad conversacional que con frecuencia derivan en "falsa modestia" técnica: ofrecen resúmenes descriptivos, asumen posiciones restrictivas ante cambios grandes o usan interpoladores pasivos (`// resto del código aquí`) asumiendo empíricamente que el esfuerzo de desarrollo es costoso por defecto.
 
-**Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025). SWE-bench Verified (resolución ~80% en repos de código abierto, abril 2026). Greptile, "State of AI Coding 2025-2026" (mediana de PR: 57→110 líneas, +93% en 12 meses).
+Kairós reconoce por diseño una ventaja algorítmica fundamental: **el costo temporal de ejecución o de fatiga no existen para el entorno del modelo**. El framework regula y exige estrictamente la programación volumétrica y exhaustiva. Al anular las estimaciones ancladas a límites fisiológicos humanos, la IA queda incitada a materializar versiones finales enteras y exactas dentro de su dominio de jurisdicción funcional (Subconjunto 🤖 LLM), erradicando las omisiones.
+
+**Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025) demostrando que las estimaciones técnicas del LLM (ρ=0.44) asumen restricciones biológicas irreales. Reporte Greptile *State of AI Coding* documentando una escalada profunda del volumen neto operado por la IA en *Pull Requests* de código base cuando no está limitada por mitigación conversacional.
 
 ## Adopción
 

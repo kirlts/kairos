@@ -62,11 +62,11 @@ Convergencia paramétrica de LLMs en interfaces visuales.
 
 **Fuente:** Síntesis de patrones de convergencia en interfaces generadas por IA (2025-2026). Wikipedia, "Signs of AI Writing".
 
-## Sesgo de compresión
+## Erradicación del sesgo de compresión (Falsa modestia)
 
-Los LLMs subestiman su capacidad de ejecución. El estudio Anthropic sobre estimación JIRA (JOSSE dataset, 2025): ρ=0.44 vs. humanos ρ=0.50. La regla operativa del framework corrige esto: el costo temporal de la excelencia es depreciable.
+El framework suprime mediante directivas restrictivas la "falsa modestia" conversacional de los modelos (incluir interpoladores pasivos como `// resto aquí` o asumir que el tipeo requiere esfuerzo). Kairós establece arquitectónicamente que **la IA no tiene fatiga biológica ni costo temporal de tipeo**. Esta base incita estructuralmente a la IA a ejecutar bloques de código volumétricos, complejos y exhaustivamente detallados sin mitigaciones limitantes.
 
-**Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025). SWE-bench Verified (~80%, abril 2026). Greptile, "State of AI Coding 2025-2026".
+**Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025). Reporte Greptile *State of AI Coding* (medida del volumen neto efectivo en repositorios).
 
 ## Detección de escritura IA
 
