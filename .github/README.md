@@ -1,74 +1,90 @@
-# Kairós — Sistema de Gobernanza para Desarrollo Asistido por IA
+# Kairós
 
-> **Versión:** v2.2.0
+> Sistema de gobernanza para desarrollo asistido por IA. v3.0.0
 
-## ¿Qué es Kairós?
+## Qué es
 
-Kairós es un sistema que estructura la colaboración entre un desarrollador y su IA de codificación. Si usas herramientas como Cursor, Windsurf, Claude Code o Gemini CLI para programar, Kairós se asegura de que la IA mantenga un estándar de calidad profesional en todo lo que produce — código, documentación y decisiones de arquitectura.
+Un framework que vive dentro de tu repositorio (`.agents/`) y estructura la interacción entre el desarrollador y su IA de codificación. Funciona con Cursor, Windsurf, Claude Code, Gemini CLI, o cualquier IDE que soporte agentes con acceso al filesystem.
 
-**¿Qué problema resuelve?** Sin gobernanza, las IAs de codificación tienden a:
-- Generar código genérico que resuelve lo inmediato pero acumula deuda técnica
-- Perder contexto entre sesiones, repitiendo errores o contradiciendo decisiones anteriores
-- Ser complacientes con tus ideas en lugar de desafiarlas constructivamente
+## Qué problema ataca
 
-Kairós instala un marco operativo que la IA sigue automáticamente para contrarrestar estas tendencias.
+Sin gobernanza, una IA de codificación:
 
-## Cómo funciona
+- Genera código genérico que resuelve lo inmediato y acumula deuda técnica.
+- Pierde contexto entre sesiones. Repite errores, contradice decisiones previas.
+- Acepta solicitudes sin cuestionarlas, incluso cuando ignoran complejidad inherente.
+- Produce interfaces con la misma paleta, tipografía y layout que toda otra IA (AI Smell).
+- Ofrece versiones "prudentes" cuando puede generar la versión completa.
 
-Kairós vive en una carpeta `.agent/` dentro de tu repositorio. Contiene:
+El framework consiste en reglas, workflows y protocolos que corrigen estos comportamientos.
 
-| Carpeta | Qué hace |
-| --- | --- |
-| `.agent/rules/` | Define cómo se comporta la IA: su rigor, su tono, sus límites |
-| `.agent/workflows/` | Flujos de trabajo que ejecutas con comandos (`/derive`, `/test`, `/fix`, etc.) |
-| `.agent/skills/` | Protocolos especializados que la IA activa automáticamente según el contexto |
-| `.agent/templates/` | Plantillas para los documentos que el sistema genera en tu proyecto |
+## Estructura
 
-Además, Kairós mantiene un directorio `docs/` en tu proyecto con documentos vivos que se actualizan durante el desarrollo:
+```
+.agents/
+├── rules/          # Cómo se comporta la IA (always-on)
+├── workflows/      # Flujos invocables (/derive, /test, /fix, etc.)
+├── skills/         # Protocolos que se activan por contexto
+├── knowledge/      # Material de referencia bajo demanda
+└── templates/      # Plantillas para docs del proyecto
 
-| Documento | Para qué sirve |
-| --- | --- |
-| `MASTER-SPEC.md` | La especificación técnica de tu proyecto — qué se está construyendo y cómo |
-| `TODO.md` | Tareas pendientes con trazabilidad hacia la especificación |
-| `MEMORY.md` | Lecciones aprendidas que persisten entre sesiones |
-| `USER-DECISIONS.md` | Registro de tus decisiones de diseño y el "por qué" detrás de ellas |
-| `CHANGELOG.md` | Historial de cambios del proyecto |
+docs/
+├── MASTER-SPEC.md  # Qué se construye, para quién, por qué, y cómo
+├── TODO.md         # Tareas con trazabilidad a la especificación
+├── MEMORY.md       # Heurísticas transferibles entre sesiones
+├── USER-DECISIONS.md # Registro de decisiones del usuario con su razón
+└── CHANGELOG.md    # Historial de cambios
+```
 
-## Comandos disponibles
+## Comandos
 
-Ejecuta estos comandos en el chat de tu IDE para activar flujos de trabajo específicos:
+| Comando | Función |
+|---|---|
+| `/derive` | Generar checklist de verificación exhaustivo, integrado con MASTER-SPEC y TODO |
+| `/checklist` | Generar checklist standalone para cualquier input (documentos, postulaciones, planes) |
+| `/test` | Definir estrategia de testing o ejecutar tests existentes |
+| `/fix` | Diagnosticar y resolver deuda técnica |
+| `/document` | Sincronizar documentación con el estado real del código |
+| `/update` | Actualizar Kairós a la última versión |
+| `/release` | Generar nueva versión del framework (solo repo canónico) |
 
-| Comando | Cuándo usarlo |
-| --- | --- |
-| `/kairos [intención]` | Al iniciar un proyecto. Establece la especificación técnica y la dirección estratégica |
-| `/kairos` | Cuando no sabes qué hacer. La IA diagnostica el estado del proyecto y propone el siguiente paso de alto impacto |
-| `/derive` | Cuando necesitas un checklist de verificación exhaustivo para tu código, integrado con la documentación del proyecto |
-| `/checklist` | Cuando necesitas un checklist de verificación para cualquier cosa — no solo código. Funciona con documentos, postulaciones, planes de negocio, etc. |
-| `/test` | Para definir o ejecutar la estrategia de testing |
-| `/fix` | Cuando algo está roto o hay deuda técnica que resolver |
-| `/document` | Para sincronizar la documentación con el estado real del código |
-| `/update` | Para actualizar Kairós a la última versión sin perder tu documentación |
-| `/contain` | Para configurar el entorno de desarrollo (contenedores, VMs, etc.) |
-| `/release` | Para generar una nueva versión del framework (solo en el repo oficial de Kairós) |
+## Fundamentos técnicos
 
-## Cómo adoptarlo
+El framework aplica patrones de adherencia extraídos de investigación empírica (corte: abril 2026). Cada patrón tiene un efecto medido y una implementación concreta.
 
-### En un proyecto nuevo
+| Patrón | Efecto medido | Implementación en Kairós | Fuente |
+|---|---|---|---|
+| Declarative System Framing | -81% varianza de adherencia entre idiomas | Constraints redactadas como hechos del entorno, no como comandos | Imperative Interference: Social Register Shapes Instruction Topology in LLMs (arXiv 2603.25015) |
+| Tabular Superiority | +40.29% precisión en lógica condicional | Subconjuntos 🤖/🧑/🤖🧑, Leyes de Armonía, LNC | Better Think with Tables: Tabular Structures Enhance LLM Comprehension (arXiv 2412.17189) |
+| Primacy/Recency Anchoring | Mitiga Factorial Dead Zone | Working templates (23K, 33K) duplican constraints en ambos extremos | Lost in the Middle: How Language Models Use Long Contexts (Stanford CS, arXiv 2307.03172); Lost in the Middle at Birth: An Exact Theory of Transformer Position Bias (arXiv 2603.10123) |
+| State Isolation | Mitiga -39% degradación multi-turno | Ciclo BEFORE/DURING/AFTER, artefactos con estado aislado | LLMs Get Lost In Multi-Turn Conversation (OpenReview, NeurIPS) |
+| Positive Directive Mapping | -50% drift comportamental | Constraints definen espacio permitido; prohibiciones para failure modes catastróficos | ClawSafety: "Safe" LLMs, Unsafe Agents (arXiv 2604.01438) |
+| Traceable Identifiers | 80.4% F1 en cadenas lógicas multi-paso | Taxonomía `[ACTOR.CAT.NN.VER]`, IDs `[R-NNN]`, `[LNC-NN]` | Evaluating the Use of LLMs for Documentation to Code Traceability (ResearchGate) |
 
-1. Clona o copia este repositorio como base
-2. Ejecuta `/kairos [descripción de tu proyecto]` en tu primera sesión de chat
-3. Empieza a desarrollar — la IA aplicará la gobernanza automáticamente
+### AI Smell
 
-### En un proyecto existente
+Cuando un LLM genera interfaces sin restricciones de diseño humanas, converge hacia valores paramétricos dominantes en su distribución de entrenamiento. Púrpura-azul (#6366F1), Inter/system-ui, layout simétrico, cards con `rounded-xl` y `p-6`.
 
-1. Copia la carpeta `.agent/`, `kairos-version.txt` y `README-KAIROS.md` a tu repositorio
-2. Ejecuta `/kairos [descripción de tu proyecto]` para establecer la especificación
-3. Opcionalmente, ejecuta `/fix` para auditar la deuda técnica que ya existe
+Mitigación:
+
+1. **Lista Negra de Convergencia (LNC):** 10 vectores con valores exactos, contexto de aparición y desvío requerido (`.agents/knowledge/ai-smell-registry.md`).
+2. **Desvío justificado:** La coincidencia con LNC no se prohíbe; la coincidencia sin justificación sí.
+3. **Gate visual de 3 pasos:** Anti-Slop mecánico, Armonía Intencional, Integridad Contextual.
+
+**Fuente:** Síntesis de hallazgos sobre convergencia paramétrica en interfaces generadas por IA (2025-2026). Patrones de detección de escritura IA: Wikipedia, "Signs of AI Writing".
+
+### Sesgo de compresión
+
+Los LLMs subestiman su capacidad de ejecución. El estudio Anthropic sobre estimación JIRA (2025, dataset JOSSE: proyectos Apache, JBoss, Spring) mostró que Claude obtuvo ρ=0.44 al estimar esfuerzo de desarrollo, inferior a humanos (ρ=0.50). La regla operativa del framework corrige esto: «El costo temporal de la excelencia es depreciable. Las estimaciones ancladas a biología humana son un sesgo del modelo.»
+
+**Fuentes:** Estudio Anthropic de estimación JIRA (JOSSE dataset, 2025). SWE-bench Verified (resolución ~80% en repos de código abierto, abril 2026). Greptile, "State of AI Coding 2025-2026" (mediana de PR: 57→110 líneas, +93% en 12 meses).
+
+## Adopción
+
+**Proyecto nuevo:** clonar este repositorio y empezar a desarrollar. La gobernanza se aplica automáticamente.
+
+**Proyecto existente:** copiar `.agents/`, `kairos-version.txt` y `README-KAIROS.md` al repositorio. Ejecutar `/document` para que la IA establezca el eje documental.
 
 ## Actualización
 
-Ejecuta `/update` en cualquier sesión de chat. El workflow detecta automáticamente qué cambió en la nueva versión y te propone las actualizaciones con diffs para tu aprobación. Tu documentación de proyecto no se toca.
-
-## Versión
-
-Kairós sigue [Semantic Versioning](https://semver.org/). La versión instalada está en `kairos-version.txt`.
+`/update` en cualquier sesión. Compara la versión local con la publicada, propone diffs, no toca la documentación del proyecto.

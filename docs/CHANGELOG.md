@@ -5,6 +5,23 @@
 
 ## [Unreleased]
 
+## [v3.0.0] - 2026-04-14
+
+### Added
+- Nueva estructura taxonómica basada en el directorio `.agents/` en lugar de `.agent/`.
+- Módulo aislando la Constitución formal en `knowledge/constitution.md`.
+- Módulo aislando las variables paramétricas visuales en `knowledge/ai-smell-registry.md`.
+- Regla independiente operativa `00-behavior.md` para el control exhaustivo de "AI slop" en el lenguaje o prosa.
+
+### Changed
+- Refactorización de reglas abstractas complejas `00` al `07` a un sistema más explícito y acotado (00-04).
+- Purgado de toda personificación o referenciación pasiva (Kairós interactuando con intencionalidad). Eliminados modismos como "Kratos", "Khaos" y "campo relacional" transicionando a vocabulario neutral.
+- Se consolidó la referenciación sobre Papers (como "ClawSafety" o "Lost in the Middle") de forma aséptica y real.
+
+### Removed
+- Infraestructura antigua dependiente del path `.agent/`.
+- Reglas estructurales como `05-protocolo-terminal-bypass.md` reabsorbidas en el nuevo manifiesto consolidado de workflows orgánicos.
+
 ## [v2.2.0] - 2026-04-09
 
 ### Added
