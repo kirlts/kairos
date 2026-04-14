@@ -40,6 +40,16 @@ Este archivo es la referencia operativa del framework de gobernanza, no document
 | Axiomatic Pre-Contextualization | Previene -6.81% degradación | Meta-instrucciones preceden a datos que gobiernan | arXiv 2412.17189 (input design studies) |
 | Modular Context Partitioning | Previene degradación >32K tokens | rules (always-on), skills (on-demand), knowledge (@reference) | arXiv 2601.10343 (OctoBench); arXiv 2603.16021 (Folder Structure as Agent Architecture) |
 
+## Asignación de dominio por diseño
+
+El framework previene fallas de delegación estructurando el trabajo en tres subconjuntos basados en las limitaciones empíricas medidas de los LLMs:
+
+- **🤖 Subconjunto LLM:** Ejecución autónoma (andamiaje sintáctico, tests de funciones puras).
+- **🧑 Subconjunto HUM:** Tareas bloqueadas para la IA (*trade-offs* estructurales, diseño lógico, validación).
+- **🤖🧑 Subconjunto MIX:** Evaluación compartida. El modelo procesa la información inicial y obliga a un *gate* del operador para avanzar.
+
+**Fuentes:** Límites de autonomía (*SWE-bench Verified*), deficiencias de predicción (*Anthropic JOSSE dataset*), seguridad de agentes (*ClawSafety*, arXiv 2604.01438).
+
 ## AI Smell
 
 Convergencia paramétrica de LLMs en interfaces visuales.

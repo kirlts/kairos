@@ -61,6 +61,16 @@ El framework aplica patrones de adherencia extraídos de investigación empíric
 | Positive Directive Mapping | -50% drift comportamental | Constraints definen espacio permitido; prohibiciones para failure modes catastróficos | ClawSafety: "Safe" LLMs, Unsafe Agents (arXiv 2604.01438) |
 | Traceable Identifiers | 80.4% F1 en cadenas lógicas multi-paso | Taxonomía `[ACTOR.CAT.NN.VER]`, IDs `[R-NNN]`, `[LNC-NN]` | Evaluating the Use of LLMs for Documentation to Code Traceability (ResearchGate) |
 
+### Asignación de dominio por diseño
+
+Los modelos estadísticos presentan limitaciones empíricas documentadas en la evaluación de *trade-offs* arquitectónicos y la estimación estructural a largo plazo. Por ello, el framework impone una división estricta de tareas basada en la aptitud asimétrica medida:
+
+- **🤖 Subconjunto LLM (Autónomo):** Tareas de micro-lógica computacional, *scaffolding* sintáctico y tests de funciones puras. Se requiere ejecución y cierre sin intervención.
+- **🧑 Subconjunto HUM (Bloqueado para IA):** Diseño arquitectónico conceptual, juicio paramétrico visual y *trade-offs* de impacto irreversible. La resolución autónoma está estrictamente prohibida.
+- **🤖🧑 Subconjunto MIX (Verificación bidireccional):** Pruebas de integración, revisión de código compleja y estimaciones. El modelo procesa y estructura el estado actual, pero impone un *gate* obligatorio definiendo qué variables específicas requieren validación del operador antes de continuar.
+
+**Fuentes:** Límites de resolución autónoma en arquitectura sistémica (*SWE-bench Verified*, abril 2026). Divergencia operativa entre seguridad de modelo y seguridad de agente (*ClawSafety: "Safe" LLMs, Unsafe Agents*, arXiv 2604.01438). Brechas de capacidad en predicción estructural (*Estudio Anthropic JIRA dataset JOSSE*, 2025).
+
 ### AI Smell
 
 Cuando un LLM genera interfaces sin restricciones de diseño humanas, converge hacia valores paramétricos dominantes en su distribución de entrenamiento. Púrpura-azul (#6366F1), Inter/system-ui, layout simétrico, cards con `rounded-xl` y `p-6`.
