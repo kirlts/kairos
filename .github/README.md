@@ -56,22 +56,22 @@ docs/
 
 El framework aplica patrones de adherencia extraídos de investigación empírica (corte: abril 2026). Cada patrón tiene un efecto medido y una implementación concreta.
 
-| Patrón | Efecto medido | Implementación en Kairós | Fuente |
+| Patrón | Efecto medido | Decisión de diseño | Fuente |
 |---|---|---|---|
-| Declarative System Framing | -81% varianza de adherencia entre idiomas | Constraints redactadas como hechos del entorno | Imperative Interference: Social Register Shapes Instruction Topology in LLMs (arXiv 2603.25015) |
-| Tabular Superiority | +40.29% precisión en lógica condicional | Subconjuntos 🤖/🧑/🤖🧑, Leyes de Armonía, LNC | Better Think with Tables: Tabular Structures Enhance LLM Comprehension (arXiv 2412.17189) |
-| Primacy/Recency Anchoring | Mitiga Factorial Dead Zone | Working templates (23K, 33K) duplican constraints en ambos extremos | Lost in the Middle: How Language Models Use Long Contexts (Stanford CS, arXiv 2307.03172); Lost in the Middle at Birth: An Exact Theory of Transformer Position Bias (arXiv 2603.10123) |
-| State Isolation | Mitiga -39% degradación multi-turno | Ciclo BEFORE/DURING/AFTER, artefactos con estado aislado | LLMs Get Lost In Multi-Turn Conversation (OpenReview, NeurIPS) |
-| Positive Directive Mapping | -50% drift comportamental | Constraints definen espacio permitido; prohibiciones para failure modes catastróficos | ClawSafety: "Safe" LLMs, Unsafe Agents (arXiv 2604.01438) |
-| Traceable Identifiers | 80.4% F1 en cadenas lógicas multi-paso | Taxonomía `[ACTOR.CAT.NN.VER]`, IDs `[R-NNN]`, `[LNC-NN]` | Evaluating the Use of LLMs for Documentation to Code Traceability (ResearchGate) |
+| Declarative System Framing | -81% varianza de adherencia entre idiomas | Las reglas se redactan como hechos del entorno. El tono declarativo es neutro entre idiomas; el tono imperativo genera interferencia de registro que produce varianza sistemática | Imperative Interference: Social Register Shapes Instruction Topology in LLMs (arXiv 2603.25015) |
+| Tabular Superiority | +40.29% precisión en lógica condicional | Subconjuntos 🤖/🧑/🤖🧑, LNC y Leyes de Armonía se expresan en tablas. Las tablas fuerzan razonamiento columna a columna, cerrando los atajos probabilísticos que el modelo toma en texto libre | Better Think with Tables: Tabular Structures Enhance LLM Comprehension (arXiv 2412.17189) |
+| Primacy/Recency Anchoring | Mitiga Factorial Dead Zone | Las plantillas de trabajo repiten las restricciones clave al inicio y al final del contexto. El paper documenta rendimiento en forma de U: máximo en posición inicial y final, mínimo en el centro | Lost in the Middle: How Language Models Use Long Contexts (Stanford CS, arXiv 2307.03172); Lost in the Middle at Birth (arXiv 2603.10123) |
+| State Isolation | Mitiga -39% degradación multi-turno | El ciclo BEFORE/DURING/AFTER reconstruye el estado desde artefactos aislados en cada turno, impidiendo la acumulación de la degradación registrada en conversaciones largas | LLMs Get Lost In Multi-Turn Conversation (OpenReview, NeurIPS) |
+| Positive Directive Mapping | -50% desviación comportamental | Las reglas definen el espacio de conducta permitido; las prohibiciones cubren solo los fallos catastróficos. Mapear el espacio positivo reduce un 50% la desviación respecto a sistemas basados únicamente en prohibiciones | ClawSafety: "Safe" LLMs, Unsafe Agents (arXiv 2604.01438) |
+| Traceable Identifiers | 80.4% F1 en cadenas lógicas multi-paso | Taxonomía `[ACTOR.CAT.NN.VER]`, IDs `[R-NNN]`, `[LNC-NN]`. Los identificadores explícitos anclan cada verificación a un artefacto concreto, sosteniendo la trazabilidad en razonamientos multi-paso | Evaluating the Use of LLMs for Documentation to Code Traceability (ResearchGate) |
 
 ### Asignación de dominio por diseño
 
 Los modelos estadísticos presentan limitaciones empíricas documentadas en la evaluación de *trade-offs* arquitectónicos y la estimación estructural a largo plazo. Por ello, el framework impone una división estricta de tareas basada en la aptitud asimétrica medida:
 
-- **🤖 Subconjunto LLM (Autónomo):** Tareas de micro-lógica computacional, *scaffolding* sintáctico y tests de funciones puras. Se requiere ejecución y cierre sin intervención.
+- **🤖 Subconjunto LLM (Autónomo):** Tareas de micro-lógica computacional, andamiaje sintáctico y tests de funciones puras. Se requiere ejecución y cierre sin intervención.
 - **🧑 Subconjunto HUM (Bloqueado para IA):** Diseño arquitectónico conceptual, juicio paramétrico visual y *trade-offs* de impacto irreversible. La resolución autónoma está estrictamente prohibida.
-- **🤖🧑 Subconjunto MIX (Verificación bidireccional):** Pruebas de integración, revisión de código compleja y estimaciones. El modelo procesa y estructura el estado actual, pero impone un *gate* obligatorio definiendo qué variables específicas requieren validación del operador antes de continuar.
+- **🤖🧑 Subconjunto MIX (Verificación bidireccional):** Pruebas de integración, revisión de código compleja y estimaciones. El modelo procesa y estructura el estado actual, pero establece un punto de control obligatorio definiendo qué variables específicas requieren validación del operador antes de continuar.
 
 **Fuentes:** Límites de resolución autónoma en arquitectura sistémica (*SWE-bench Verified*, abril 2026). Divergencia operativa entre seguridad de modelo y seguridad de agente (*ClawSafety: "Safe" LLMs, Unsafe Agents*, arXiv 2604.01438). Brechas de capacidad en predicción estructural (*Estudio Anthropic JIRA dataset JOSSE*, 2025).
 

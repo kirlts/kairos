@@ -31,16 +31,16 @@ Este archivo es la referencia operativa del framework de gobernanza, no document
 
 ## Patrones de adherencia aplicados
 
-| Patrón | Efecto medido | Implementación | Fuente |
+| Patrón | Efecto medido | Decisión de diseño | Fuente |
 |---|---|---|---|
-| Declarative System Framing | -81% varianza de adherencia entre idiomas | Constraints como hechos del entorno | arXiv 2603.25015 (Imperative Interference) |
-| Tabular Superiority | +40.29% precisión en lógica condicional | Subconjuntos 🤖/🧑/🤖🧑, LNC, Leyes de Armonía | arXiv 2412.17189 (Better Think with Tables) |
-| Primacy/Recency Anchoring | Mitiga Factorial Dead Zone | Working templates duplican constraints en extremos | Stanford CS (Lost in the Middle); arXiv 2603.10123 |
-| State Isolation | Mitiga -39% degradación multi-turno | Ciclo BEFORE/DURING/AFTER, artefactos aislados | OpenReview (LLMs Get Lost In Multi-Turn Conversation) |
-| Positive Directive Mapping | -50% drift comportamental | Espacio permitido explícito; prohibiciones para failures catastróficos | arXiv 2604.01438 (ClawSafety) |
-| Traceable Identifiers | 80.4% F1 multi-paso | `[ACTOR.CAT.NN.VER]`, `[R-NNN]`, `[LNC-NN]` | ResearchGate (LLMs for Doc-to-Code Traceability) |
-| Axiomatic Pre-Contextualization | Previene -6.81% degradación | Meta-instrucciones preceden a datos que gobiernan | arXiv 2412.17189 (input design studies) |
-| Modular Context Partitioning | Previene degradación >32K tokens | rules (always-on), skills (on-demand), knowledge (@reference) | arXiv 2601.10343 (OctoBench); arXiv 2603.16021 (Folder Structure as Agent Architecture) |
+| Declarative System Framing | -81% varianza entre idiomas | Reglas como hechos del entorno. El tono declarativo es neutro entre idiomas; el imperativo genera varianza de adherencia | arXiv 2603.25015 (Imperative Interference) |
+| Tabular Superiority | +40.29% precisión lógica | Subconjuntos 🤖/🧑/🤖🧑, LNC y Leyes de Armonía expresados en tablas. Las tablas fuerzan razonamiento columna a columna, cerrando atajos probabilísticos | arXiv 2412.17189 (Better Think with Tables) |
+| Primacy/Recency Anchoring | Mitiga Factorial Dead Zone | Restricciones clave al inicio y al final de las plantillas. El modelo rinde en U: máximo en posición inicial y final, mínimo en el centro | Stanford CS (Lost in the Middle); arXiv 2603.10123 |
+| State Isolation | Mitiga -39% degradación multi-turno | Ciclo BEFORE/DURING/AFTER: reconstruye el estado desde artefactos aislados en cada turno, sin acumulación entre conversaciones | OpenReview (LLMs Get Lost In Multi-Turn Conversation) |
+| Positive Directive Mapping | -50% desviación comportamental | Espacio de conducta explícito. Las prohibiciones cubren solo fallos catastróficos; mapear lo permitido supera en eficacia a mapear lo prohibido | arXiv 2604.01438 (ClawSafety) |
+| Traceable Identifiers | 80.4% F1 multi-paso | `[ACTOR.CAT.NN.VER]`, `[R-NNN]`, `[LNC-NN]`. Anclan cada verificación a un artefacto concreto en cadenas de razonamiento largas | ResearchGate (LLMs for Doc-to-Code Traceability) |
+| Axiomatic Pre-Contextualization | Previene -6.81% degradación | Meta-instrucciones preceden a los datos que gobiernan. El modelo lee el marco antes que el contenido que debe interpretar | arXiv 2412.17189 (input design studies) |
+| Modular Context Partitioning | Previene degradación >32K tokens | rules (siempre activas), skills (por demanda), knowledge (@referencia). Mantiene el contexto activo bajo el umbral de degradación documentado | arXiv 2601.10343 (OctoBench); arXiv 2603.16021 (Folder Structure as Agent Architecture) |
 
 ## Asignación de dominio por diseño
 
@@ -48,7 +48,7 @@ El framework previene fallas de delegación estructurando el trabajo en tres sub
 
 - **🤖 Subconjunto LLM:** Ejecución autónoma (andamiaje sintáctico, tests de funciones puras).
 - **🧑 Subconjunto HUM:** Tareas bloqueadas para la IA (*trade-offs* estructurales, diseño lógico, validación).
-- **🤖🧑 Subconjunto MIX:** Evaluación compartida. El modelo procesa la información inicial y obliga a un *gate* del operador para avanzar.
+- **🤖🧑 Subconjunto MIX:** Evaluación compartida. El modelo procesa la información inicial y establece un punto de control del operador para avanzar.
 
 **Fuentes:** Límites de autonomía (*SWE-bench Verified*), deficiencias de predicción (*Anthropic JOSSE dataset*), seguridad de agentes (*ClawSafety*, arXiv 2604.01438).
 
@@ -74,11 +74,11 @@ Las reglas del framework establecen que **la IA no tiene fatiga biológica ni co
 
 | Categoría | Patrones | Mecanismo |
 |---|---|---|
-| Muletillas RLHF | «Cabe destacar que», «Es importante señalar» | Gate anti-slop en workflows + 00-behavior.md |
-| Paralelismos negativos | «not just X, but Y», «no solo X, sino Y» | Gate 7 en working templates |
-| Copy corporativo | «cutting-edge», «seamless», «innovative» | Detección en `/document` + Gate 7 |
+| Muletillas RLHF | «Cabe destacar que», «Es importante señalar» | Filtro anti-slop en workflows + 00-behavior.md |
+| Paralelismos negativos | «not just X, but Y», «no solo X, sino Y» | Filtro 7 en plantillas de trabajo |
+| Copy corporativo | «cutting-edge», «seamless», «innovative» | Detección en `/document` + Filtro 7 |
 | Positividad servil | «¡Excelente pregunta!», «Gran observación» | 00-behavior.md |
-| Em dashes | Cualquier instancia de (—) | Gate 7, zero tolerance |
+| Em dashes | Cualquier instancia de (—) | Filtro 7, tolerancia cero |
 
 **Fuentes:** Wikipedia, "Signs of AI Writing". Detección heurística derivada de ai-smell-registry.md.
 
