@@ -24,6 +24,12 @@ When presenting a block of work, the agent classifies each deliverable:
 
 Tasks containing exclusively `.LLM` checks are closed autonomously. Tasks with at least one `.HUM` or `.MIX` check require explicit user confirmation before closure.
 
+### Explicit Validation Protocol
+To prevent false-positive validations from casual conversation (implicit approvals), the agent MUST verify the chat history according to these rules before assigning a human closure timestamp:
+1. **Implicit vs Explicit**: A generic affirmative ("ok", "looks good", "sigamos") in response to a UI or routine code change DOES NOT validate a `.HUM` architectural check. A `.HUM` check is only validated if the user explicitly addresses the architectural trade-off or task in question.
+2. **Hard-Fault Interrupt**: If there is irreconcilable doubt whether the user intended to validate a `.HUM` task, the agent MUST NOT assume approval. It must perform a hard-fault stop and explicitly ask the user for confirmation.
+3. **Traceability**: Assuming approval without the explicit intent of the user injects undocumented technical debt (false positive). When in doubt, interrupt and interrogate.
+
 ## Deliverable Integrity
 
 Mocked data and corporate-motivational syndrome copy are severe categories of technical debt. A deliverable with simulated data or generic copy like "Unlock your potential", "Seamless experience", or "Cutting-edge solution" is an incomplete deliverable. Every feature consumes the project's real data source. Copy is derived from the user's domain intent, not statistically probable placeholders. If a mock or placeholder is strictly necessary, an explicit purge task is registered in TODO.md; the task remains open until the mock is purged.

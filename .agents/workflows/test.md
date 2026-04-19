@@ -113,3 +113,4 @@ The relevant tests are executed using the detected runner. If a test fails:
 - Coverage count is updated if applicable.
 - If the project uses a legacy strategy without a formal TEST.md, its migration to `docs/TEST.md` is proposed for future executions.
 
+**HALT. Workflow complete.**

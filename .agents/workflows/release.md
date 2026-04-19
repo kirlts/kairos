@@ -62,10 +62,10 @@ The release plan is presented to the user and the system proceeds directly to ar
 
 ### 4.3 Public Documentation (READMEs)
 
-READMEs are the framework's first impression. They must be accessible, clear, and non-intimidating. Two public documentation files MUST be updated in every release:
+READMEs are updated in every release. Two files are mandatory:
 
-- **`.github/README.md`**: Public GitHub README. The project's face for external visitors.
-- **`README-KAIROS.md`**: Internal README copied to each adopting project. The quick reference guide for developers already using Kairós.
+- **`.github/README.md`**: Public GitHub README.
+- **`README-KAIROS.md`**: Internal README distributed to each adopting project.
 
 **Update Protocol:**
 

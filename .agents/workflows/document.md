@@ -1,15 +1,86 @@
 ---
-description: /document - Synchronizes the documentary axis (MASTER-SPEC, TODO, MEMORY, USER-DECISIONS, CHANGELOG) with the real state of the project. In sessions with no prior work, evaluates synchronization against current templates.
+description: /document - Synchronizes the documentary axis (MASTER-SPEC, TODO, MEMORY, USER-DECISIONS, CHANGELOG) with the real state of the project. Enforces structural lint against canonical templates in ALL modes before content synchronization. In sessions with no prior work, also evaluates full structural synchronization against current templates.
 ---
 
 # Documentary Synchronization
 
 This workflow ensures that all project documentation accurately reflects the current state of the code and architecture.
 
+> **MANDATORY:** Before executing ANY mode, the agent MUST read ALL template files from `.agents/templates/` into working memory. Failure to do so invalidates the synchronization. The templates define the canonical structure; no document can be considered synchronized if its format diverges from its template.
+
 ## Mode Detection
 
 - If the session has prior work (modified code, executed tasks): **Normal Mode** (incremental synchronization).
 - If the session has no prior work (the user invoked `/document` as the first action, or it runs as the closure of `/fix`, `/derive`, etc.): **Audit Mode** (full verification against current templates).
+
+---
+
+## Step 0: Structural Lint (MANDATORY in both modes)
+
+Runs unconditionally before any content synchronization or audit. Detects format divergence between existing documentation and canonical templates.
+
+### 0.1. Load Canonical Templates
+
+Read every template file from `.agents/templates/` into working memory:
+
+| Template File | Governs |
+|---|---|
+| `.agents/templates/master-spec.md` | `docs/MASTER-SPEC.md` |
+| `.agents/templates/todo.md` | `docs/TODO.md` |
+| `.agents/templates/memory.md` | `docs/MEMORY.md` |
+| `.agents/templates/user-decisions.md` | `docs/USER-DECISIONS.md` |
+| `.agents/templates/changelog.md` | `docs/CHANGELOG.md` |
+| `.agents/templates/TEST.md` | `docs/TEST.md` (if exists) |
+| `.agents/templates/technical-debt.md` | `docs/TECHNICAL-DEBT.md` (if exists) |
+
+### 0.2. Verify Mandatory Sections
+
+For each existing document in `docs/`, compare against its canonical template:
+
+1. **Header and identity line:** Does the document start with the canonical header pattern?
+2. **Symbol Legend:** Does the document contain the Kairós Symbol Legend table (if the template defines one)?
+3. **Mandatory sections:** Does the document contain every section defined in the template (e.g., `## §8. Verification Checklist` with canonical numbering)?
+4. **Closing markers:** Is the closing line (e.g., "Fin de la Especificación Maestra" or equivalent) positioned AFTER all canonical sections, not before?
+5. **Summary table structure:** Does the summary table (if template defines one) contain all canonical columns (e.g., `.LLM / .HUM / .MIX` columns in TODO.md)?
+
+### 0.3. Verify Mandatory Fields Per Item
+
+For repeating items (TASKs, checks, heuristics, decisions), verify mandatory fields exist:
+
+| Document | Item Type | Mandatory Field | If Missing |
+|---|---|---|---|
+| TODO.md | TASK | `**Covered checks:**` | Add with `Transversal governance` if no §8 checks apply |
+| MASTER-SPEC.md | §8 Check (Implemented) | Verification emoji + timestamp | Add `(🤖 Verified by tool; DATE)` format |
+| MASTER-SPEC.md | §8 Section | Canonical numbering `## §8.` | Rename from legacy `### Checklist` |
+| USER-DECISIONS.md | UD entry | All 5 ADR fields | Flag as incomplete |
+| MEMORY.md | HEU entry | `**Source:**` field | Flag as incomplete |
+
+### 0.4. Retroactive Compliance
+
+When templates have evolved (new sections, new fields, new columns), historical content must be evaluated:
+
+```
+For each item in the document that predates the current template version:
+  Does the item comply with all current mandatory fields/sections?
+    YES → No action needed.
+    NO →
+      Is the correction non-destructive (adding a missing field, adding a column)?
+        YES → Execute autonomously. Log in the Structural Lint report.
+        NO (renaming IDs, restructuring sections, deleting content):
+          → Catalog as "requires approval". Present diff to user.
+```
+
+### 0.5. Structural Lint Report
+
+Generate a lint report BEFORE proceeding to Audit or Normal Mode:
+
+| Document | Divergence | Type | Severity | Action | Status |
+|---|---|---|---|---|---|
+| [file] | [what diverges from template] | Missing Section / Legacy Format / Stale Content / Missing Field | High / Medium | [what was done/proposed] | ✅ Fixed / ⏳ Pending approval |
+
+If the report contains zero divergences, log: `Structural Lint: PASS (0 divergences)`.
+
+If the report contains divergences, all autonomous fixes are applied before proceeding. Pending-approval items are presented to the user and the workflow pauses until resolved.
 
 ---
 
@@ -124,7 +195,23 @@ The system verifies no internal contradictions exist:
 
 ### Verificability Coherence (LLM/HUM/MIX)
 
-Deterministic 5-step algorithm:
+Deterministic 6-step algorithm:
+
+**STEP 0. INPUT VALIDATION (mandatory field audit):** Before running the coherence algorithm, scan ALL TASKs in TODO.md:
+
+```
+For each TASK in TODO.md:
+  Does it have a "Covered checks:" field?
+    NO → [WARNING] MISSING MANDATORY FIELD.
+          If the TASK relates to governance or has no §8 checks:
+            → Add: **Covered checks:** Transversal governance
+          Else:
+            → Flag for manual assignment.
+  Is the field empty or contains only generic terms ("active", "N/A")?
+    YES → [WARNING] INVALID FIELD VALUE. Flag for correction.
+```
+
+This step ensures the subsequent inventory does not silently skip TASKs lacking the field.
 
 **STEP 1. INVENTORY:** Read MASTER-SPEC §8. Extract all checks with their classifier (.LLM/.HUM/.MIX). Build internal memory: `{Check_ID, Verifier, Status}`.
 
@@ -134,6 +221,7 @@ Deterministic 5-step algorithm:
 - Find the corresponding task in TODO.md.
 - Does the task have a human-closure restriction? → NO: [WARNING] CONFLICT.
 - If the task is marked as completed: Does it have a human verification timestamp? → NO: [WARNING] CONFLICT.
+- **Context Verification (Hard-Fault):** Audit the chat history. Was the validation explicit? An implicit approval (e.g., "ok to all") to visual changes DOES NOT validate irreversible architectural alterations. Upon irreconcilable doubt regarding intentionality, declare [WARNING] CONFLICT and require direct human confirmation.
 
 **STEP 4. TIMESTAMP VALIDATION:** For each check marked as Implemented:
 - Does it include a timestamp? → NO: [WARNING] CONFLICT.
@@ -147,6 +235,7 @@ Total checks: N
   - .HUM: X (Y implemented, Z pending human validation)
   - .MIX: X (Y implemented, Z pending)
   - Coherence conflicts: N [list]
+  - TASKs missing "Covered checks:" field: N [list]
 ```
 
 If checks without verificability suffix (legacy) are detected, classify them retroactively using the Decision Tree in `derive-working.md`. If non-destructive (adding suffixes), execute autonomously. If destructive (renaming IDs), require human approval.

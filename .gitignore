@@ -35,4 +35,6 @@ KAIROS-SNAPSHOT.md
 KAIROS-WORK.md
 .agents/scratch/
 
-
+# Kairós roles (personal)
+.agents/roles/*
+!.agents/roles/.gitkeep

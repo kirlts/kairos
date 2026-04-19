@@ -1,6 +1,6 @@
 # Kairós: Referencia Rápida
 
-> v3.1.0
+> v3.1.1
 
 Este archivo es la referencia operativa del framework de gobernanza, no documentación del proyecto. Todo el contenido del directorio `.agents/` (reglas, skills, workflows, plantillas) está escrito para ser leído y ejecutado autónomamente por la IA. El agente es el operador del framework; el usuario define la intención.
 
@@ -11,6 +11,7 @@ Este archivo es la referencia operativa del framework de gobernanza, no document
 | Carpeta | Función |
 |---|---|
 | `.agents/rules/` | Reglas de comportamiento (always-on y model-decision) |
+| `.agents/roles/` | Identidades extraídas para gobernanza de sesión |
 | `.agents/workflows/` | Flujos invocables con comandos |
 | `.agents/skills/` | Protocolos automáticos por contexto |
 | `.agents/knowledge/` | Material de referencia bajo demanda |
@@ -28,6 +29,8 @@ Este archivo es la referencia operativa del framework de gobernanza, no document
 | `/document` | Sincronizar documentación con el estado real del proyecto |
 | `/update` | Actualizar gobernanza a la última versión |
 | `/release` | Generar nueva versión del framework (solo repo canónico) |
+| `/role` | Activar una identidad de gobernanza (persona) para la sesión |
+| `/create-role` | Extraer una nueva identidad a partir de fuentes primarias |
 
 ## Patrones de adherencia aplicados
 

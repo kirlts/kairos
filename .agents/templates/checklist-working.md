@@ -432,10 +432,10 @@ ANTI-PATTERN: Filling this gate by referencing Phase 4 counts instead of countin
 
 | ID | Pattern Category | Detection Heuristic | Empirical Reasoning (CoT) | Status (✅/❌) |
 |---|---|---|---|---|
-| G7-RLHF-FILLER | Muletillas de transición RLHF | Scan deliverable for: «It's worth noting that», «Cabe destacar que», «Es importante señalar», «En este contexto», «Por otro lado» | [Write: List any instances found. If none, write "Zero instances."] | ☐ |
+| G7-RLHF-FILLER | RLHF transition fillers | Scan deliverable for: «It's worth noting that», «Cabe destacar que», «Es importante señalar», «En este contexto», «Por otro lado» | [Write: List any instances found. If none, write "Zero instances."] | ☐ |
 | G7-NEG-PARALLELISM | Negative parallelisms | Scan for: «not just X, but Y», «no solo X, sino Y», «more than just» | [Write: List any instances found.] | ☐ |
-| G7-CORPORATE-COPY | Copy corporativo-motivacional | Scan for: «cutting-edge», «seamless», «innovative», «unlock», «empower», «transform your», «leverage» | [Write: List any instances found.] | ☐ |
-| G7-SERVILE-POSITIVITY | Positividad servil | Scan for: «¡Excelente pregunta!», «Gran observación», «Eso es muy interesante», «Great question» | [Write: List any instances found.] | ☐ |
+| G7-CORPORATE-COPY | Corporate-motivational copy | Scan for: «cutting-edge», «seamless», «innovative», «unlock», «empower», «transform your», «leverage» | [Write: List any instances found.] | ☐ |
+| G7-SERVILE-POSITIVITY | Servile positivity | Scan for: «¡Excelente pregunta!», «Gran observación», «Eso es muy interesante», «Great question» | [Write: List any instances found.] | ☐ |
 | G7-EM-DASHES | Em dashes | Scan deliverable for ANY em dash character (—). Zero tolerance: if count > 0, flag. Replace with period, comma, semicolon, or parentheses as appropriate | [Write: Total count. If > 0, list each instance and its replacement.] | ☐ |
 
 If ANY gate fails: remediate the deliverable by replacing the flagged patterns with domain-specific language derived from the input.

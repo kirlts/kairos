@@ -1,6 +1,6 @@
 # Kairós
 
-> Sistema de gobernanza para desarrollo asistido por IA. v3.1.0
+> Sistema de gobernanza para desarrollo asistido por IA. v3.1.1
 
 ## Qué es
 
@@ -27,6 +27,7 @@ El framework consiste en reglas, workflows y protocolos que corrigen estos compo
 ```
 .agents/
 ├── rules/          # Cómo se comporta la IA (always-on)
+├── roles/          # Identidades de gobernanza local
 ├── workflows/      # Flujos invocables (/derive, /test, /fix, etc.)
 ├── skills/         # Protocolos que se activan por contexto
 ├── knowledge/      # Material de referencia bajo demanda
@@ -51,6 +52,8 @@ docs/
 | `/document` | Sincronizar documentación con el estado real del código |
 | `/update` | Actualizar Kairós a la última versión |
 | `/release` | Generar nueva versión del framework (solo repo canónico) |
+| `/role` | Activar una identidad de gobernanza (persona) para la sesión |
+| `/create-role` | Extraer una nueva identidad a partir de fuentes primarias |
 
 ## Fundamentos técnicos
 

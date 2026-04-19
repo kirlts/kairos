@@ -5,6 +5,26 @@
 
 ## [Unreleased]
 
+## [v3.1.2] - 2026-04-15
+
+### Added
+- Nuevo Step 0 "Structural Lint" inyectado en el workflow `/document` para correr de forma incondicional en todos los modos, erradicando la persistencia de deuda estructural (missing fields, legacy formats).
+- Protocolo de Verificabilidad y Input Validation insertado al comienzo del algoritmo de coherencia en `/document` (Step 0) para denegar la saltarse de campos `[Covered checks: ...]`.
+- Cierre estructural obligatorio `HALT` implementado al final del workflow `/test` para estandarizar la convención de conclusión algorítmica.
+
+### Changed
+- Eliminada justificación emocional redundante del subproceso "Structural Lint" en el workflow `/document` en adhesión al Declarative System Framing.
+- Adjetivos de apreciación genérica (AI slop) sustituidos por directivas operativas estrictas en la sección de mantenimiento de READMEs dentro de `/release`.
+- Corregida violación de la regla de *English Latent Pivot* (Pivote Latente Inglés) traduciendo las etiquetas descriptivas mixtas de la sección GATE 7 (identificadores anti-slop) a inglés en las plantillas algorítmicas `derive-working.md` y `checklist-working.md`.
+
+## [v3.1.1] - 2026-04-15
+
+### Added
+- Directorio de estructura `.agents/roles/` (.gitkeep) para almacenar identidades locales de gobernanza extraídas por el usuario, omitiéndose del trackeo global (.gitignore) al ser de uso personal.
+
+### Changed
+- El modelo operativo `01-operating-model.md` y el compilador de documentos `workflows/document.md` implementan un protocolo estricto de interrupción (hard-fault) ante aprobaciones implícitas de tareas `.HUM`, previniendo inyección accidental de validaciones arquitectónicas.
+
 ## [v3.1.0] - 2026-04-14
 
 ### Added
