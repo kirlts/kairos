@@ -49,26 +49,56 @@ For repeating items (TASKs, checks, heuristics, decisions), verify mandatory fie
 
 | Document | Item Type | Mandatory Field | If Missing |
 |---|---|---|---|
-| TODO.md | TASK | `**Covered checks:**` | Add with `Transversal governance` if no §8 checks apply |
-| MASTER-SPEC.md | §8 Check (Implemented) | Verification emoji + timestamp | Add `(🤖 Verified by tool; DATE)` format |
-| MASTER-SPEC.md | §8 Section | Canonical numbering `## §8.` | Rename from legacy `### Checklist` |
+| TODO.md | TASK | `**Covered checks:**` | Add with `Transversal governance` if no VERIFICATION.md checks apply |
+| VERIFICATION.md | Check (Implemented) | Verification emoji + timestamp | Add `(🤖 Verified by tool; DATE)` format |
 | USER-DECISIONS.md | UD entry | All 5 ADR fields | Flag as incomplete |
 | MEMORY.md | HEU entry | `**Source:**` field | Flag as incomplete |
 
-### 0.4. Retroactive Compliance
+### 0.4. Retroactive Compliance and Version Porting
 
-When templates have evolved (new sections, new fields, new columns), historical content must be evaluated:
+When templates have evolved (new sections, new fields, new columns), historical content must be evaluated. This includes **cross-version porting**: when a repository's documentation was created under a prior version of Kairos, the `/document` workflow is responsible for migrating it to the current template version without destroying information.
+
+#### Version Detection
+
+The system detects the Kairos version that generated the existing documentation by examining:
+- Explicit version markers in document headers (if present).
+- Structural fingerprints: which sections exist, what format they use, what fields they contain.
+- Absence of sections that are mandatory in the current template version.
+
+If the detected version differs from the current template version, the full porting logic activates.
+
+#### Porting Algorithm
 
 ```
-For each item in the document that predates the current template version:
-  Does the item comply with all current mandatory fields/sections?
-    YES → No action needed.
-    NO →
-      Is the correction non-destructive (adding a missing field, adding a column)?
-        YES → Execute autonomously. Log in the Structural Lint report.
-        NO (renaming IDs, restructuring sections, deleting content):
-          → Catalog as "requires approval". Present diff to user.
-```
+For each document in docs/:
+  Detect the Kairos version that generated it.
+  Load the current canonical template for this document type.
+
+  For each section in the current template:
+    Does this section exist in the document (even under a legacy name)?
+      YES → Does the section's format match the current template?
+        YES → No action needed.
+        NO  →
+          Is the format migration non-destructive?
+            YES → Migrate format autonomously. Preserve all content.
+            NO  → Catalog as "requires approval". Present diff to user.
+      NO  → Is the section empty in the template (a structural placeholder)?
+        YES → Add the empty section. Non-destructive.
+        NO  → Catalog as "requires approval". Present what would be added.
+
+  For each section in the document that does NOT exist in the current template:
+    This is legacy content with no current equivalent.
+    DO NOT delete. Append to an "Archived Sections" area at the bottom
+    of the document, clearly marked as legacy. Present to user for review.
+
+#### Tactical Porting: MASTER-SPEC §8 → VERIFICATION.md
+If the system detects that `docs/MASTER-SPEC.md` contains a populated `§8. Verification Checklist` (legacy format), the system MUST perform an automatic, non-destructive migration before running lint rules:
+1. Extract the ENTIRE contents of `§8` verbatim.
+2. Initialize `docs/VERIFICATION.md` using its canonical template and deposit the extracted checks.
+3. Remove the entire `§8` section from `MASTER-SPEC.md`.
+4. Scan `docs/TODO.md` and perform a silent find/replace of any string mentioning `MASTER-SPEC §8` (e.g., `Ref: MASTER-SPEC §8`) with `Ref: VERIFICATION.md`.
+
+**Invariant:** Zero bytes of user-written content are deleted without explicit user approval. The porting process adds, restructures, and migrates, but never silently removes.
 
 ### 0.5. Structural Lint Report
 
@@ -175,14 +205,14 @@ The system verifies that no deliverables marked as "complete" contain:
 
 If slop or mocks are detected in "completed" features, the system reports them in the gap table and creates a purge TASK in TODO.md.
 
-### §8 ↔ TODO Traceability Coherence
+### VERIFICATION.md ↔ TODO Traceability Coherence
 
 Mandatory cross-verification:
 
-1. **Checks without TASK:** Are there unimplemented checks in §8 without an associated TASK? → Create the missing TASKs.
-2. **TASKs without check:** Are there TASKs referencing non-existent IDs in §8? → Correct references or delete TASKs.
+1. **Checks without TASK:** Are there unimplemented checks in VERIFICATION.md without an associated TASK? → Create the missing TASKs.
+2. **TASKs without check:** Are there TASKs referencing non-existent IDs in VERIFICATION.md? → Correct references or delete TASKs.
 3. **Ghost checks:** Are there checks marked as implemented whose code no longer exists? → Unmark and create reimplementation TASK.
-4. **Coverage count per actor:** For each actor in §8, count implemented vs. pending checks. Log in TODO summary table.
+4. **Coverage count per actor:** For each actor in VERIFICATION.md, count implemented vs. pending checks. Log in TODO summary table.
 
 ### Cross-Coherence Validation
 
@@ -191,7 +221,7 @@ The system verifies no internal contradictions exist:
 - Intentions/Purposes in MASTER-SPEC §1 ↔ Epics in TODO.md
 - Constraints in MASTER-SPEC §4 ↔ Rules in `.agents/rules/03-constraints.md`
 - Decisions in USER-DECISIONS.md ↔ Trade-offs in MASTER-SPEC §5
-- Checks in MASTER-SPEC §8 ↔ TASKs in TODO.md (bidirectional)
+- Checks in VERIFICATION.md ↔ TASKs in TODO.md (bidirectional)
 
 ### Verificability Coherence (LLM/HUM/MIX)
 
@@ -203,7 +233,7 @@ Deterministic 6-step algorithm:
 For each TASK in TODO.md:
   Does it have a "Covered checks:" field?
     NO → [WARNING] MISSING MANDATORY FIELD.
-          If the TASK relates to governance or has no §8 checks:
+          If the TASK relates to governance or has no VERIFICATION.md checks:
             → Add: **Covered checks:** Transversal governance
           Else:
             → Flag for manual assignment.
@@ -213,7 +243,7 @@ For each TASK in TODO.md:
 
 This step ensures the subsequent inventory does not silently skip TASKs lacking the field.
 
-**STEP 1. INVENTORY:** Read MASTER-SPEC §8. Extract all checks with their classifier (.LLM/.HUM/.MIX). Build internal memory: `{Check_ID, Verifier, Status}`.
+**STEP 1. INVENTORY:** Read `docs/VERIFICATION.md`. Extract all checks with their classifier (.LLM/.HUM/.MIX). Build internal memory: `{Check_ID, Verifier, Status}`.
 
 **STEP 2. CROSS-REFERENCE:** Read TODO.md. Extract all tasks and covered checks. Build internal memory: `{Task_ID, [Check_IDs], Task_Status, Has_Human_Closure_Restriction}`.
 
@@ -239,3 +269,25 @@ Total checks: N
 ```
 
 If checks without verificability suffix (legacy) are detected, classify them retroactively using the Decision Tree in `derive-working.md`. If non-destructive (adding suffixes), execute autonomously. If destructive (renaming IDs), require human approval.
+
+### Living Document Narrative Sync
+
+Executes silently as the final step of Normal Mode. No user action required.
+
+```
+Are there pending narrative updates in working memory?
+  NO  → Skip. No output. Zero cost.
+  YES →
+    Does docs/LIVING-DOCUMENT.md exist?
+      NO  → Skip. Log: "Living Document not initialized. Run /narrate to create it."
+      YES →
+        1. Lazy-load docs/LIVING-DOCUMENT.md
+        2. Load .agents/knowledge/narrator-voice.md and .agents/roles/narrator.md
+        3. Update only the chapters affected by pending narrative updates
+        4. Write changes to docs/LIVING-DOCUMENT.md
+        5. Clear pending narrative updates from working memory
+        6. Add one line to the /document sync report:
+           "Living Document: [N] chapters updated."
+```
+
+The sync produces no standalone output and adds no friction. It is a silent side-effect of the documentary closure the user already performs.

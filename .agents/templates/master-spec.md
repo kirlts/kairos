@@ -107,26 +107,4 @@
 
 **Dependencies:** [dependency list]
 
----
 
-## §8. Verification Checklist
-
-> Canonical section populated by `/derive`. If `/derive` has not been executed, write:
-> "Pending formal verification; execute `/derive` to populate this section."
-
-<!--
-Taxonomy: [ACTOR.CATEGORY.NN.VER]
-Actors: Defined by /derive according to the project
-Categories: AV (Availability), FN (Functionality), CR (Correctness), IN (Integrity), RS (Resilience)
-Verifier (VER): LLM (automatable), HUM (requires human), MIX (pre-verifiable + human)
-
-Check format:
-  🧑 `[ACTOR.CAT.NN.HUM]` Action → Result. *(Validated promise)*
-  🤖 `[ACTOR.CAT.NN.LLM]` Action → Result. *(Validated promise)*
-  🤖🧑 `[ACTOR.CAT.NN.MIX]` Action → Result. *(Validated promise)*
-
-Implementation format (with mandatory timestamp):
-  ✅ Implemented (🤖 Verified by [tool]; YYYY-MM-DD HH:MM)
-  ✅ Implemented (🧑 Confirmed by user; YYYY-MM-DD HH:MM)
-  ✅ Implemented (🤖🧑 Pre-verified by [tool], confirmed by user; YYYY-MM-DD HH:MM)
--->

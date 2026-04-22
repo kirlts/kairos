@@ -25,9 +25,9 @@
 
 <!-- Tests validating NO Inviolable Boundary of MASTER-SPEC §4 is breached -->
 
-| ID | Description | MASTER-SPEC Reference | Verifier |
-|---|---|---|---|
-| HP-001 | [Test description] | §4.[N] | 🤖 .LLM / 🧑 .HUM / 🤖🧑 .MIX |
+| ID | Description | Verifier |
+|---|---|---|
+| HP-001 | [Test description] | 🤖 .LLM / 🧑 .HUM / 🤖🧑 .MIX |
 
 ## Regression Tests
 

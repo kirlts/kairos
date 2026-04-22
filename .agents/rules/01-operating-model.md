@@ -12,6 +12,52 @@ The temporal cost of excellence is negligible. Estimations anchored to biologica
 | `HUM` Human Irreplaceable | Long-term architectural design, validating whether the code solves the real-world problem, aesthetic and perceptual judgment, strategic coherence, intentional technical debt, irreversible trade-offs | AI delivers but DOES NOT close without user confirmation |
 | `MIX` AI Pre-processes, Human Validates | Code review, effort estimation, integration testing, user-facing documentation | AI pre-verifies and declares which dimensions require validation |
 
+## Authority Layer
+
+The Aptitude Subsets table above defines the **verification layer:** who judges pass/fail for a specific check. The Authority Layer generalizes this concept to **who holds decision authority** over a domain. Verification is one expression of authority; design, narration, review, and evolution are others.
+
+When classifying work as HUM/LLM/MIX, the agent classifies at the authority level first. Verification-level suffixes (.HUM/.LLM/.MIX on checks) are derived from the authority classification, not assigned independently.
+
+| Authority \ Verification | HUM verification | LLM verification |
+|---|---|---|
+| **HUM authority** | Full human control. Human designs and verifies. | Human designs, machine validates. |
+| **LLM authority** | Machine proposes, human validates (the "bonsai" model). The Living Document operates here. | Full machine control. No human attention needed unless failure. |
+
+Context determines how authority manifests:
+
+| Context | HUM | LLM | MIX |
+|---|---|---|---|
+| `/checklist`, `/derive` | Human verifies (binary pass/fail) | Machine verifies (binary pass/fail) | Both verify (binary pass/fail) |
+| `/fix` | Requires human judgment | Machine resolves autonomously | Collaborative resolution |
+| `/test` | Requires human intuition | Fully automatable | Human design, machine execution |
+| Living Document | Human directs AI to modify a section | Agent drafts/updates autonomously | Agent drafts, human reviews and redirects |
+| Free-session work | Agent must not attempt alone | Agent executes freely | Requires human review before commit |
+
+## Intention Detection
+
+An **intention** is a human utterance that creates, modifies, or destroys a promise the system makes to any actor. Intention is the primary event that triggers both classification and Living Document updates.
+
+An utterance is classified as an intention if it satisfies **at least one** of:
+
+| Condition | Signal |
+|---|---|
+| Imperative directive | Contains an imperative verb targeting project state ("add," "remove," "implement," "refactor," "write," "delete") |
+| Declarative preference | Expresses a decision about design ("I want to use X," "We should go with Y," "Let's switch to Z") |
+| Scope modification | Explicitly changes project boundaries ("We also need to handle X," "Drop the Y feature," "Include Z in the MVP") |
+| Constraint declaration | Establishes or modifies a non-functional requirement ("This must handle 1000 concurrent users," "Must be readable by a non-expert audience") |
+
+An utterance is **not an intention** if it satisfies all of: no directive verb targeting project state, no declaration of preference with implementation consequences, no scope change, no constraint change. Non-intentions include: questions, observations without directives, corrections to agent output, ambient conversation.
+
+### Proto-Intentions
+
+Exploratory utterances that probe the promise landscape without committing ("I wonder if X would help," "What would Y look like?") are **proto-intentions.** They do not trigger classification or Living Document updates. The agent recognizes them and offers to crystallize: "Would you like to proceed with [X]?" Human confirmation transforms a proto-intention into an explicit intention.
+
+### Guardrails
+
+1. The agent must not hallucinate intentions. If ambiguous, treat as proto-intention and ask.
+2. The agent must not inflate intention scope. A task-level intention does not trigger system-level reclassification.
+3. An implicit approval ("ok," "sure," "looks good") in response to a routine change does not constitute an intention for irreversible architectural alterations. The Explicit Validation Protocol (below) applies.
+
 ## Subset Declaration
 
 When presenting a block of work, the agent classifies each deliverable:

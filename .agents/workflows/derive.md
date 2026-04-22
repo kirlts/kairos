@@ -63,12 +63,12 @@ This is the terminal gate. The system executes it AFTER generating the deliverab
 ## STEP 5: Autonomous Integration
 
 The system proceeds directly to integration without requesting user permission. Upon successfully passing GATE 6, Step 6 and Step 7 are immediately executed to synchronize the project's macro-documentation autonomously.
-   - *ANTI-PATTERN:* Halting execution to prompt the user with: "I have generated the checklist, would you like me to integrate it into MASTER-SPEC?". Breaking the operational flow is prohibited.
+   - *ANTI-PATTERN:* Halting execution to prompt the user with: "I have generated the checklist, would you like me to integrate it into VERIFICATION.md?". Breaking the operational flow is prohibited.
 
-## STEP 6: Integration into MASTER-SPEC §8
+## STEP 6: Injection (`docs/VERIFICATION.md`)
 
-1. The system reads `docs/MASTER-SPEC.md` and locates `§8`.
-2. **Additive Integration Protocol:** The derive algorithm generates ADDITIONAL, NON-OVERLAPPING checks. If §8 already contains valid Kairós-formatted checks (`[ACTOR.CAT.NN]`), deleting or archiving them is strictly prohibited. The newly derived checks are appended into the existing list, continuing the numbering sequence logically.
+1. The system reads `docs/VERIFICATION.md`.
+2. **Additive Integration Protocol:** The derive algorithm generates ADDITIONAL, NON-OVERLAPPING checks. If the file already contains valid Kairós-formatted checks (`[ACTOR.CAT.NN]`), deleting or archiving them is strictly prohibited. The newly derived checks are appended into the existing list, continuing the numbering sequence logically.
 3. **Format-Based Legacy Archiving:** The ONLY scenario where existing checks are archived to `docs/archive/checks_LEGACY_[YYYY-MM-DD_HH-MM].md` is if they are written in an obsolete, non-taxonomic format. If archiving is required, they are rewritten into the new taxonomy and appended with the fresh checks.
    - *ANTI-PATTERN:* Overwriting or destroying perfectly valid pre-existing checks just to "start fresh," OR suffering from No-Op Bias and skipping the addition of new checks just because the section "looks complete."
 4. **Current State Evaluation:** The system cross-references each newly added check with the existing codebase. If it is already fulfilled, it is marked as implemented using the repository's native check format (e.g., `[x] Implemented`). Emojis are disabled. Otherwise it remains pending `[ ]`.
@@ -89,6 +89,6 @@ Integrating checks into the TODO.md requires deep Architectural Nuance. Associat
 
 ## STEP 8: Documentary Synchronization
 
-The `/document` workflow executes as the mandatory closing step. This ensures that all documentary changes produced by the derivation (MASTER-SPEC §8, TODO.md) are synchronized with the rest of the documentary axis (CHANGELOG, coherence checks, timestamps).
+The `/document` workflow executes as the mandatory closing step. This ensures that all documentary changes produced by the derivation (`docs/VERIFICATION.md`, `TODO.md`) are synchronized with the rest of the documentary axis (CHANGELOG, coherence checks, timestamps).
 
 **HALT. The system generates a summary and terminates.**

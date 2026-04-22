@@ -1,6 +1,6 @@
 # Verification Checklist: [Subject Name]
 
-> Derived using the Promise Decomposition Algorithm. Traceable to MASTER-SPEC §8.
+> Derived using the Promise Decomposition Algorithm. Canonical verification contract.
 
 ## Kairós Symbol Legend
 

@@ -1,6 +1,6 @@
 # TODO: [Project Name] v0.1.0
 
-> Direct traceability: each task references checks from `MASTER-SPEC.md` §8.
+> Direct traceability: each task references checks from `VERIFICATION.md`.
 
 ## Kairós Symbol Legend
 
@@ -41,7 +41,7 @@ CLOSING RULE CONDITIONED BY VERIFIER TYPE:
   Format: - [x] [TASK-NNN]; YYYY-MM-DD HH:MM [🤖🧑 Pre-verified + confirmed by user]
 
 GENERAL RULES:
-- Every TASK must have the "Covered checks:" field with MASTER-SPEC §8 IDs (including .LLM/.HUM/.MIX suffix).
+- Every TASK must have the "Covered checks:" field with VERIFICATION.md IDs (including .LLM/.HUM/.MIX suffix).
 - If the task is purely governance: **Covered checks:** Transversal governance
 - Timestamps are mandatory when marking a subtask as completed.
 - It is FORBIDDEN to use generic terms like "active" or leave the field empty.

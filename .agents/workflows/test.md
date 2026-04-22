@@ -38,11 +38,12 @@ The testing strategy is designed from the user's perspective: what needs verific
 
 **Default testing pyramid for greenfield:**
 
-| Layer | Typical Tool | Target Coverage | Success Criterion |
-|---|---|---|---|
-| Unit tests | vitest, pytest, go test, jest | Business logic, pure functions, utilities | Every function with non-trivial logic has a test |
-| Integration tests | vitest, pytest, supertest | End-to-end data flows, APIs, DB queries | Every endpoint/critical flow has a test |
-| E2E / visual tests | Playwright | Visible user flows, UI regressions | Every critical flow in MASTER-SPEC has a test |
+| Layer | Typical Tool | Target Coverage | Authority | Success Criterion |
+|---|---|---|---|---|
+| Unit tests | vitest, pytest, go test, jest | Business logic, pure functions, utilities | `.LLM` (fully automatable) | Every function with non-trivial logic has a test |
+| Integration tests | vitest, pytest, supertest | End-to-end data flows, APIs, DB queries | `.MIX` (agent designs and runs; human validates critical flow coverage) | Every endpoint/critical flow has a test |
+| E2E / visual tests | Playwright | Visible user flows, UI regressions | `.MIX` (agent executes; human validates visual correctness) | Every critical flow in MASTER-SPEC has a test |
+| Exploratory / perceptual | Manual | UX coherence, aesthetic judgment, edge cases requiring domain intuition | `.HUM` (requires human execution) | Critical judgment calls documented |
 
 The user can always implicitly override any element of the proposed strategy (e.g., "I don't want Playwright" → respected without questioning).
 

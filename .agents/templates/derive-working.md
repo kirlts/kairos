@@ -13,8 +13,7 @@
 >    - Every check uses taxonomy `[ACTOR.CAT.NN.VER]` with verificability suffix (.LLM, .HUM, .MIX).
 >    - Every check is atomic: ONE action, ONE result, binary pass/fail.
 >    - The MECE audit is non-negotiable: overlaps are eliminated, gaps are filled.
->    - ≥10 checks per actor, NO EXCEPTIONS.
->    - The final deliverable traces back to MASTER-SPEC §8.
+>    - The final deliverable traces back to VERIFICATION.md.
 
 ---
 ## Phase 0: Input Classification & System Identity
@@ -342,6 +341,6 @@ If ANY gate fails: remediate the deliverable by replacing the flagged patterns w
 > - Every check is atomic: ONE action, ONE result, binary pass/fail.
 > - The MECE audit is non-negotiable: overlaps are eliminated, gaps are filled.
 > - ≥10 checks per actor, NO EXCEPTIONS.
-> - The final deliverable traces back to MASTER-SPEC §8.
+> - The final deliverable forms the VERIFICATION.md contract.
 
 <!-- TEMPLATE END -->
