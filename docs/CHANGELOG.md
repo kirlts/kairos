@@ -5,6 +5,11 @@
 
 ## [Unreleased]
 
+## [v3.2.1] - 2026-04-25
+
+### Changed
+- Traducción de la plantilla `repomap.md` al inglés para cumplir con la política de *Translation Tax Suppression* (English-Pivoted CoT).
+
 ## [v3.2.0] - 2026-04-25
 
 ### Added

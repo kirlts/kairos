@@ -1,4 +1,4 @@
-v3.2.0
+v3.2.1
 .agents/knowledge/ai-smell-registry.md
 .agents/knowledge/constitution.md
 .agents/roles/director.md

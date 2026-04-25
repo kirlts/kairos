@@ -1,6 +1,6 @@
-# REPOMAP: [INSERT_PROJECT_NAME]
+# REPOMAP: Kairós
 
-> Generated: [INSERT_TIMESTAMP] (Kairós v[INSERT_VERSION])  
+> Generated: 2026-04-25T17:41:43-04:00 (Kairós v3.2.0)  
 > Purpose: Routing matrix. Defines when the AI is authorized to read each directory or file.
 
 ## Routing Matrix
@@ -12,4 +12,6 @@
 | `docs/VERIFICATION.md` | Quality contract and acceptance criteria. | Pre-delivery code validation. |
 | `docs/TODO.md` | Active tasks and history repository. | Only for progress logging or reading requirements of a TASK. |
 | `.agents/skills/` | Specialized execution protocols. | UI tasks (visual-excellence) or stagnation (conflict-resolution). |
-[INSERT_TOPOLOGY_ROWS]
+| `.agents/` | Unspecified auxiliary module | Consultation of Kairós rules, roles, templates, and workflows. |
+| `.github/` | Unspecified auxiliary module | GitHub configuration tasks, CI/CD pipelines. |
+| `docs/` | Unspecified auxiliary module | Consultation of additional documentation artifacts. |
