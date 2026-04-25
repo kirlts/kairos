@@ -38,3 +38,7 @@ KAIROS-WORK.md
 # Kairós roles (personal)
 .agents/roles/*
 !.agents/roles/.gitkeep
+
+# Kairós Living Document
+docs/LIVING-DOCUMENT.md
+docs/*.epub

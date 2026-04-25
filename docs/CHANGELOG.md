@@ -5,6 +5,17 @@
 
 ## [Unreleased]
 
+## [v3.2.0] - 2026-04-25
+
+### Added
+- Workflow `/repomap` y plantilla `repomap.md`. Genera el mapa de enrutamiento topológico.
+- Directiva de exclusión para `LIVING-DOCUMENT.md`. El archivo es accesible y modificable exclusivamente mediante `/narrate`.
+
+### Changed
+- Refactorización de `.gitignore`. Kairós inyecta sus exclusiones mandatorias (`.agents/templates/gitignore-append.txt`) al archivo `.gitignore` preexistente del repositorio anfitrión.
+- Regla `02-documentation.md` reescrita. El `REPOMAP.md` actúa como único contrato de navegación.
+- Regla `03-constraints.md` actualizada. El sistema conserva el imperativo estructural sin directiva de lectura obligatoria.
+
 ## [v3.1.2] - 2026-04-15
 
 ### Added

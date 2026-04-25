@@ -1,4 +1,4 @@
-v3.1.2
+v3.2.0
 .agents/knowledge/ai-smell-registry.md
 .agents/knowledge/constitution.md
 .agents/roles/director.md
@@ -19,8 +19,10 @@ v3.1.2
 .agents/templates/checklist-working.md
 .agents/templates/derive-checklist.md
 .agents/templates/derive-working.md
+.agents/templates/gitignore-append.txt
 .agents/templates/master-spec.md
 .agents/templates/memory.md
+.agents/templates/repomap.md
 .agents/templates/role-session-results.md
 .agents/templates/role-session-working.md
 .agents/templates/technical-debt.md
@@ -33,6 +35,7 @@ v3.1.2
 .agents/workflows/document.md
 .agents/workflows/fix.md
 .agents/workflows/release.md
+.agents/workflows/repomap.md
 .agents/workflows/role.md
 .agents/workflows/test.md
 .agents/workflows/update.md

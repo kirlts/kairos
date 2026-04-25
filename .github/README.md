@@ -1,6 +1,6 @@
 # Kairós
 
-> Sistema de gobernanza para desarrollo asistido por IA. v3.1.1
+> Sistema de gobernanza para desarrollo asistido por IA. v3.2.0
 
 ## Qué es
 
@@ -34,11 +34,13 @@ El framework consiste en reglas, workflows y protocolos que corrigen estos compo
 └── templates/      # Plantillas para docs del proyecto
 
 docs/
-├── MASTER-SPEC.md  # Qué se construye, para quién, por qué, y cómo
-├── TODO.md         # Tareas con trazabilidad a la especificación
-├── MEMORY.md       # Heurísticas transferibles entre sesiones
-├── USER-DECISIONS.md # Registro de decisiones del usuario con su razón
-└── CHANGELOG.md    # Historial de cambios
+├── REPOMAP.md          # Mapa topológico del repositorio para la IA
+├── LIVING-DOCUMENT.md  # Narrativa pedagógica del proyecto (opcional)
+├── MASTER-SPEC.md      # Qué se construye, para quién, por qué, y cómo
+├── TODO.md             # Tareas con trazabilidad a la especificación
+├── MEMORY.md           # Heurísticas transferibles entre sesiones
+├── USER-DECISIONS.md   # Registro de decisiones del usuario con su razón
+└── CHANGELOG.md        # Historial de cambios
 ```
 
 ## Comandos
@@ -50,6 +52,8 @@ docs/
 | `/test` | Definir estrategia de testing o ejecutar tests existentes |
 | `/fix` | Diagnosticar y resolver deuda técnica |
 | `/document` | Sincronizar documentación con el estado real del código |
+| `/repomap` | Genera el mapa de enrutamiento y acceso a directorios en REPOMAP.md |
+| `/narrate` | Único punto de entrada para generar o actualizar LIVING-DOCUMENT.md con exportación EPUB |
 | `/update` | Actualizar Kairós a la última versión |
 | `/release` | Generar nueva versión del framework (solo repo canónico) |
 | `/role` | Activar una identidad de gobernanza (persona) para la sesión |

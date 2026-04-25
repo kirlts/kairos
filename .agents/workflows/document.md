@@ -270,24 +270,12 @@ Total checks: N
 
 If checks without verificability suffix (legacy) are detected, classify them retroactively using the Decision Tree in `derive-working.md`. If non-destructive (adding suffixes), execute autonomously. If destructive (renaming IDs), require human approval.
 
-### Living Document Narrative Sync
+### Routing Matrix Sync (REPOMAP)
 
-Executes silently as the final step of Normal Mode. No user action required.
+Executes silently as the final step of Normal Mode and Audit Mode. No user action required.
 
-```
-Are there pending narrative updates in working memory?
-  NO  → Skip. No output. Zero cost.
-  YES →
-    Does docs/LIVING-DOCUMENT.md exist?
-      NO  → Skip. Log: "Living Document not initialized. Run /narrate to create it."
-      YES →
-        1. Lazy-load docs/LIVING-DOCUMENT.md
-        2. Load .agents/knowledge/narrator-voice.md and .agents/roles/narrator.md
-        3. Update only the chapters affected by pending narrative updates
-        4. Write changes to docs/LIVING-DOCUMENT.md
-        5. Clear pending narrative updates from working memory
-        6. Add one line to the /document sync report:
-           "Living Document: [N] chapters updated."
-```
+1. The system implicitly executes the `/repomap` workflow to update the topological routing matrix.
+2. The `/repomap` workflow overwrites `docs/REPOMAP.md` ensuring the routing matrix matches the repository's physical state.
+3. Add one line to the `/document` sync report: "REPOMAP synchronized."
 
-The sync produces no standalone output and adds no friction. It is a silent side-effect of the documentary closure the user already performs.
+> **CRITICAL ISOLATION RULE:** The `/document` workflow MUST NEVER read, write, or touch `docs/LIVING-DOCUMENT.md`. The Living Document is strictly isolated and can ONLY be modified via the `/narrate` workflow.
