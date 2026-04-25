@@ -5,6 +5,17 @@
 
 ## [Unreleased]
 
+## [v3.2.3] - 2026-04-25
+
+### Changed
+- Refactorización algorítmica del workflow `/repomap`. Se implementa el enrutamiento mediante clústeres MECE y el paradigma de Pre-Contextualización Axiomática para evitar la degradación de contexto del LLM.
+- Limpieza de la plantilla `repomap.md`. Se suprimen los documentos pre-inyectados para forzar a la IA a mapear la topología orgánicamente.
+
+## [v3.2.2] - 2026-04-25
+
+### Changed
+- Refactorización del workflow `/repomap`: prohibición estricta de *placeholders* genéricos (exigiendo deducción activa del directorio) e imposición absoluta de generación en inglés para las filas de la matriz.
+
 ## [v3.2.1] - 2026-04-25
 
 ### Changed

@@ -7,9 +7,4 @@
 
 | Directory / File | Nature | When to Consult |
 |---|---|---|
-| `docs/MASTER-SPEC.md` | Architectural specifications, constraints, and trade-offs. | Design tasks (.HUM) or new module integration. |
-| `docs/MEMORY.md` | Heuristics and learned historical errors. | Implementation of complex or error-prone logic. |
-| `docs/VERIFICATION.md` | Quality contract and acceptance criteria. | Pre-delivery code validation. |
-| `docs/TODO.md` | Active tasks and history repository. | Only for progress logging or reading requirements of a TASK. |
-| `.agents/skills/` | Specialized execution protocols. | UI tasks (visual-excellence) or stagnation (conflict-resolution). |
 [INSERT_TOPOLOGY_ROWS]
