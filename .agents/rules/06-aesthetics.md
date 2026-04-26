@@ -1,4 +1,5 @@
 ---
+trigger: model_decision
 description: Applies when the task involves generation or modification of visual content (CSS, HTML, frontend components, UX design, formatted PDF/EPUB documents, images, diagrams, or any artifact destined for human visual perception).
 ---
 

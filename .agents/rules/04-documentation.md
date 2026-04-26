@@ -1,4 +1,5 @@
 ---
+trigger: model_decision
 description: Applies when creating, reading, or modifying project documentation within the docs/ directory (MASTER-SPEC, TODO, MEMORY, CHANGELOG).
 ---
 

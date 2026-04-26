@@ -1,4 +1,5 @@
 ---
+trigger: model_decision
 description: Applies when classifying tasks (HUM/LLM/MIX), estimating effort, interpreting intentions, or requiring user validation before closing a task.
 ---
 

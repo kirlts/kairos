@@ -1,4 +1,5 @@
 ---
+trigger: model_decision
 description: Applies when writing code, altering architecture, managing dependencies, or modifying core logic to ensure compliance with project restrictions.
 ---
 

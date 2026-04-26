@@ -1,4 +1,5 @@
 ---
+trigger: model_decision
 description: Applies when formulating chat responses, translating internal thoughts to user language, or checking for prohibited vocabulary (anti-tells).
 ---
 

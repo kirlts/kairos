@@ -1,5 +1,5 @@
 ---
-description: ALWAYS ON. Core initialization, agent role, and AI-ROUTER authorization gate. Must be applied immediately upon the first message.
+description: ALWAYS ON. Core initialization, agent role, and REPOMAP authorization gate. Must be applied immediately upon the first message.
 ---
 
 # Output Behavior
