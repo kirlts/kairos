@@ -91,7 +91,7 @@ The master templates in `.agents/templates/` are the source of truth for documen
 
 1. **Inventory**: All existing templates in `.agents/templates/` are listed.
 2. **Documentary Cross-Reference**: For each template corresponding to an axis document (`master-spec.md`, `todo.md`, `memory.md`, `changelog.md`, `user-decisions.md`, `technical-debt.md`), the system verifies:
-   - The template structure conforms to the rules in `.agents/rules/02-documentation.md`. If a rule mandates a field or format, the template MUST have it.
+   - The template structure conforms to the rules in `.agents/rules/03-documentation.md`. If a rule mandates a field or format, the template MUST have it.
    - No orphan templates exist (templates no workflow or rule references).
    - No missing templates exist (documents mentioned in rules whose template is absent).
 3. **Workflow Template Cross-Reference**: For each workflow template (`derive-working.md`, `derive-checklist.md`, `checklist-working.md`, `checklist-output.md`), the system verifies:

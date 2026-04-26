@@ -1,3 +1,7 @@
+---
+description: Applies when writing code, altering architecture, managing dependencies, or modifying core logic to ensure compliance with project restrictions.
+---
+
 # Project Constraints Execution
 
 The operational environment executes compliance with project-specific constraints. 

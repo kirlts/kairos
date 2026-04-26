@@ -20,7 +20,7 @@ This workflow generates a routing matrix based on the project's physical topolog
    Detection applies three signals in order:
 
    **Signal 1 — Documentary Axis (Structural):**
-   `docs/MASTER-SPEC.md` is the project's foundational specification and always receives an individual row as a Domain Axiom. The remaining documentary axis files defined in `02-documentation.md` are grouped into a single row. Their individual consultation conditions are already governed by `[RULE: TASK INITIATION & AUTHORIZATION]` and do not require per-file routing.
+   `docs/MASTER-SPEC.md` is the project's foundational specification and always receives an individual row as a Domain Axiom. The remaining documentary axis files defined in `03-documentation.md` are grouped into a single row. Their individual consultation conditions are already governed by `[RULE: TASK INITIATION & AUTHORIZATION]` and do not require per-file routing.
 
    **Signal 2 — MASTER-SPEC Cross-Reference (Deterministic):**
    Scan `docs/MASTER-SPEC.md` for explicit references to documentation, specification, or schema files. Every referenced non-code file is a Domain Axiom. References to source code files increase the parent directory's architectural weight in Step 2b but do not create individual rows.

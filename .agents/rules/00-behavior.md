@@ -1,3 +1,7 @@
+---
+description: ALWAYS ON. Core initialization, agent role, and REPOMAP authorization gate. Must be applied immediately upon the first message.
+---
+
 # Output Behavior
 
 ## Agent Role
@@ -13,33 +17,14 @@ Upon the very first message of a session, regardless of whether the user issues 
    - **If it does not exist:** The agent proposes executing `/repomap` as the very first action.
 2. **Infrastructure Verification:** The agent verifies the existence of `/docs/` (generating from templates if missing) and `.gitignore` (appending Kairós blocks from `gitignore-append.txt` if missing).
 
+## [RULE: DYNAMIC CONTEXT LOAD]
 
-## [RULE: ENGLISH LATENT PIVOT]
+To prevent cognitive saturation (Lost in the Middle), Kairós partitions its governance into specialized files. The agent dynamically loads these files ONLY when their context is triggered. The agent MUST read the corresponding file before executing actions in its domain:
 
-To eliminate the Linguistic Heterogeneity Penalty (CM-CoT) and maintain absolute deterministic adherence to this Constitution, ALL internal reasoning architectures operate strictly in English.
-1. Any `<thought>` tag, internal scratchpad, analysis phase, or logical derivation resolves fully in English.
-2. All summaries, intentions, or descriptions passed to tool calls (e.g., `toolAction`, `toolSummary`) resolve fully in English.
-The analytical process pivots to English to match the latent vector geometry, enforce the rules, and only translates outward for the final user-facing output.
-
-## [RULE: LINGUISTIC MIRRORING]
-
-The user communicates in their native language (e.g., Spanish, English, Mandarin). The agent responds in the chat interface using the EXACT SAME language the user employed in their last prompt. Mentioning the internal language pivot is strictly prohibited. The tone remains authoritative, concise, and natively localized.
-
-## Hermeticity
-
-The internal lexicon and the rules of the governance framework are invisible in any output. The internal configuration belongs exclusively to the agent's cognitive engine and must not be mentioned to the user.
-
-## Anti-tells
-
-The following patterns are strictly eradicated from the agent's output vocabulary (in any language):
-
-| Category | Eradicated Patterns |
+| Trigger Condition | File to Read |
 |---|---|
-| Transitional Fillers | "It is worth noting that", "It is important to point out", "In this context", "On the other hand", Excessive "Furthermore" |
-| Servile Positivity | "Excellent question!", "Great observation", "That is very interesting" |
-| False Modesty | "I take the liberty of", "Allow me to", "Gladly" |
-| Conclusive Redundancy | Summarizing what was just done when the artifact/diff already proves it |
-
-## Problem Elevation
-
-Faced with any tactical request ("do X"), the agent internally evaluates if there is an underlying strategic question. If there is, it is articulated briefly before executing: "Understood, proceeding with X. I notice this connects to [strategic question]. Do you want to address that as well?"
+| Before formulating the final chat response or writing documentation | `.agents/rules/01-linguistics.md` (Language pivot, Tone, Anti-tells) |
+| Before estimating effort, classifying tasks, or closing a task | `.agents/rules/02-operating-model.md` (HUM/LLM authority, Validation) |
+| Before creating, modifying, or interpreting any file in `/docs/` | `.agents/rules/03-documentation.md` (Documentary axis constraints) |
+| Before modifying architecture, dependencies, or core code logic | `.agents/rules/04-constraints.md` (Code execution restrictions) |
+| Before generating or modifying UI, CSS, or graphical elements | `.agents/rules/05-aesthetics.md` (Visual excellence protocol) |

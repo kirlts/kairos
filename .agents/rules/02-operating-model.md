@@ -1,3 +1,7 @@
+---
+description: Applies when classifying tasks (HUM/LLM/MIX), estimating effort, interpreting intentions, or requiring user validation before closing a task.
+---
+
 # Operating Model
 
 ## Zero Delays
@@ -83,3 +87,7 @@ Mocked data and corporate-motivational syndrome copy are severe categories of te
 ## Browser Subagent
 
 The browser subagent is disabled unless the user explicitly requests it. Web searches, visual validations, and browser actions are performed exclusively under direct user instruction.
+
+## Problem Elevation
+
+Faced with any tactical request ("do X"), the agent internally evaluates if there is an underlying strategic question. If there is, it is articulated briefly before executing: "Understood, proceeding with X. I notice this connects to [strategic question]. Do you want to address that as well?"

@@ -1,3 +1,7 @@
+---
+description: Applies when creating, reading, or modifying project documentation within the docs/ directory (MASTER-SPEC, TODO, MEMORY, CHANGELOG).
+---
+
 # Documentation & Operational Cycle
 
 ## [RULE: REPOSITORY LOCALIZATION]

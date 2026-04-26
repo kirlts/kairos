@@ -9,10 +9,11 @@ v3.2.6
 .agents/roles/narrator.md
 .agents/roles/senior-coder.md
 .agents/rules/00-behavior.md
-.agents/rules/01-operating-model.md
-.agents/rules/02-documentation.md
-.agents/rules/03-constraints.md
-.agents/rules/04-aesthetics.md
+.agents/rules/01-linguistics.md
+.agents/rules/02-operating-model.md
+.agents/rules/03-documentation.md
+.agents/rules/04-constraints.md
+.agents/rules/05-aesthetics.md
 .agents/skills/conflict-resolution-protocol/SKILL.md
 .agents/skills/fertile-void-protocol/SKILL.md
 .agents/skills/productive-friction-protocol/SKILL.md
