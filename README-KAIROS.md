@@ -48,6 +48,17 @@ Este archivo es la referencia operativa del framework de gobernanza, no document
 | Axiomatic Pre-Contextualization | Previene -6.81% degradación | Meta-instrucciones preceden a los datos que gobiernan. El modelo lee el marco antes que el contenido que debe interpretar | arXiv 2412.17189 (input design studies) |
 | Modular Context Partitioning | Previene degradación >32K tokens | rules (siempre activas), skills (por demanda), knowledge (@referencia). Mantiene el contexto activo bajo el umbral de degradación documentado | arXiv 2601.10343 (OctoBench); arXiv 2603.16021 (Folder Structure as Agent Architecture) |
 
+## Gobernanza Topológica (REPOMAP)
+
+El framework impone un "Cortafuegos de Contexto" (Context Firewall) frente a la exploración probabilística de los IDEs agenticos, neutralizando el *Context Rot* y la *Deuda de Verificación*.
+
+| Principio Arquitectónico | Mecanismo y Efecto | Fuente / Justificación |
+|---|---|---|
+| Axiomatic Pre-Contextualization | Aísla reglas críticas (`MASTER-SPEC`) como "Axiomas de Dominio". Previene que el LLM deduzca reglas normativas a partir de código estadístico (descriptivo). | arXiv 2603.07896 (SMGI: Fact-Value Distinction) |
+| Context Firewall | Sustituye la búsqueda vectorial (BM25/Embeddings) del IDE por fronteras declarativas. Elimina las "Alucinaciones Complacientes" causadas por contextos ruidosos. | arXiv 2604.17025 (Convergent AI Agent Framework - CAAF) |
+| MECE Clustering | Compresión estricta de la topología en clústeres planos (Mutuamente Excluyentes, Colectivamente Exhaustivos). Maximiza la densidad de señal y previene la dilución de atención. | arXiv 2307.03172 (Lost in the Middle); Andrej Karpathy (LLM OS: RAM vs Hard Drive) |
+| Stateless Overwriting | Regeneración *Zero-Shot* del mapa desde la topología física. Erradica el Sesgo de Recencia y la Oscilación Estocástica propios de las actualizaciones diferenciales continuas. | Harrison Chase (Agent Harnesses); OpenReview (Multi-Turn Conversation Decay) |
+
 ## Asignación de dominio por diseño
 
 El framework previene fallas de delegación estructurando el trabajo en tres subconjuntos basados en las limitaciones empíricas medidas de los LLMs:

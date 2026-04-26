@@ -73,6 +73,17 @@ El framework aplica patrones de adherencia extraídos de investigación empíric
 | Traceable Identifiers | 80.4% F1 en cadenas lógicas multi-paso | Taxonomía `[ACTOR.CAT.NN.VER]`, IDs `[R-NNN]`, `[LNC-NN]`. Los identificadores explícitos anclan cada verificación a un artefacto concreto, sosteniendo la trazabilidad en razonamientos multi-paso | Evaluating the Use of LLMs for Documentation to Code Traceability (ResearchGate) |
 | Translation Tax Suppression | Elimina "Linguistic Heterogeneity Penalty" | Los protocolos internos operan en inglés determinista para alinearse con el espacio latente de la IA, maximizando la comprensión lógica, mientras la interacción y escritura final reflejan el idioma del usuario. | Adherencia Lingüística en IA Frontera (Abril 2026) |
 
+### Gobernanza Topológica (REPOMAP)
+
+El framework impone un "Cortafuegos de Contexto" (Context Firewall) frente a la exploración probabilística de los IDEs agenticos, neutralizando el *Context Rot* y la *Deuda de Verificación*.
+
+| Principio Arquitectónico | Mecanismo y Efecto | Fuente / Justificación |
+|---|---|---|
+| Axiomatic Pre-Contextualization | Aísla reglas críticas (`MASTER-SPEC`) como "Axiomas de Dominio". Previene que el LLM deduzca reglas normativas a partir de código estadístico (descriptivo). | arXiv 2603.07896 (SMGI: Fact-Value Distinction) |
+| Context Firewall | Sustituye la búsqueda vectorial (BM25/Embeddings) del IDE por fronteras declarativas. Elimina las "Alucinaciones Complacientes" causadas por contextos ruidosos. | arXiv 2604.17025 (Convergent AI Agent Framework - CAAF) |
+| MECE Clustering | Compresión estricta de la topología en clústeres planos (Mutuamente Excluyentes, Colectivamente Exhaustivos). Maximiza la densidad de señal y previene la dilución de atención. | arXiv 2307.03172 (Lost in the Middle); Andrej Karpathy (LLM OS: RAM vs Hard Drive) |
+| Stateless Overwriting | Regeneración *Zero-Shot* del mapa desde la topología física. Erradica el Sesgo de Recencia y la Oscilación Estocástica propios de las actualizaciones diferenciales continuas. | Harrison Chase (Agent Harnesses); OpenReview (Multi-Turn Conversation Decay) |
+
 ### Asignación de dominio por diseño
 
 Los modelos estadísticos presentan limitaciones empíricas documentadas en la evaluación de *trade-offs* arquitectónicos y la estimación estructural a largo plazo. Por ello, el framework impone una división estricta de tareas basada en la aptitud asimétrica medida:
