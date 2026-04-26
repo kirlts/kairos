@@ -5,7 +5,15 @@
 
 ## [Unreleased]
 
-## [v3.2.3] - 2026-04-25
+## [v3.2.4] - 2026-04-25
+
+### Changed
+- Endurecimiento del Session Boot en `02-documentation.md`: la lectura de `docs/REPOMAP.md` pasa a ser un hard gate declarativo. La exploración de archivos queda suspendida hasta que el REPOMAP se lea en su totalidad.
+- Algoritmo de detección de Domain Axioms en el workflow `/repomap` (Señal 1: referencias en MASTER-SPEC; Señal 2: clasificación por contenido con rubric tabular de 4 criterios).
+- Candado Authoring Constraints en la plantilla `repomap.md`: los archivos de gobernanza de Kairós son infraestructura invisible en repos huéspedes; anti-recency bias declarado.
+- Corrección de lenguaje ambiguo en `document.md`: `implicitly executes` → declaración directa; `pauses until resolved` → definición de estado de bloqueo.
+- Sustitución de la cita débil "Harrison Chase (Agent Harnesses)" por arXiv 2603.16021 en ambos READMEs.
+- Manifest actualizado: 7 archivos físicamente existentes incorporados al inventario de v3.2.3 que no constaban en él.
 
 ### Changed
 - Refactorización algorítmica del workflow `/repomap`. Se implementa el enrutamiento mediante clústeres MECE y el paradigma de Pre-Contextualización Axiomática para evitar la degradación de contexto del LLM.

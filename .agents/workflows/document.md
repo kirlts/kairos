@@ -110,7 +110,7 @@ Generate a lint report BEFORE proceeding to Audit or Normal Mode:
 
 If the report contains zero divergences, log: `Structural Lint: PASS (0 divergences)`.
 
-If the report contains divergences, all autonomous fixes are applied before proceeding. Pending-approval items are presented to the user and the workflow pauses until resolved.
+If the report contains divergences, all autonomous fixes are applied before proceeding. Pending-approval items are presented to the user. The workflow is blocked (no further steps execute) until every pending-approval item is explicitly resolved by the user.
 
 ---
 
@@ -272,10 +272,9 @@ If checks without verificability suffix (legacy) are detected, classify them ret
 
 ### Routing Matrix Sync (REPOMAP)
 
-Executes silently as the final step of Normal Mode and Audit Mode. No user action required.
+Executes as the mandatory final step of Normal Mode and Audit Mode.
 
-1. The system implicitly executes the `/repomap` workflow to update the topological routing matrix.
-2. The `/repomap` workflow overwrites `docs/REPOMAP.md` ensuring the routing matrix matches the repository's physical state.
-3. Add one line to the `/document` sync report: "REPOMAP synchronized."
+1. The `/repomap` workflow executes and overwrites `docs/REPOMAP.md` to match the repository's current physical state.
+2. One line is appended to the `/document` sync report: "REPOMAP synchronized."
 
 > **CRITICAL ISOLATION RULE:** The `/document` workflow MUST NEVER read, write, or touch `docs/LIVING-DOCUMENT.md`. The Living Document is strictly isolated and can ONLY be modified via the `/narrate` workflow.

@@ -1,8 +1,12 @@
-v3.2.3
+v3.2.4
+.agents/epub/style.css
 .agents/knowledge/ai-smell-registry.md
 .agents/knowledge/constitution.md
-.agents/roles/director.md
+.agents/knowledge/narrator-voice.md
 .agents/roles/.gitkeep
+.agents/roles/director.md
+.agents/roles/martin.md
+.agents/roles/narrator.md
 .agents/roles/senior-coder.md
 .agents/rules/00-behavior.md
 .agents/rules/01-operating-model.md
@@ -20,6 +24,7 @@ v3.2.3
 .agents/templates/derive-checklist.md
 .agents/templates/derive-working.md
 .agents/templates/gitignore-append.txt
+.agents/templates/living-document.md
 .agents/templates/master-spec.md
 .agents/templates/memory.md
 .agents/templates/repomap.md
@@ -29,11 +34,13 @@ v3.2.3
 .agents/templates/TEST.md
 .agents/templates/todo.md
 .agents/templates/user-decisions.md
+.agents/templates/verification.md
 .agents/workflows/checklist.md
 .agents/workflows/create-role.md
 .agents/workflows/derive.md
 .agents/workflows/document.md
 .agents/workflows/fix.md
+.agents/workflows/narrate.md
 .agents/workflows/release.md
 .agents/workflows/repomap.md
 .agents/workflows/role.md

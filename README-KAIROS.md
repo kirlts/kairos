@@ -1,6 +1,7 @@
 # Kairós: Referencia Rápida
 
-> v3.2.3
+> v3.2.4
+
 
 Este archivo es la referencia operativa del framework de gobernanza, no documentación del proyecto. Todo el contenido del directorio `.agents/` (reglas, skills, workflows, plantillas) está escrito para ser leído y ejecutado autónomamente por la IA. El agente es el operador del framework; el usuario define la intención.
 
@@ -57,7 +58,7 @@ El framework impone un "Cortafuegos de Contexto" (Context Firewall) frente a la 
 | Axiomatic Pre-Contextualization | Aísla reglas críticas (`MASTER-SPEC`) como "Axiomas de Dominio". Previene que el LLM deduzca reglas normativas a partir de código estadístico (descriptivo). | arXiv 2603.07896 (SMGI: Fact-Value Distinction) |
 | Context Firewall | Sustituye la búsqueda vectorial (BM25/Embeddings) del IDE por fronteras declarativas. Elimina las "Alucinaciones Complacientes" causadas por contextos ruidosos. | arXiv 2604.17025 (Convergent AI Agent Framework - CAAF) |
 | MECE Clustering | Compresión estricta de la topología en clústeres planos (Mutuamente Excluyentes, Colectivamente Exhaustivos). Maximiza la densidad de señal y previene la dilución de atención. | arXiv 2307.03172 (Lost in the Middle); Andrej Karpathy (LLM OS: RAM vs Hard Drive) |
-| Stateless Overwriting | Regeneración *Zero-Shot* del mapa desde la topología física. Erradica el Sesgo de Recencia y la Oscilación Estocástica propios de las actualizaciones diferenciales continuas. | Harrison Chase (Agent Harnesses); OpenReview (Multi-Turn Conversation Decay) |
+| Stateless Overwriting | Regeneración *Zero-Shot* del mapa desde la topología física. Erradica el Sesgo de Recencia y la Oscilación Estocástica propios de las actualizaciones diferenciales continuas. | arXiv 2603.16021 (Folder Structure as Agent Architecture); OpenReview NeurIPS (LLMs Get Lost in Multi-Turn Conversation) |
 
 ## Asignación de dominio por diseño
 
