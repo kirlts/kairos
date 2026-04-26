@@ -190,7 +190,7 @@ The system mathematically verifies the coherence of each document with the proje
 - Does the TODO reflect real progress with correct timestamps?
 - Are there decisions in the codebase missing in USER-DECISIONS.md?
 - Are there product changes missing in CHANGELOG.md?
-- Are MASTER-SPEC §4 constraints strictly synchronized with `.agents/rules/03-constraints.md`?
+- Are MASTER-SPEC §4 constraints strictly synchronized with `.agents/rules/05-constraints.md`?
 
 ### Slop and Mock Detection
 
@@ -219,7 +219,7 @@ Mandatory cross-verification:
 The system verifies no internal contradictions exist:
 
 - Intentions/Purposes in MASTER-SPEC §1 ↔ Epics in TODO.md
-- Constraints in MASTER-SPEC §4 ↔ Rules in `.agents/rules/03-constraints.md`
+- Constraints in MASTER-SPEC §4 ↔ Rules in `.agents/rules/05-constraints.md`
 - Decisions in USER-DECISIONS.md ↔ Trade-offs in MASTER-SPEC §5
 - Checks in VERIFICATION.md ↔ TASKs in TODO.md (bidirectional)
 

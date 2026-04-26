@@ -13,7 +13,7 @@ This workflow modifies the global distribution manifest. It MUST ONLY be execute
 ## Step 1: Detection and Analysis
 
 1. The current `kairos-version.txt` at the repository root is read. Version `vX.Y.Z` is obtained from the first line and the manifest files. (If absent, `v0.1.0` is temporarily assumed).
-2. All current real files within the `.agents/` directory (ignoring temporary files or the `scratch/` subdirectory) are listed. Paths must be relative to the root (e.g., `.agents/rules/00-behavior.md`).
+2. All current real files within the `.agents/` directory (ignoring temporary files or the `scratch/` subdirectory) are listed. Paths must be relative to the root (e.g., `.agents/rules/01-behavior.md`).
 3. The **Diff** is calculated:
    - NEW files in `.agents/` not in the old manifest (+).
    - DELETED files from the old manifest no longer in `.agents/` (-).

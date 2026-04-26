@@ -5,6 +5,11 @@
 
 ## [Unreleased]
 
+## [v3.2.8] - 2026-04-25
+
+### Fixed
+- **Integridad de Plantillas:** Corrección de referencias cruzadas obsoletas en `master-spec.md` y `document.md`, que apuntaban a la antigua regla `03-constraints.md` en lugar de la actual `05-constraints.md` (consecuencia del desplazamiento numérico en v3.2.7).
+- **Integridad de Flujos:** Actualización de ejemplos y referencias estructurales en `release.md` hacia el nuevo índice base `01-behavior.md`.
 ## [v3.2.7] - 2026-04-25
 
 ### Fixed
