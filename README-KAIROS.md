@@ -1,6 +1,6 @@
 # Kairós: Referencia Rápida
 
-> v3.2.6
+> v3.2.7
 
 
 Este archivo es la referencia operativa del framework de gobernanza, no documentación del proyecto. Todo el contenido del directorio `.agents/` (reglas, skills, workflows, plantillas) está escrito para ser leído y ejecutado autónomamente por la IA. El agente es el operador del framework; el usuario define la intención.
@@ -77,7 +77,7 @@ Convergencia paramétrica de LLMs en interfaces visuales.
 | Mecanismo | Ubicación |
 |---|---|
 | Lista Negra de Convergencia (10 vectores con valores, contexto y desvío) | `.agents/knowledge/ai-smell-registry.md` |
-| Regla de desvío justificado | `.agents/rules/05-aesthetics.md` |
+| Regla de desvío justificado | `.agents/rules/06-aesthetics.md` |
 | Gate visual de 3 pasos (Anti-Slop, Armonía, Integridad) | `.agents/skills/visual-excellence-protocol/SKILL.md` |
 
 **Fuente:** Síntesis de patrones de convergencia en interfaces generadas por IA (2025-2026). Wikipedia, "Signs of AI Writing".

@@ -5,6 +5,17 @@
 
 ## [Unreleased]
 
+## [v3.2.7] - 2026-04-25
+
+### Fixed
+- **00 Falsy Indexing Bug:** Desplazamiento de todo el índice de reglas (`.agents/rules/`) de `00-05` a `01-06`. Esto mitiga una falla crítica en los parsers de contexto de IDEs agenticos (Cursor, Windsurf) que omitían silenciosamente la inyección de archivos que comenzaban por `00`, causando ceguera cognitiva hacia el REPOMAP Gate.
+
+### Added
+- **Semantic IDE Lazy-Loading:** Integración de *YAML frontmatter* con `description` en todas las reglas, acoplando la arquitectura del framework directamente con el indexador semántico de los IDEs para inyectar reglas sólo cuando el contexto lo requiere.
+- **Dynamic Context Load Protocol:** Inserción de una tabla de enrutamiento declarativo en `01-behavior.md` que obliga a la IA a cargar *lazy-loading* las demás reglas según el dominio operativo, erradicando la degradación "Lost in the Middle".
+
+### Changed
+- **Purificación del Axioma Raíz:** Extracción de todas las reglas lingüísticas (Anti-tells, English Latent Pivot) desde la regla raíz hacia un nuevo archivo `02-linguistics.md`, garantizando que `01-behavior.md` opere exclusivamente como un *Context Firewall* sin contaminación atencional.
 ## [v3.2.6] - 2026-04-25
 
 ### Changed

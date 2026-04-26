@@ -272,8 +272,6 @@ If checks without verificability suffix (legacy) are detected, classify them ret
 
 ### Routing Matrix Sync (REPOMAP)
 
-Executes as the mandatory final step of Normal Mode and Audit Mode.
-
 1. The `/repomap` workflow executes and overwrites `docs/REPOMAP.md` to match the repository's current physical state.
 2. One line is appended to the `/document` sync report: "REPOMAP synchronized."
 

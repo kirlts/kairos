@@ -4,7 +4,7 @@ description: /narrate - Creates or synchronizes the Living Document (docs/LIVING
 
 # Narrate (Living Document Management)
 
-This workflow manages the creation, synchronization, and regeneration of the Living Document. It is the manual fallback for the auto-detection system defined in `03-documentation.md`. The Living Document is an agent-authored, human-directed pedagogical narrative of the project, structured as a book.
+This workflow manages the creation, synchronization, and regeneration of the Living Document. It is the manual fallback for the auto-detection system defined in `04-documentation.md`. The Living Document is an agent-authored, human-directed pedagogical narrative of the project, structured as a book.
 
 > **MANDATORY:** Before executing ANY mode, the agent MUST read:
 > 1. `.agents/knowledge/narrator-voice.md` (voice protocol with generation constraints)

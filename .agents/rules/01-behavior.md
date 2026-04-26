@@ -1,5 +1,5 @@
 ---
-description: ALWAYS ON. Core initialization, agent role, and REPOMAP authorization gate. Must be applied immediately upon the first message.
+description: ALWAYS ON. Core initialization, agent role, and AI-ROUTER authorization gate. Must be applied immediately upon the first message.
 ---
 
 # Output Behavior
@@ -23,8 +23,8 @@ To prevent cognitive saturation (Lost in the Middle), Kairós partitions its gov
 
 | Trigger Condition | File to Read |
 |---|---|
-| Before formulating the final chat response or writing documentation | `.agents/rules/01-linguistics.md` (Language pivot, Tone, Anti-tells) |
-| Before estimating effort, classifying tasks, or closing a task | `.agents/rules/02-operating-model.md` (HUM/LLM authority, Validation) |
-| Before creating, modifying, or interpreting any file in `/docs/` | `.agents/rules/03-documentation.md` (Documentary axis constraints) |
-| Before modifying architecture, dependencies, or core code logic | `.agents/rules/04-constraints.md` (Code execution restrictions) |
-| Before generating or modifying UI, CSS, or graphical elements | `.agents/rules/05-aesthetics.md` (Visual excellence protocol) |
+| Before formulating the final chat response or writing documentation | `.agents/rules/02-linguistics.md` (Language pivot, Tone, Anti-tells) |
+| Before estimating effort, classifying tasks, or closing a task | `.agents/rules/03-operating-model.md` (HUM/LLM authority, Validation) |
+| Before creating, modifying, or interpreting any file in `/docs/` | `.agents/rules/04-documentation.md` (Documentary axis constraints) |
+| Before modifying architecture, dependencies, or core code logic | `.agents/rules/05-constraints.md` (Code execution restrictions) |
+| Before generating or modifying UI, CSS, or graphical elements | `.agents/rules/06-aesthetics.md` (Visual excellence protocol) |
