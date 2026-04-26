@@ -5,6 +5,14 @@
 
 ## [Unreleased]
 
+## [v3.2.6] - 2026-04-25
+
+### Changed
+- Reestructuración profunda del algoritmo de inicialización: la antigua secuencia "Session Boot" fue eliminada de `02-documentation.md` y promovida a la regla constituyente principal en `00-behavior.md` bajo el nombre `[RULE: TASK INITIATION & AUTHORIZATION]`.
+- Modificación del Trigger de Atención: el chequeo del REPOMAP ya no está atado a una "inicialización", sino estrictamente anclado al **primer mensaje de la sesión**, garantizando su ejecución antes de cualquier salto exploratorio.
+- Implementación de *Positive Directive Mapping*: la consulta del REPOMAP ahora se enmarca declarativamente como "el camino más rápido y optimizado para resolver cualquier petición", alineándose con el sesgo natural del modelo hacia la baja latencia, mitigando el by-pass por *pattern-matching*.
+- Expansión de cobertura heurística: el trigger ahora captura explícitamente tanto comandos directos (ej: "ejecuta X") como intenciones ambiguas (ej: "¿cómo funciona Z?"), bloqueando la búsqueda lineal a ciegas.
+
 ## [v3.2.5] - 2026-04-25
 
 ### Fixed

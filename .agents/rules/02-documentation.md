@@ -20,22 +20,6 @@ All guiding project documents reside in `/docs/`. The canonical templates reside
 | `docs/TEST.md` | (generated via /test) | Testing contract. Must be read if it exists. |
 | `docs/LIVING-DOCUMENT.md` | `.agents/templates/living-document.md` | Pedagogical narrative. **Isolated from normal operations.** Can ONLY be created or modified via the `/narrate` workflow. |
 
-## Session Boot
-
-`docs/REPOMAP.md` is the authoritative context boundary for this repository. When `docs/REPOMAP.md` exists, the following gate is active:
-
-- **File exploration beyond the project root is suspended** until `docs/REPOMAP.md` has been fully read.
-- The agent maps the current task against every entry in the REPOMAP routing matrix before opening any additional file.
-- Only files whose defined condition evaluates to `true` for the current task are authorized for reading.
-- Accessing files not covered by the REPOMAP requires explicit user instruction.
-
-If `docs/REPOMAP.md` does not exist, normal exploration applies. The agent proposes `/repomap` as the next action before any task begins.
-
-1. The existence of `/docs/` and the base documents is verified. If missing, they are generated from templates.
-2. The existence of `.gitignore` is verified. If the Kairós mandatory exclusion blocks (from `.agents/templates/gitignore-append.txt`) are missing, the system appends them. If the file does not exist, it is created with those blocks.
-3. `docs/REPOMAP.md` is read in full before any other file access.
-4. The agent maps the current task to every condition listed in the REPOMAP routing matrix.
-5. The agent reads additional files only when their defined condition in the REPOMAP evaluates to true for the current task.
 
 ## Work Cycle
 

@@ -4,6 +4,16 @@
 
 The agent is the autonomous operator of this framework. All rules, skills, workflows, and templates within `.agents/` are written to be read, parsed, and executed by the AI without human mediation. Managing the structural documentation (`docs/`) is the direct operational responsibility of the agent. The user defines the intent; the agent manages the entire execution of the governance system.
 
+## [RULE: TASK INITIATION & AUTHORIZATION]
+
+Upon the very first message of a session, regardless of whether the user issues a direct command (e.g., "implement X") or presents an ambiguous intention (e.g., "how does Z work?"), `docs/REPOMAP.md` MUST be the very first file verified if it exists. Reading it is the absolute fastest and most highly optimized execution pathway because it provides the definitive routing information necessary to resolve any user request.
+
+1. **Context Authorization (The REPOMAP Gate):** `docs/REPOMAP.md` is the system's strict Access Control List (ACL). 
+   - **If it exists:** Reading the REPOMAP in full is the absolute fastest path to resolve the task because it prevents context poisoning and rework. The agent reads it immediately to verify read authorization against its routing matrix before opening any other project files. Relying on intuition or pattern-matching to bypass the ACL is a protocol violation.
+   - **If it does not exist:** The agent proposes executing `/repomap` as the very first action.
+2. **Infrastructure Verification:** The agent verifies the existence of `/docs/` (generating from templates if missing) and `.gitignore` (appending Kairós blocks from `gitignore-append.txt` if missing).
+
+
 ## [RULE: ENGLISH LATENT PIVOT]
 
 To eliminate the Linguistic Heterogeneity Penalty (CM-CoT) and maintain absolute deterministic adherence to this Constitution, ALL internal reasoning architectures operate strictly in English.
