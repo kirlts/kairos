@@ -1,6 +1,6 @@
 # Kairós
 
-> Sistema de gobernanza para desarrollo asistido por IA. v3.2.4
+> Sistema de gobernanza para desarrollo asistido por IA. v3.2.5
 
 
 ## Qué es

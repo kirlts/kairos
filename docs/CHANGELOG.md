@@ -5,7 +5,12 @@
 
 ## [Unreleased]
 
-## [v3.2.4] - 2026-04-25
+## [v3.2.5] - 2026-04-25
+
+### Fixed
+- Regresión en el workflow `/repomap`: algoritmo de Domain Axiom Detection refactorizado con tres señales diferenciadas. Signal 1 ahora separa `MASTER-SPEC.md` (fila individual como Domain Axiom) del eje documental restante (fila agrupada). Signal 2 acotado estrictamente a archivos no-código; referencias a código fuente elevan el peso del directorio padre en Step 2b, sin crear filas individuales. Signal 3 con recursión explícita en directorios no-código para detectar axiomas de dominio no referenciados en MASTER-SPEC (ej. `INTERNAL-DOCS/`).
+- Template `repomap.md`: constraint Scope actualizado para reflejar la separación MASTER-SPEC/eje documental y la restricción de abstracción de nivel de directorio para código fuente.
+
 
 ### Changed
 - Endurecimiento del Session Boot en `02-documentation.md`: la lectura de `docs/REPOMAP.md` pasa a ser un hard gate declarativo. La exploración de archivos queda suspendida hasta que el REPOMAP se lea en su totalidad.

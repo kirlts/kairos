@@ -13,15 +13,20 @@ This workflow generates a routing matrix based on the project's physical topolog
    
    **Step 2a: Domain Axiom Detection**
 
-   Domain Axioms are host project files whose content establishes foundational definitions that other project files consume. Kairós governance files (`.agents/`, `README-KAIROS.md`, `kairos-version.txt`) are invisible infrastructure and are never Domain Axioms. If included at all, they appear as a single noise cluster row.
+   Domain Axioms are documentation and specification files whose content establishes foundational definitions that other project files consume. Source code files are always mapped at the directory level (Step 2b), never as individual Domain Axioms, regardless of their architectural importance.
 
-   Detection applies two signals in order:
+   Kairós governance files (`.agents/`, `README-KAIROS.md`, `kairos-version.txt`) are invisible infrastructure and are never Domain Axioms. If included at all, they appear as a single noise cluster row.
 
-   **Signal 1 — MASTER-SPEC Cross-Reference (Deterministic):**
-   Scan `docs/MASTER-SPEC.md` for explicit file path references, document citations, or named external sources. Every host project file referenced in MASTER-SPEC is a Domain Axiom. No further classification is needed for these files.
+   Detection applies three signals in order:
 
-   **Signal 2 — Content Classification (Heuristic):**
-   For files not captured by Signal 1, read the first 100 lines of each non-code, non-config file encountered during the topological scan. The file is classified as a Domain Axiom if its content satisfies at least TWO of the following criteria:
+   **Signal 1 — Documentary Axis (Structural):**
+   `docs/MASTER-SPEC.md` is the project's foundational specification and always receives an individual row as a Domain Axiom. The remaining documentary axis files defined in `02-documentation.md` are grouped into a single row. Their individual consultation conditions are already governed by the Session Boot rules and do not require per-file routing.
+
+   **Signal 2 — MASTER-SPEC Cross-Reference (Deterministic):**
+   Scan `docs/MASTER-SPEC.md` for explicit references to documentation, specification, or schema files. Every referenced non-code file is a Domain Axiom. References to source code files increase the parent directory's architectural weight in Step 2b but do not create individual rows.
+
+   **Signal 3 — Content Classification (Heuristic):**
+   For each non-code directory identified during the topological scan that is not already fully covered by Signals 1 and 2, the system enters the directory and reads the first 100 lines of each file within it. A file is classified as a Domain Axiom if its content satisfies at least TWO of the following criteria:
 
    | Criterion | What to detect |
    |---|---|
@@ -33,6 +38,7 @@ This workflow generates a routing matrix based on the project's physical topolog
    Files satisfying fewer than two criteria are not Domain Axioms. They are classified as Architectural Modules (Step 2b) or compressed into noise clusters (Step 2c).
 
    Domain Axioms receive individual rows with a high-priority consultation directive.
+
 
 
    **Step 2b: Architectural Modules**
