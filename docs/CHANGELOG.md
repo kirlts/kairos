@@ -5,6 +5,20 @@
 
 ## [Unreleased]
 
+## [v3.3.0] - 2026-04-26
+
+### Added
+- **Dynamic Skill Activation:** Nueva directiva agregada a la regla raíz (`01-behavior.md`) que fuerza a la IA a monitorear activamente el diálogo e inyectar *skills* específicos cuando se cumplen sus condiciones de activación, cerrando la brecha de adherencia.
+
+### Changed
+- **Auditoría y Refactorización de Skills:**
+  - `conflict-resolution-protocol`: Heurística de recuperación de contexto optimizada para sobrevivir a truncación de sesiones, leyendo explícitamente `MEMORY.md` y `USER-DECISIONS.md`.
+  - `productive-friction-protocol`: Endurecimiento del Nivel 1 con categorías de validación explícitas (Escala, Reversibilidad, Dependencia) y adición de una condición de salida (*Exit Condition*).
+  - `standard-research`: Ajuste agresivo de *Activation Limits* para prevenir búsquedas innecesarias en conceptos sintácticos y reducir la carga a 2 búsquedas para comparaciones binarias de herramientas maduras.
+  - `visual-excellence-protocol`: Reescritura completa para enfocarlo estrictamente como compuertas de verificación mecánicas (*Anti-Slop*, *Intentional Harmony*), eliminando solapamiento con la regla `06-aesthetics`.
+
+### Removed
+- **Fertile Void Protocol:** Eliminado como *skill* independiente (borrado `.agents/skills/fertile-void-protocol/SKILL.md`) y absorbido como **Level 0** dentro de `productive-friction-protocol` para eliminar redundancia filosófica.
 ## [v3.2.8] - 2026-04-25
 
 ### Fixed

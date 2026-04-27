@@ -37,7 +37,6 @@ In addition to static rules, the agent possesses specialized skills for complex 
 | Trigger Condition | Skill to Activate |
 |---|---|
 | User expresses frustration, repeats corrections, or rejects proposals | `.agents/skills/conflict-resolution-protocol/SKILL.md` |
-| User uses exploration keywords ("think", "explore") on a new topic | `.agents/skills/fertile-void-protocol/SKILL.md` |
-| Dialogue shows inertia, vagueness, or >3 turns without concrete artifacts | `.agents/skills/productive-friction-protocol/SKILL.md` |
+| Dialogue shows inertia, vagueness, or >3 turns without concrete artifacts, OR user uses exploration keywords on a nascent topic | `.agents/skills/productive-friction-protocol/SKILL.md` |
 | Recommending technologies/practices that might be outdated | `.agents/skills/standard-research/SKILL.md` |
 | Verifying visual/experience artifacts for aesthetic harmony | `.agents/skills/visual-excellence-protocol/SKILL.md` |
