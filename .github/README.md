@@ -1,6 +1,6 @@
 # Kairós
 
-> Sistema de gobernanza para desarrollo asistido por IA. v3.3.0
+> Sistema de gobernanza para desarrollo asistido por IA. v3.4.0
 
 
 ## Qué es
@@ -37,6 +37,7 @@ El framework consiste en reglas, workflows y protocolos que corrigen estos compo
 docs/
 ├── REPOMAP.md          # Mapa topológico del repositorio para la IA
 ├── LIVING-DOCUMENT.md  # Narrativa pedagógica del proyecto (opcional)
+├── RULES.md            # Reglas operacionales específicas del repositorio (opcional)
 ├── MASTER-SPEC.md      # Qué se construye, para quién, por qué, y cómo
 ├── TODO.md             # Tareas con trazabilidad a la especificación
 ├── MEMORY.md           # Heurísticas transferibles entre sesiones

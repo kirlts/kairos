@@ -107,4 +107,17 @@
 
 **Dependencies:** [dependency list]
 
+---
 
+## §8. Operational Rules
+
+> How the AI agent should operate within this repository.
+
+**Rules location:** [One of the following]
+- `docs/RULES.md`
+- [Custom path or system description]
+- No operational rules defined for this repository.
+
+**Scope:** [When do the rules apply? Examples: "All file modifications",
+"Only changes to src/", "Only database migrations". If no scope is defined,
+rules apply to all agent operations.]

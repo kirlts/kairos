@@ -5,6 +5,20 @@
 
 ## [Unreleased]
 
+## [v3.4.0] - 2026-05-16
+
+### Added
+- **Repository Operational Rules (§8):** Nueva sección §8 en la template de MASTER-SPEC que actúa como puntero hacia reglas operacionales específicas del repositorio. Permite a cada proyecto definir directivas de comportamiento para el agente de IA sin mutar `.agents/`.
+- **Template `rules.md`:** Template canónica para `docs/RULES.md` con estructura mínima (Scope + Rules). No obligatoria: solo existe si el usuario declara reglas.
+- **Skill `suggest-rules`:** Detecta directivas operacionales transversales en la sesión actual y propone su cristalización como reglas permanentes en el sistema de reglas del repositorio, con confirmación humana obligatoria.
+
+### Changed
+- **`05-constraints.md` reescrito como dispatcher puro:** Eliminada la duplicación defensiva de constraints del proyecto. El archivo ahora apunta exclusivamente a MASTER-SPEC §4 y §8 como fuentes de verdad. `.agents/` permanece inmutable.
+- **`04-documentation.md`:** RULES.md agregado a la tabla del eje documental como documento no obligatorio.
+- **`01-behavior.md`:** `suggest-rules` agregado a la tabla de Dynamic Skill Activation.
+- **Workflow `/document`:** Extendido para inventariar y lintear RULES.md (solo si existe) y verificar la presencia de §8 en MASTER-SPEC.
+- **Eliminación de sincronización constraints ↔ MASTER-SPEC §4:** `/document` ya no verifica duplicación entre constraints.md y MASTER-SPEC §4, dado que constraints.md ya no almacena contenido de proyecto.
+
 ## [v3.3.0] - 2026-04-26
 
 ### Added

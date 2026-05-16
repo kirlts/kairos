@@ -1,4 +1,4 @@
-v3.3.0
+v3.4.0
 .agents/epub/style.css
 .agents/knowledge/ai-smell-registry.md
 .agents/knowledge/constitution.md
@@ -17,6 +17,7 @@ v3.3.0
 .agents/skills/conflict-resolution-protocol/SKILL.md
 .agents/skills/productive-friction-protocol/SKILL.md
 .agents/skills/standard-research/SKILL.md
+.agents/skills/suggest-rules/SKILL.md
 .agents/skills/visual-excellence-protocol/SKILL.md
 .agents/templates/TEST.md
 .agents/templates/changelog.md
@@ -31,6 +32,7 @@ v3.3.0
 .agents/templates/repomap.md
 .agents/templates/role-session-results.md
 .agents/templates/role-session-working.md
+.agents/templates/rules.md
 .agents/templates/technical-debt.md
 .agents/templates/todo.md
 .agents/templates/user-decisions.md
