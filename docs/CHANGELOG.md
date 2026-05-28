@@ -5,6 +5,15 @@
 
 ## [Unreleased]
 
+## [v3.4.1] - 2026-05-28
+
+### Fixed
+- **REPOMAP: `.agents/` clasificado como "invisible infrastructure":** La template `repomap.md` y el workflow `/repomap` clasificaban `.agents/` como "infraestructura invisible" y "noise cluster", causando que la IA de los IDEs agenticos ignorara las reglas de gobernanza en repos adoptantes. `.agents/` ahora está hardcodeado como fila mandatory con directiva de consulta permanente en la template. El workflow excluye `.agents/` de la clasificación dinámica, delegándolo a la fila hardcodeada.
+- **Template `master-spec.md` §4 nota obsoleta:** Eliminada nota que referenciaba la duplicación defensiva en `05-constraints.md`, patrón eliminado en v3.4.0 cuando constraints se convirtió en dispatcher puro.
+
+### Added
+- **Workflow `/update` - Detección de Cambios en Templates:** Se añadió el paso `Step 7: Template Change Detection` para alertar al operador si una actualización modifica archivos en `.agents/templates/`, requiriendo una posterior reconciliación estructural mediante `/document`.
+
 ## [v3.4.0] - 2026-05-16
 
 ### Added

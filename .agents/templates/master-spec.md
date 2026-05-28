@@ -59,8 +59,6 @@
 2. [e.g., Compatibility with Chrome, Firefox, and Safari]
 3. [constraint N]
 
-> Note: Constraints logged here are defensively duplicated in `.agents/rules/05-constraints.md` to survive context degradation in long sessions.
-
 ---
 
 ## §5. Agreed Trade-offs
