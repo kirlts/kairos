@@ -1,4 +1,3 @@
-v4.0.0
 .agents/epub/style.css
 .agents/knowledge/ai-smell-registry.md
 .agents/knowledge/constitution.md

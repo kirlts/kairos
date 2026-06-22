@@ -5,6 +5,13 @@
 
 ## [Unreleased]
 
+## [v4.0.0] - 2026-06-22
+
+### Changed
+- Completely refactored the entire Governance Engine (rules, skills, workflows, templates) into English to eliminate the 18-24% Translation Tax.
+- Applied Declarative System Framing to all instructions to maximize agent adherence and reduce imperative interference.
+- Updated memory guidelines for Hindsight and Composio integration.
+
 ## [v3.5.0] - 2026-06-21
 
 ### Added

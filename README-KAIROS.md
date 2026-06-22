@@ -1,6 +1,6 @@
 # Kairós: Referencia Rápida
 
-> **Version:** v3.5.0
+> **Version:** v4.0.0
 
 
 Este archivo es la referencia operativa del framework de gobernanza, no documentación del proyecto. Todo el contenido del directorio `.agents/` (reglas, skills, workflows, plantillas) está escrito para ser leído y ejecutado autónomamente por la IA. El agente es el operador del framework; el usuario define la intención.
