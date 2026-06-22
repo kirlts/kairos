@@ -1,6 +1,6 @@
 # Kairós
 
-> Sistema de gobernanza para desarrollo asistido por IA. v3.4.1
+> Sistema de gobernanza para desarrollo asistido por IA. v3.5.0
 
 
 ## Qué es
@@ -56,6 +56,7 @@ docs/
 | `/document` | Sincronizar documentación con el estado real del código |
 | `/repomap` | Genera el mapa de enrutamiento y acceso a directorios en REPOMAP.md |
 | `/narrate` | Único punto de entrada para generar o actualizar LIVING-DOCUMENT.md con exportación EPUB |
+| `/mcp` | Administrar servidores MCP (Hindsight y Composio) del proyecto |
 | `/update` | Actualizar Kairós a la última versión |
 | `/release` | Generar nueva versión del framework (solo repo canónico) |
 | `/role` | Activar una identidad de gobernanza (persona) para la sesión |

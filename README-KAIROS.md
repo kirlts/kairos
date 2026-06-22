@@ -1,6 +1,6 @@
 # Kairós: Referencia Rápida
 
-> **Version:** v3.4.1
+> **Version:** v3.5.0
 
 
 Este archivo es la referencia operativa del framework de gobernanza, no documentación del proyecto. Todo el contenido del directorio `.agents/` (reglas, skills, workflows, plantillas) está escrito para ser leído y ejecutado autónomamente por la IA. El agente es el operador del framework; el usuario define la intención.
@@ -30,6 +30,7 @@ Este archivo es la referencia operativa del framework de gobernanza, no document
 | `/document` | Sincronizar documentación con el estado real del proyecto |
 | `/repomap` | Genera el mapa de enrutamiento y acceso a directorios en REPOMAP.md |
 | `/narrate` | Único punto de entrada para generar o actualizar LIVING-DOCUMENT.md con exportación EPUB |
+| `/mcp` | Administrar servidores MCP (Hindsight y Composio) del proyecto |
 | `/update` | Actualizar gobernanza a la última versión |
 | `/release` | Generar nueva versión del framework (solo repo canónico) |
 | `/role` | Activar una identidad de gobernanza (persona) para la sesión |

@@ -5,6 +5,11 @@
 
 ## [Unreleased]
 
+## [v3.5.0] - 2026-06-21
+
+### Added
+- **Workflow `/mcp` y template `mcp.md`:** Nuevo flujo de trabajo para inicializar y gestionar de forma orgánica la configuración de servidores MCP (Hindsight y Composio) en los repositorios adoptantes.
+
 ## [v3.4.1] - 2026-05-28
 
 ### Fixed

@@ -1,4 +1,4 @@
-v3.4.1
+v3.5.0
 .agents/epub/style.css
 .agents/knowledge/ai-smell-registry.md
 .agents/knowledge/constitution.md
@@ -28,6 +28,7 @@ v3.4.1
 .agents/templates/gitignore-append.txt
 .agents/templates/living-document.md
 .agents/templates/master-spec.md
+.agents/templates/mcp.md
 .agents/templates/memory.md
 .agents/templates/repomap.md
 .agents/templates/role-session-results.md
@@ -42,6 +43,7 @@ v3.4.1
 .agents/workflows/derive.md
 .agents/workflows/document.md
 .agents/workflows/fix.md
+.agents/workflows/mcp.md
 .agents/workflows/narrate.md
 .agents/workflows/release.md
 .agents/workflows/repomap.md
