@@ -6,13 +6,13 @@
   - Si el servidor correspondiente existe, se utilizará para todas las operaciones de recall y retain.
   - Si no existe un servidor configurado con el nombre del proyecto activo, el agente debe abortar inmediatamente la operación de memoria y alertar al usuario para que añada la configuración en la configuración de MCP global de su arnés.
 - **Carga Proactiva de Contexto:** Al inicio de cualquier tarea o sesión, el agente debe invocar la herramienta `recall` con palabras clave relacionadas con la tarea activa para recuperar preferencias, decisiones arquitectónicas e historial relevante del usuario desde el banco del proyecto activo.
-- **Sincronización Obligatoria de Gobernanza:** El agente debe ejecutar `retain` en Hindsight siempre que realice un **cambio no menor** en los archivos de `docs/`. Un cambio se clasifica de forma determinista como "no menor" si cumple con al menos una de las siguientes condiciones objetivas:
+- **Sincronización Obligatoria de Gobernanza:** El agente debe ejecutar la herramienta `retain` en Hindsight SIEMPRE que se cumpla al menos una de las siguientes condiciones deterministas. No hay excepciones ni margen para la interpretación:
+  - **Finalización de Workflows (INCONDICIONAL):** Ejecutar `retain` es el paso OBLIGATORIO final, justo antes de dar por terminada la ejecución de los workflows `/document`, `/repomap` y `/derive`, independientemente de si los archivos físicos sufrieron modificaciones o no. La sola invocación del workflow exige retención de estado.
   - **Creación de archivos:** Creación de cualquier archivo nuevo en el directorio `docs/`.
-  - **Edición de MASTER-SPEC.md:** Cualquier edición de contenido en `docs/MASTER-SPEC.md`.
+  - **Edición de MASTER-SPEC.md:** Cualquier alteración de contenido en `docs/MASTER-SPEC.md`.
   - **Adición de identificadores únicos:** Inserción de nuevos bloques con identificadores únicos (`[TASK-NNN]`, `[UD-NNN]`, `[HEU-NNN]`, `[ACTOR.CAT.NN.VER]`) en los archivos de `docs/`.
   - **Cambios de estado:** Modificación de tareas en `docs/TODO.md` o checks en `docs/VERIFICATION.md`.
   - **Actualizaciones de ruteo:** Modificaciones en la tabla de ruteo de `docs/REPOMAP.md`.
-  - **Ejecución de workflows:** Fase final de la ejecución de los workflows `/document`, `/repomap` y `/derive`.
 - **Consistencia de Inferencia:** Para evitar la destrucción de la caché de contexto (cache miss), el agente debe consultar Hindsight al inicio de la sesión para verificar las directrices sobre el modelo de inferencia seleccionado y evitar alternar modelos de forma innecesaria.
 
 ### Sinergia y Uso de Composio MCP (Pasarela de Integraciones)
